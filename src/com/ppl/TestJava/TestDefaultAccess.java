@@ -15,7 +15,6 @@ package com.ppl.TestJava;
 件）只能从属于单个包，
 所以单个编译单元内的所有类相互间都是自动“友好”的。因此，我们也说友好元素拥有“包访问”权限。
 */
-
 public class TestDefaultAccess {
 	void TestDefualt() {
 		System.out.println("访问权限控制");

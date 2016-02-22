@@ -6,7 +6,7 @@ public class TestJava {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("1111");
+		System.out.println("³ÌÐò¿ªÊ¼... ...");
 		// TestJVM();
 		// CustomClassTest.TestLoader();
 	}
@@ -16,6 +16,8 @@ public class TestJava {
 		// com.ppl.TestJava.TestDefaultAccess td = new
 		// com.ppl.TestJava.TestDefaultAccess();
 		// td.TestDefualt();
+		
+		//TestDefualtDelimiter tdd = new TestDefualtDelimiter();
 	}
 
 	public static void TestJVM() {
