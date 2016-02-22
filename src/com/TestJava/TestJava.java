@@ -7,8 +7,15 @@ public class TestJava {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("1111");
-		//TestJVM();
-		//CustomClassTest.TestLoader();
+		// TestJVM();
+		// CustomClassTest.TestLoader();
+	}
+
+	// 无法访问TestDefualt，默认为包内可以见
+	public static void name() {
+		// com.ppl.TestJava.TestDefaultAccess td = new
+		// com.ppl.TestJava.TestDefaultAccess();
+		// td.TestDefualt();
 	}
 
 	public static void TestJVM() {
