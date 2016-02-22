@@ -8,6 +8,7 @@ public class TestJava {
 		// TODO Auto-generated method stub
 		System.out.println("1111");
 		//TestJVM();
+		//CustomClassTest.TestLoader();
 	}
 
 	public static void TestJVM() {
