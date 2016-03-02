@@ -1,12 +1,16 @@
 package com.TestJava;
 
 import java.net.URL;
+import com.keywords.FinalArgument;
+import com.keywords.*;
 
 public class InitProgram {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
 		System.out.println("程序开始... ...");
+		TestFinal();
 		// TestJVM();
 		// CustomClassTest.TestLoader();
 	}
@@ -16,8 +20,8 @@ public class InitProgram {
 		// com.ppl.TestJava.TestDefaultAccess td = new
 		// com.ppl.TestJava.TestDefaultAccess();
 		// td.TestDefualt();
-		
-		//TestDefualtDelimiter tdd = new TestDefualtDelimiter();
+
+		// TestDefualtDelimiter tdd = new TestDefualtDelimiter();
 	}
 
 	public static void TestJVM() {
@@ -26,5 +30,14 @@ public class InitProgram {
 		for (int i = 0; i < urls.length; i++) {
 			System.out.println(urls[i].toExternalForm());
 		}
+	}
+
+	public static void TestFinal() {
+		FinalArgument fArgument = new FinalArgument();
+		// g 无论如何赋值都是null 此处有错
+		// fArgument.without(new Gizmo());
+		fArgument.with(null);
+		fArgument.with(new Gizmo());
+		System.out.println("测试" + fArgument.g(100));
 	}
 }
