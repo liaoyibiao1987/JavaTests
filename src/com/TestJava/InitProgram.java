@@ -47,6 +47,8 @@ public class InitProgram {
 		InnerClass q = new InnerClass();
 		// Defining handles to inner classes:
 		InnerClass.Contents c = q.cont();
+		/*无法访问内部类*/
+		//InnerClass.Contents cc = new InnerClass.Contents();
 		InnerClass.Destination d = q.to("Borneo");
 	}
 }
