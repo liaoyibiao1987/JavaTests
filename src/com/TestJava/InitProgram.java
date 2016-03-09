@@ -36,19 +36,23 @@ public class InitProgram {
 		FinalArgument fArgument = new FinalArgument();
 		// g 无论如何赋值都是null 此处有错
 		// fArgument.without(new Gizmo());
-		//fArgument.with(null);
+		// fArgument.with(null);
 		fArgument.with(new Gizmo());
 		System.out.println("测试 计算结果：" + fArgument.g(100));
 	}
-	
+
 	public static void TestInnerClass() {
 		InnerClass p = new InnerClass();
 		p.ship("Tanzania");
 		InnerClass q = new InnerClass();
 		// Defining handles to inner classes:
 		InnerClass.Contents c = q.cont();
-		/*无法访问内部类 */
-		//InnerClass.Contents cc = new InnerClass.Contents();
+		/* 无法访问内部类 */
+		// InnerClass.Contents cc = new InnerClass.Contents();
 		InnerClass.Destination d = q.to("Borneo");
+	}
+
+	public static void TestInterface() {
+		int i = IInterfaceProperty.JANUARY;
 	}
 }

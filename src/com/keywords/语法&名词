@@ -11,4 +11,49 @@
 调查，找到正确的方法主体。不同的语言对后期绑定的实现方法是有所区别的。但我们至少可以这样认为：
 它们都要在对象中安插某些特殊类型的信息
 
-
+----------------------接口==“接口字段”------------------------------------------
+由于置入一个接口的所有字段都自动具有static 和final 属性，所以接口是对常数值进行分组的一个好工
+具，它具有与C 或C++的enum 非常相似的效果。如下例所示：
+//: Months.java
+// Using interfaces to create groups of constants
+package c07;
+public interface Months {
+int
+JANUARY = 1, FEBRUARY = 2, MARCH = 3,
+APRIL = 4, MAY = 5, JUNE = 6, JULY = 7,
+AUGUST = 8, SEPTEMBER = 9, OCTOBER = 10,
+NOVEMBER = 11, DECEMBER = 12;
+} ///:~
+注意根据Java 命名规则，拥有固定标识符的 static final基本数据类型（亦即编译期常数）都全部采用大
+写字母（用下划线分隔单个标识符里的多个单词）。
+接口中的字段会自动具备public 属性，所以没必要专门指定。
+现在，通过导入c07.*或c07.Months，我们可以从包的外部使用常数——就象对其他任何包进行的操作那
+样。此外，也可以用类似Months.JANUARY 的表达式对值进行引用。当然，我们获得的只是一个 int，所以不
+象C++的enum 那样拥有额外的类型安全性。但与将数字强行编码（硬编码）到自己的程序中相比，这种（常
+用的）技术无疑已经是一个巨大的进步。我们通常把“硬编码”数字的行为称为“魔术数字”，它产生的代
+码是非常难以维护的。
+如确实不想放弃额外的类型安全性，可构建象下面这样的一个类（注释①）：
+//: Month2.java
+// A more robust enumeration system
+package c07;
+public final class Month2 {
+private String name;
+private Month2(String nm) { name = nm; }
+public String toString() { return name; }
+public final static Month2
+JAN = new Month2("January"),
+FEB = new Month2("February"),
+MAR = new Month2("March"),
+APR = new Month2("April"),
+MAY = new Month2("May"),
+JUN = new Month2("June"),
+JUL = new Month2("July"),
+AUG = new Month2("August"),
+SEP = new Month2("September"),
+OCT = new Month2("October"),
+NOV = new Month2("November"),
+DEC = new Month2("December");
+public final static Month2[] month = {
+JAN, JAN, FEB, MAR, APR, MAY, JUN,
+JUL, AUG, SEP, OCT, NOV, DEC
+};
