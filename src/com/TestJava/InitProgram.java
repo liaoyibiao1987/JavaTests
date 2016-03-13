@@ -55,4 +55,6 @@ public class InitProgram {
 	public static void TestInterface() {
 		int i = IInterfaceProperty.JANUARY;
 	}
+
+	
 }
