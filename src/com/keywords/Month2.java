@@ -1,4 +1,5 @@
 package com.keywords;
+
 //如确实不想放弃额外的类型安全性,又想实现接口的简便性
 public class Month2 {
 	private String name;
@@ -16,4 +17,9 @@ public class Month2 {
 			AUG = new Month2("August"), SEP = new Month2("September"), OCT = new Month2("October"),
 			NOV = new Month2("November"), DEC = new Month2("December");
 	public final static Month2[] month = { JAN, JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC };
+
+	enum MONTH {
+		January, FebruarY, March, April, May, June, July, August, September, October, November, December
+	}
+
 }
