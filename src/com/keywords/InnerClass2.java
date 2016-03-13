@@ -39,12 +39,24 @@ public class InnerClass2 {
 
 	// 若试图定义一个匿名内部类，并想使用在匿名内部类外部定义的一个对象，则编译器要求外部对象为final 属性。
 	// 这正是我们将dest()的自变量设为final 的原因。如果忘记这样做，就会得到一条编译期出错提示。
-	public Destination dest2(final String dest) {
+	// Destination为接口，java
+	public Destination dest2(final String dest, final float price) {
 		return new Destination() {
+
 			private String label = dest;
 
 			public String readLabel() {
 				return label;
+			}
+
+			private int cost;
+
+			// Instance initialization for each object:
+			{
+				cost = Math.round(price);
+				System.out.println("------" + price);
+				if (cost > 100)
+					System.out.println("Over budget!");
 			}
 		};
 	}
@@ -59,5 +71,7 @@ public class InnerClass2 {
 		Destination d = p.dest("Tanzania");
 		// Illegal -- can't access private class:
 		// ! Parcel3.PContents c = p.new PContents();
+
+		Destination e = p.dest2("Tanzania", 12);
 	}
 }

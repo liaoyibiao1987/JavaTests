@@ -8,7 +8,7 @@ public class InitProgram {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		InnerClass2.TestInner2();
 		System.out.println("³ÌÐò¿ªÊ¼... ...");
 		TestFinal();
 		// TestJVM();
