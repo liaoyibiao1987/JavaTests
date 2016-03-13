@@ -52,9 +52,10 @@ public class InnerClass2 {
 			private int cost;
 
 			// Instance initialization for each object:
+			//实例化方法
 			{
+				//四舍五入
 				cost = Math.round(price);
-				System.out.println("------" + price);
 				if (cost > 100)
 					System.out.println("Over budget!");
 			}
@@ -72,6 +73,6 @@ public class InnerClass2 {
 		// Illegal -- can't access private class:
 		// ! Parcel3.PContents c = p.new PContents();
 
-		Destination e = p.dest2("Tanzania", 12);
+		Destination e = p.dest2("Tanzania", 101.99f);
 	}
 }
