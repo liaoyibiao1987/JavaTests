@@ -56,23 +56,5 @@ public class InitProgram {
 		int i = IInterfaceProperty.JANUARY;
 	}
 
-	public Destination dest(final String dest, final float price) {
-		return new Destination() {
-			private int cost;
-
-			// Instance initialization for each object:
-			{
-				cost = Math.round(price);
-				if (cost > 100)
-					System.out.println("Over budget!");
-			}
-
-			private String label = dest;
-
-			public String readLabel() {
-				return label;
-			}
-		};
-	}
-
+	
 }
