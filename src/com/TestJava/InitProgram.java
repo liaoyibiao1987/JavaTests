@@ -2,6 +2,7 @@ package com.TestJava;
 
 import java.net.URL;
 import com.keywords.FinalArgument;
+import com.ppl.grammars.*;
 import com.keywords.*;
 
 public class InitProgram {
@@ -11,6 +12,7 @@ public class InitProgram {
 		InnerClass2.TestInner2();
 		System.out.println("³ÌÐò¿ªÊ¼... ...");
 		TestFinal();
+		TestInnerClass2();
 		// TestJVM();
 		// CustomClassTest.TestLoader();
 	}
@@ -52,9 +54,31 @@ public class InitProgram {
 		InnerClass.Destination d = q.to("Borneo");
 	}
 
+	/*
+	 * public Destination dest(final String dest, final float price) { return
+	 * new Destination() { private int cost;
+	 * 
+	 * // Instance initialization for each object: { cost = Math.round(price);
+	 * if (cost > 100) System.out.println("Over budget!"); }
+	 * 
+	 * private String label = dest;
+	 * 
+	 * public String readLabel() { return label; } }; }
+	 */
+
 	public static void TestInterface() {
 		int i = IInterfaceProperty.JANUARY;
 	}
 
-	
+	public static void TestInnerClass2() {
+		Sequence s = new Sequence(10);
+		for (int i = 0; i < 10; i++)
+			s.add(Integer.toString(i));
+		Selector sl = s.getSelector();
+		while (!sl.end()) {
+			System.out.println((String) sl.current());
+			sl.next();
+		}
+	}
+
 }
