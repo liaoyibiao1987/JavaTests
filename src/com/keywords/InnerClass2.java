@@ -59,6 +59,12 @@ public class InnerClass2 {
 				if (cost > 100)
 					System.out.println("Over budget!");
 			}
+			
+			//åeÕ`µÄ·½·¨
+			/*public String TestRead()
+			{
+				return desc;
+			}*/
 		};
 	}
 
