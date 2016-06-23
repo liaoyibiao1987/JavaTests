@@ -104,4 +104,33 @@ public class UnnamedInnerClass {
 			 */
 		};
 	}
+
+	public static class Dog implements Pet {
+		@Override
+		public void beFriendly() {
+			System.out.println("蹭蹭你^_^");
+		}
+
+		@Override
+		public void play() {
+			System.out.println("把飞盘叼给你，逼你把飞盘丢出去，然后它再捡回来让你继续扔，连续500次^_^");
+		}
+	}
+
+	public class Fox implements Pet {
+		@Override
+		public void beFriendly() {
+			System.out.println("我是狐狸^_^");
+		}
+
+		@Override
+		public void play() {
+			System.out.println("我是狐狸城的冠军，连续500次^_^");
+		}
+	}
+
+	public static void main(String[] args) {
+		Dog dog = new Dog();
+		dog.beFriendly();
+	}
 }
