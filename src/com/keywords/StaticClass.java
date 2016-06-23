@@ -25,12 +25,19 @@ public class StaticClass {
 		System.out.println("xxxx");
 	}
 
+	public class HotDog extends UnnamedInnerClass.Dog {
+		// ! HotDog() {} // 不能编译
+		HotDog(UnnamedInnerClass wi) {
+			wi.super();
+		}
+	}
+
 	public static void main(String[] arg) {
 		UnnamedInnerClass cl = new UnnamedInnerClass();
-		UnnamedInnerClass.Fox fox = cl.new Fox();					//普通内部类
+		UnnamedInnerClass.Fox fox = cl.new Fox(); // 普通内部类
 		fox.beFriendly();
-		
-		UnnamedInnerClass.Dog dog = new UnnamedInnerClass.Dog();	//静态内部类
+
+		UnnamedInnerClass.Dog dog = new UnnamedInnerClass.Dog(); // 静态内部类
 		dog.beFriendly();
 	}
 }
