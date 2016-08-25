@@ -1,6 +1,6 @@
 package com.ppl.grammars;
 
-
+//这是什么垃圾东西。
 
 public class Sequence {
 	private Object[] o;
