@@ -28,7 +28,7 @@ public class StaticClass {
 	public class HotDog extends UnnamedInnerClass.Dog {
 		// ! HotDog() {} // ≤ªƒ‹±‡“Î
 		HotDog(UnnamedInnerClass wi) {
-			wi.super();
+			//wi.super();
 		}
 	}
 
