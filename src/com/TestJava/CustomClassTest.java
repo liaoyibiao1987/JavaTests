@@ -19,7 +19,7 @@ public class CustomClassTest {
 					/**
 					 * 被子加载器加载的类拥有被父加载器加载的类的可见性 Printer是由自定义类加载器加载的，
 					 * 而它的父类IPrinter是由系统类加载器加载的， 因此IPrinter对于Printer具有可见性，
-					 * 因此转型成功，并不会因为类加载器不同导致ClassCastException异常 
+					 * 因此转型成功，并不会因为类加载器不同导致ClassCastException异常     
 					 */
 					printer = (IPrinter) clazz.newInstance();
 					/** 看看是否热加载成功了 **/
