@@ -1,0 +1,85 @@
+
+Collection是最基本的集合接口，一个Collection代表一组Object，即Collection的元素（Elements）。一些 Collection允许相同的元素而另一些不行。一些能排序而另一些不行。Java SDK不提供直接继承自Collection的类，Java SDK提供的类都是继承自Collection的“子接口”如List和Set。
+　　所有实现Collection接口的类都必须提供两个标准的构造函数：无参数的构造函数用于创建一个空的Collection，有一个 Collection参数的构造函数用于创建一个新的Collection，这个新的Collection与传入的Collection有相同的元素。后 一个构造函数允许用户复制一个Collection。
+　　如何遍历Collection中的每一个元素？不论Collection的实际类型如何，它都支持一个iterator()的方法，该方法返回一个迭代子，使用该迭代子即可逐一访问Collection中每一个元素。典型的用法如下：
+　　　　Iterator it = collection.iterator(); // 获得一个迭代子
+　　　　while(it.hasNext()) {
+　　　　　　Object obj = it.next(); // 得到下一个元素
+　　　　}
+由Collection接口派生的两个接口是List和Set。
+
+
+
+　	　				是否有序			是否允许元素重复
+Collection			否				是
+List				是				是
+Set	AbstractSet		否				否
+　	HashSet
+　	TreeSet			是（用二叉排序树）
+Map	AbstractMap		否				使用key-value来映射和存储数据，key必须唯一，value可以重复
+　	HashMap/WeakHashMap
+　	TreeMap			是（用二叉排序树）
+ 
+ 
+ 	如果涉及到堆栈，队列等操作，应该考虑用List，
+ 	对于需要快速插入，删除元素，应该使用LinkedList，
+ 	如果需要快速随机访问元素，应该使用ArrayList。
+　　如果程序在单线程环境中，或者访问仅仅在一个线程中进行，考虑非同步的类，其效率较高，如果多个线程可能同时操作一个类，应该使用同步的类。
+　　要特别注意对哈希表的操作，作为key的对象要正确复写equals和hashCode方法。
+　　尽量返回接口而非实际的类型，如返回List而非ArrayList，这样如果以后需要将ArrayList换成LinkedList时，客户端代码不用改变。这就是针对抽象编程。
+
+
+1. 决定使用何种 List
+		Type  		Get 	Iteration 	Insert 	Remove
+		ArrayList 	110 	490  		3790 	8730
+		LinkedList 	1980 	220  		110  	110
+		可以看出，在ArrayList 中进行随机访问（即get()）以及循环反复是最划得来的；但对于LinkedList 却是
+		一个不小的开销。但另一方面，在列表中部进行插入和删除操作对于LinkedList 来说却比ArrayList 划算得
+		多。我们最好的做法也许是先选择一个ArrayList 作为自己的默认起点。以后若发现由于大量的插入和删除
+		造成了性能的降低，再考虑换成LinkedList 不迟。
+		
+		
+		
+2. 决定使用何种 Set
+
+			TreeSet在本书写作时尚未成为一个正式的特性，但在这个例子中可以很轻松地为其添加一个测试。
+			最后对ArraySet 的测试只有500 个元素，而不是1000 个，因为它太慢了。
+		类型 测试大小 添加 包含 反复
+		Type  	Test 	size 	Add 	Contains Iteration
+				10  	22.0 	11.0  	16.0
+		TreeSet 100  	22.5 	13.2  	12.1
+				1000  	31.1 	18.7  	11.8
+				
+				10  	5.0 	6.0  	27.0
+		HashSet 100  	6.6 	6.6  	10.9
+				1000  	7.4 	6.6  	9.5
+		进行add()以及contains()操作时，HashSet显然要比 ArraySet 出色得多，而且性能明显与元素的多寡关系不大。
+		一般编写程序的时候，几乎永远用不着使用 ArraySet。
+
+3. 决定使用何种 Map，选择不同的 Map实施方案时，注意 Map的大小对于性能的影响是最大的
+		Type				size		put  	get  	Iteration
+							10  		11.0  	5.0  	44.0
+		HashTable 			100  		7.7  	7.7  	16.5
+							1000  		8.0  	8.0  	14.4
+
+							10  		16.0  	11.0  	22.0
+		TreeMap		 		100  		25.8  	15.4  	13.2
+							1000  		33.8  	20.9  	13.6
+							
+							10  		11.0  	6.0  	33.0
+		HashMap		 		100  		8.2  	7.7  	13.7
+							1000  		8.0  	7.8  	11.9
+		即使大小为 10，ArrayMap 的性能也要比HashMap 差——除反复循环时以外。而在使用Map时，反复的作用通常并不重要（get()通常是我们时间花得最多的地方）。
+		TreeMap 提供了出色的 put()以及反复时间，但 get()的性能并不佳。
+		但是，我们为什么仍然需要使用TreeMap 呢？这样一来，我们可以不把它作为Map使用，而	作为创建顺序列表的一种途径。树的本质在于它总是顺序排列的，不必特别进行排序（它的排序方式马上就
+		要讲到）。一旦填充了一个TreeMap，就可以调用 keySet()来获得键的一个Set“景象”。然后用 toArray()产生包含了那些键的一个数组。
+		随后，可用static 方法Array.binarySearch()快速查找排好序的数组中的内容。
+		当然，也许只有在HashMap 的行为不可接受的时候，才需要采用这种做法。因为HashMap 的设计宗旨	就是进行快速的检索操作。
+		最后，当我们使用 Map时，首要的选择应该是 HashMap。只有在极少数情况下才	需要考虑其他方法。
+		
+		此外，在上面那张表里，有另一个性能问题没有反映出来。下述程序用于测试不同类型Map的创建速度
+		TreeMap的创建速度比其他两种类型明显快得多（但你应亲自尝试一下，因为据说新版本可能会改善ArrayMap 的性能）。
+		考虑到这方面的原因，同时由于前述 TreeMap出色的 put()性能，所以如	果需要创建大量Map，而且只有在以后才需要涉及大量检索操作，那么最佳的策略就是：创建和填充TreeMap；
+		以后检索量增大的时候，再将重要的TreeMap 转换成HashMap——使用HashMap(Map)构建器。
+		同样	地，只有在事实证明确实存在性能瓶颈后，才应关心这些方面的问题——先用起来，再根据需要加快速度。
+
