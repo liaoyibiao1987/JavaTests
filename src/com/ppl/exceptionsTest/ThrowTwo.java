@@ -5,18 +5,18 @@ import com.sun.org.apache.xml.internal.resolver.helpers.Debug;
 
 public class ThrowTwo {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String x = null;
-		TestNull(x);
+	public static void f() throws Exception {
+		System.out.println("originating the exception in f()");
+		throw new Exception("thrown from f()");
 	}
 
-	public static void TestNull(String x) {
+	public static void main(String[] args) {
 		try {
-			byte[] xy = x.getBytes();
-		} catch (Exception se) {
-			se.printStackTrace();
-			System.out.println(se + "ÀÏÂÞËµµÄ¡£");
+			f();
+		} catch (Exception e) {
+			System.out.println("Caught in main, e.printStackTrace()");
+			e.printStackTrace();
+			throw new NullPointerException("from main");
 		}
 	}
 }
