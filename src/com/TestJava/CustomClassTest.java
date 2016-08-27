@@ -3,7 +3,7 @@ package com.TestJava;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-//두두두두두두///
+
 public class CustomClassTest {
 	public static void TestLoader() {
 		String name = "com.TestJava.Printer";
