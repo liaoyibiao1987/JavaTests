@@ -2,7 +2,7 @@ package com.ppl.exceptionsTest;
 
 import java.io.*;
 
-/*用于InputFile 的构建器采用了一个String（字串）参数，它代表我们想打开的那个文件的名字。在一个
+/*   用于InputFile 的构建器采用了一个String（字串）参数，它代表我们想打开的那个文件的名字。在一个
 try块内部，它用该文件名创建了一个 FileReader。对FileReader来说，除非转移并用它创建一个能够实际
 与之“交谈”的BufferedReader，否则便没什么用处。注意InputFile 的一个好处就是它同时合并了这两种
 行动。
