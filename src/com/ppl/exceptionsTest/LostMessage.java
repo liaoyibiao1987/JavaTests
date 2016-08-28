@@ -32,8 +32,16 @@ public class LostMessage {
 		throw new HoHumException();
 	}
 
+	
+
 	public static void main(String[] args) throws Exception {
 		LostMessage lm = new LostMessage();
+		try {
+			lm.f();
+		} catch (VeryImportantException e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
+		}
 		try {
 			lm.f();
 		} finally {
