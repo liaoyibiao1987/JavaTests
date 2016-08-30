@@ -1,0 +1,290 @@
+How do I save a stream to a file in C#?
+
+
+up vote
+444
+down vote
+favorite
+101
+I have a StreamReader object that I initialized with a stream, now I want to save this stream to disk (the stream may be a .gif or .jpg or .pdf).
+
+Existing Code:
+
+StreamReader sr = new StreamReader(myOtherObject.InputStream);
+I need to save this to disk (I have the filename).
+In the future I may want to store this to SQL Server.
+I have the encoding type also, which I will need if I store it to SQL Server, correct?
+
+c# .net sql-server stream
+shareimprove this question
+edited Feb 5 '15 at 12:35
+
+sbeliakov
+748322
+asked Jan 4 '09 at 20:04
+
+Loadman
+2,2893103
+add a comment
+9 Answers
+active oldest votes
+up vote
+581
+down vote
+As highlighted by Tilendor in Jon Skeet's answer, streams have a CopyTo method since .NET 4.
+
+var fileStream = File.Create("C:\\Path\\To\\File");
+myOtherObject.InputStream.Seek(0, SeekOrigin.Begin);
+myOtherObject.InputStream.CopyTo(fileStream);
+fileStream.Close();
+Or with the using syntax:
+
+using (var fileStream = File.Create("C:\\Path\\To\\File"))
+{
+    myOtherObject.InputStream.Seek(0, SeekOrigin.Begin);
+    myOtherObject.InputStream.CopyTo(fileStream);
+}
+shareimprove this answer
+edited Dec 28 '14 at 15:02
+
+Jony Adamit
+1,1361024
+answered Apr 1 '11 at 16:01
+
+Antoine Leclair
+9,91821815
+41	 	
+Note that you have to call myOtherObject.InputStream.Seek(0, SeekOrigin.Begin) if you're not already at the beginning or you won't copy the entire stream. – Steve Rukuts Mar 22 '12 at 12:00 
+1	 	
+If this input stream is got from http connection then will it buffer and download and then write all the bytes from the source????? – dbw Jan 4 '14 at 14:16
+1	 	
+I have created PDF viewer where I am using stream, once I bind the stream and when I save the pdf file using the same stream then without using "Seek(0, SeekOrigin.Begin)" I wont be able to save correct document. so +1 for mentioning this "Seek(0, SeekOrigin.Begin)" – user2463514 Mar 6 '14 at 12:28
+  	 	
+myOtherObject.InputStream.CopyTo(fileStream); this line gives an error: access denied. – sulhadin Jun 29 at 13:05
+  	 	
+@sulhadin that just means that you don't have permission to write on fileStream – Antoine Leclair Jun 29 at 17:05
+add a comment
+
+up vote
+384
+down vote
+You must not use StreamReader for binary files (like gifs or jpgs). StreamReader is for text data. You will almost certainly lose data if you use it for arbitrary binary data. (If you use Encoding.GetEncoding(28591) you will probably be okay, but what's the point?)
+
+Why do you need to use a StreamReader at all? Why not just keep the binary data as binary data and write it back to disk (or SQL) as binary data?
+
+EDIT: As this seems to be something people want to see... if you do just want to copy one stream to another (e.g. to a file) use something like this:
+
+/// <summary>
+/// Copies the contents of input to output. Doesn't close either stream.
+/// </summary>
+public static void CopyStream(Stream input, Stream output)
+{
+    byte[] buffer = new byte[8 * 1024];
+    int len;
+    while ( (len = input.Read(buffer, 0, buffer.Length)) > 0)
+    {
+        output.Write(buffer, 0, len);
+    }    
+}
+To use it to dump a stream to a file, for example:
+
+using (Stream file = File.Create(filename))
+{
+    CopyStream(input, file);
+}
+shareimprove this answer
+edited Jan 17 '14 at 19:41
+answered Jan 4 '09 at 20:08
+
+Jon Skeet
+890k47964307398
+5	 	
+This seems like such a common case I'm surprised its not in .NET. I see people creating byte arrays the size of the entire file, which can cause problems for big files. – Tilendor Dec 7 '10 at 17:00
+71	 	
+@Tilendor: It's present as an extension method in .NET 4. (CopyTo) – Jon Skeet Dec 7 '10 at 17:17
+28	 	
+I don't think it is an extension method, but it's new in Stream class. – Kugel Jan 24 '11 at 21:43
+6	 	
+@Kugel: You're right, sorry. I had it as an extension method in a utility library, but now that it's in Stream itself, my extension method doesn't get called. – Jon Skeet Jan 24 '11 at 22:02
+2	 	
+Why you set the size of the buffer to 8192 ? Thx – Florian Oct 2 '13 at 16:46
+show 3 more comments
+up vote
+35
+down vote
+public void CopyStream(Stream stream, string destPath)
+{
+  using (var fileStream = new FileStream(destPath, FileMode.Create, FileAccess.Write))
+  {
+    stream.CopyTo(fileStream);
+  }
+}
+shareimprove this answer
+edited Apr 4 '14 at 9:08
+
+Jerome
+3,3081452102
+answered Aug 1 '13 at 20:25
+
+Darren Corbett
+52655
+11	 	
+You probably shouldn't put the stream object in the using(){} bracket. Your method didn't create the stream, so it shouldn't dispose of it. – LarsTech Aug 1 '13 at 21:16
+2	 	
+Instead you need to put FileStream instead to using, otherwise it will be kept open until it is garbage collected. – Pavel Chikulaev Jan 16 '14 at 23:55
+  	 	
+I've found that your approach was much closer to solve my problem in WinForms with my AWS S3 class gateway class! thank you! – lscarneiro Jun 3 '15 at 18:06
+  	 	
+This ran fine but I got a 0 KB output. Instead I had to do this for the correct output: File.WriteAllBytes(destinationFilePath, input.ToArray());. In my case, input is a MemoryStream coming from within a ZipArchive. – SNag Jan 10 at 1:50
+add a comment
+up vote
+10
+down vote
+private void SaveFileStream(String path, Stream stream)
+{
+    var fileStream = new FileStream(path, FileMode.Create, FileAccess.Write);
+    stream.CopyTo(fileStream);
+    fileStream.Dispose();
+}
+shareimprove this answer
+edited May 26 '14 at 6:21
+
+nawfal
+27.9k25180228
+answered Dec 11 '13 at 14:38
+
+jhonjairoroa87
+13415
+  	 	
+This ran fine but I got a 0 KB output. Instead I had to do this for the correct output: File.WriteAllBytes(destinationFilePath, input.ToArray());. In my case, input is a MemoryStream coming from within a ZipArchive. – SNag Jan 10 at 1:50
+  	 	
+This helped me figure out what I was doing wrong. However, don't forget to move to the beginning of the stream: stream.Seek(0, SeekOrigin.Begin); – Nathan Bills Aug 8 at 22:06
+add a comment
+up vote
+7
+down vote
+Why not use a FileStream object?
+
+public void SaveStreamToFile(string fileFullPath, Stream stream)
+{
+    if (stream.Length == 0) return;
+
+    // Create a FileStream object to write a stream to a file
+    using (FileStream fileStream = System.IO.File.Create(fileFullPath, (int)stream.Length))
+    {
+        // Fill the bytes[] array with the stream data
+        byte[] bytesInStream = new byte[stream.Length];
+        stream.Read(bytesInStream, 0, (int)bytesInStream.Length);
+
+        // Use FileStream object to write to the specified file
+        fileStream.Write(bytesInStream, 0, bytesInStream.Length);
+     }
+}
+shareimprove this answer
+edited Oct 14 '10 at 11:27
+
+balexandre
+45k28169249
+answered Apr 23 '10 at 22:49
+
+Adrian
+19912
+38	 	
+what if the input stream is 1GB long - this code would try to allocate 1GB buffer :) – Buthrakaur Jun 30 '11 at 7:56
+2	 	
+Buthrakaur is right -- this answer should be deleted. – Frank Hileman May 23 '13 at 21:08
+  	 	
+This is not working with ResponseStream, because it is of uknown length. – qub1n Oct 18 '13 at 10:31
+add a comment
+up vote
+6
+down vote
+//If you don't have .Net 4.0  :)
+
+public void SaveStreamToFile(Stream stream, string filename)
+{  
+   using(Stream destination = File.Create(filename))
+      Write(stream, destination);
+}
+
+//Typically I implement this Write method as a Stream extension method. 
+//The framework handles buffering.
+
+public void Write(Stream from, Stream to)
+{
+   for(int a = from.ReadByte(); a != -1; a = from.ReadByte())
+      to.WriteByte( (byte) a );
+}
+
+/*
+Note, StreamReader is an IEnumerable<Char> while Stream is an IEnumbable<byte>.
+The distinction is significant such as in multiple byte character encodings 
+like Unicode used in .Net where Char is one or more bytes (byte[n]). Also, the
+resulting translation from IEnumerable<byte> to IEnumerable<Char> can loose bytes
+or insert them (for example, "\n" vs. "\r\n") depending on the StreamReader instance
+CurrentEncoding.
+*/
+shareimprove this answer
+edited Jul 7 '11 at 14:48
+answered Jul 7 '11 at 14:30
+
+George
+9312
+15	 	
+Copying a stream byte-by-byte (using ReadByte/WriteByte) will be much slower than copying buffer-by-buffer (using Read(byte[], int, int)/Write(byte[], int,int)). – Kevin Aug 10 '11 at 3:10
+add a comment
+up vote
+4
+down vote
+Another option is to get the stream to a byte[] and use File.WriteAllBytes. This should do:
+
+using (var stream = new MemoryStream())
+{
+    input.CopyTo(stream);
+    File.WriteAllBytes(file, stream.ToArray());
+}
+Wrapping it in an extension method gives it better naming:
+
+public void WriteTo(this Stream input, string file)
+{
+    //your fav write method:
+
+    using (var stream = File.Create(file))
+    {
+        input.CopyTo(stream);
+    }
+
+    //or
+
+    using (var stream = new MemoryStream())
+    {
+        input.CopyTo(stream);
+        File.WriteAllBytes(file, stream.ToArray());
+    }
+
+    //whatever that fits.
+}
+shareimprove this answer
+answered Feb 13 '14 at 11:04
+
+nawfal
+27.9k25180228
+1	 	
+If the input is too large you'll get an out of memory exception. The option of copying content from the input stream to a filestream is much better – Ykok Sep 4 '15 at 11:02 
+add a comment
+up vote
+3
+down vote
+public void testdownload(stream input)
+{
+    byte[] buffer = new byte[16345];
+    using (FileStream fs = new FileStream(this.FullLocalFilePath,
+                        FileMode.Create, FileAccess.Write, FileShare.None))
+    {
+        int read;
+        while ((read = input.Read(buffer, 0, buffer.Length)) > 0)
+        {
+             fs.Write(buffer, 0, read);
+        }
+    }
+}

@@ -24,7 +24,6 @@ public class JButtonDemo extends Applet {
 	}
 
 	public static void main(String[] args) {
-		// TODO 自动生成的方法存根
 		JButtonDemo applet = new JButtonDemo();
 		JFrame frame = new JFrame("TextAreaNew");
 		frame.addWindowListener(new WindowAdapter() {
