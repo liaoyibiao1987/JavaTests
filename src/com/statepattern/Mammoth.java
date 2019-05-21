@@ -1,6 +1,9 @@
 package com.statepattern;
 
+import java.util.Random;
+
 import sun.misc.GC;
+import sun.net.www.content.audio.x_aiff;
 
 public class Mammoth {
 
@@ -83,23 +86,52 @@ public class Mammoth {
 	}
 
 	public static void main(String[] args) {
-		for (int i = 0; i < 200000; i++) {
-			Mammoth mammoth = new Mammoth();
-			// 看看大象现在是什么状态
-			mammoth.observe();
-
-			// 过了一会儿
-			mammoth.timePasses();
-
-			// 看看大象现在是什么状态
-			mammoth.observe();
-
-			// 过了一会儿
-			mammoth.timePasses();
-
-			// 看看大象现在是什么状态
-			mammoth.observe();
+		outer: for (int i = 0; i < 10; i++) {
+			System.out.println("outer_loop:" + i);
+			inner: for (int k = 0; i < 10; k++) {
+				System.out.print(k + " ");
+				int x = new Random().nextInt(10);
+				if (x > 7) {
+					System.out.println(" >>x == " + x + "，结束inner循环，继续迭代执行outer循环了！");
+					continue outer;
+				}
+				if (x == 1) {
+					System.out.println(" >>x == 1，跳出并结束整个outer和inner循环！");
+					break outer;
+				}
+			}
 		}
-		
+		System.out.println("------>>>所有循环执行完毕！");
+
+		Mammoth mammoth = new Mammoth();
+		// 看看大象现在是什么状态
+		mammoth.observe();
+
+		// 过了一会儿
+		mammoth.timePasses();
+
+		// 看看大象现在是什么状态
+		mammoth.observe();
+
+		// 过了一会儿
+		mammoth.timePasses();
+
+		// 看看大象现在是什么状态
+		mammoth.observe();
+
+		/*
+		 * for (int i = 0; i < 200000; i++) { Mammoth mammoth = new Mammoth();
+		 * // 看看大象现在是什么状态 mammoth.observe();
+		 * 
+		 * // 过了一会儿 mammoth.timePasses();
+		 * 
+		 * // 看看大象现在是什么状态 mammoth.observe();
+		 * 
+		 * // 过了一会儿 mammoth.timePasses();
+		 * 
+		 * // 看看大象现在是什么状态 mammoth.observe();
+		 * 
+		 * }
+		 */
 	}
 }
