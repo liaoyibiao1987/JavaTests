@@ -2,8 +2,8 @@ package com.statepattern;
 
 import java.util.Random;
 
-import sun.misc.GC;
-import sun.net.www.content.audio.x_aiff;
+/*import sun.misc.GC;
+import sun.net.www.content.audio.x_aiff;*/
 
 public class Mammoth {
 
@@ -85,6 +85,24 @@ public class Mammoth {
 		return "猛犸大象";
 	}
 
+	private static class CircularReferenceA {
+		private byte[] data;
+		private CircularReferenceB reference;
+
+		public void setReference(CircularReferenceB c) {
+			reference = c;
+			data = new byte[2000];
+		}
+	}
+	private static class CircularReferenceB {
+		private byte[] data;
+		private CircularReferenceA reference;
+
+		public void setReference(CircularReferenceA c) {
+			reference = c;
+			data = new byte[2000];
+		}
+	}
 	public static void main(String[] args) {
 		outer: for (int i = 0; i < 10; i++) {
 			System.out.println("outer_loop:" + i);
@@ -118,7 +136,14 @@ public class Mammoth {
 
 		// 看看大象现在是什么状态
 		mammoth.observe();
-
+		for (int i = 0; i < 200000; i++) {
+			CircularReferenceA a = new CircularReferenceA();
+			CircularReferenceB b = new CircularReferenceB();
+			//java 对非根上的循环引用，会回收
+			a.setReference(b);
+			b.setReference(a);
+			System.out.println("------>>>循环执行！");
+		}
 		/*
 		 * for (int i = 0; i < 200000; i++) { Mammoth mammoth = new Mammoth();
 		 * // 看看大象现在是什么状态 mammoth.observe();
@@ -134,4 +159,6 @@ public class Mammoth {
 		 * }
 		 */
 	}
+	
+	
 }
