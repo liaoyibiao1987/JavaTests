@@ -3,7 +3,11 @@ package com.keywords;
 //如确实不想放弃额外的类型安全性,又想实现接口的简便性
 public class Month2 {
 	private String name;
-
+	
+	// 如果构造函数被显式的定义出来了，构造函数全部私有了无法被继承,导致类也无法被继承
+	// 编译器会报如下错误。
+	// Implicit super constructor Month2() is undefined. Must explicitly invoke another constructor (没有定义非私有的默认构造函数，或只有私有的带参构造函数)
+	// Implicit super constructor Month2() is not visible. Must explicitly invoke another constructor (定义了私有的默认构造函数)
 	private Month2(String nm) {
 		name = nm;
 	}
