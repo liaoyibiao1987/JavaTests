@@ -27,11 +27,11 @@ public class InitProgram {
 	}
 
 	public static void TestJVM() {
-		ClassLoader cl = Thread.currentThread().getContextClassLoader();
+		/*ClassLoader cl = Thread.currentThread().getContextClassLoader();
 		URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();
 		for (int i = 0; i < urls.length; i++) {
 			System.out.println(urls[i].toExternalForm());
-		}
+		}*/
 	}
 
 	public static void TestFinal() {

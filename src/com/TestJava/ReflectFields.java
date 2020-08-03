@@ -2,7 +2,6 @@ package com.TestJava;
 
 import java.lang.reflect.Field;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
 
 
 public class ReflectFields {
@@ -11,7 +10,7 @@ public class ReflectFields {
 		try {
 			StringBuilder sb = new StringBuilder();
 			Class clazz = object.getClass();
-			Field[] fields = object.getClass().getDeclaredFields();// »ñµÃÊôÐÔ
+			Field[] fields = object.getClass().getDeclaredFields();// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			for (Field field : fields) {
 				Object value = getValueFormObject(object, field.getName());
 				sb.append(field.getName() + " : " + value + "; ");
@@ -19,7 +18,7 @@ public class ReflectFields {
 			return sb.toString();
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "ÎÞ·¨»ñÈ¡";
+			return "ï¿½Þ·ï¿½ï¿½ï¿½È¡";
 		}
 	}
 

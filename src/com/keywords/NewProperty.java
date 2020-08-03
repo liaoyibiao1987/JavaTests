@@ -1,6 +1,5 @@
 package com.keywords;
 
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 
 public class NewProperty extends BaseProperty {
 	/*

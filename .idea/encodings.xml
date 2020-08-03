@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/com/TestJava/Daikuan.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/TestJava/InBox.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/TestJava/InitProgram.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/TestJava/StringFormat.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/keywords/FinalArgument.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/keywords/IInterfaceProperty.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/keywords/Month2.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/keywords/NewProperty.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/keywords/StaticClass.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/observerpattern/WechatServer.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/encoder/Base64Encoder.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/exceptionsTest/ThrowOne.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/exceptionsTest/ThrowTwo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/grammars/TestClones.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/javaIO/StandardInputOutput.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/testconvert/ByteConvert.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/statepattern/Mammoth.java" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

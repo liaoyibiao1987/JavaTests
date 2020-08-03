@@ -1,7 +1,5 @@
 package com.ppl.exceptionsTest;
 
-import com.sun.management.jmx.Trace;
-import com.sun.org.apache.xml.internal.resolver.helpers.Debug;
 
 public class ThrowOne {
 

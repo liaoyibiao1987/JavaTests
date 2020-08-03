@@ -3,7 +3,6 @@ package com.observerpattern;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sun.org.apache.xml.internal.resolver.helpers.Debug;
 
 public class WechatServer implements Observerable {
 	private List<Observer> listObserver;

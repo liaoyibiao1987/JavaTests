@@ -1,9 +1,5 @@
 package com.ppl.exceptionsTest;
 
-import java.util.jar.JarException;
-
-import com.sun.management.jmx.Trace;
-import com.sun.org.apache.xml.internal.resolver.helpers.Debug;
 
 /*
 	Java中抛出RuntimeException为什么不用显示声明

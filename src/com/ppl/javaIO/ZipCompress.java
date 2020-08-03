@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.zip.*;
 
-import com.sun.org.apache.xerces.internal.impl.dv.ValidatedInfo;
 
 public class ZipCompress {
 
@@ -83,10 +82,10 @@ public class ZipCompress {
 	public static byte[] toByteArray(int iSource) {
 		byte[] targets = new byte[2];
 
-		targets[1] = (byte) (iSource & 0xff);// µÍ×Ö½Ú
-		targets[0] = (byte) ((iSource >> 8) & 0xff);// ¸ß×Ö½Ú
+		targets[1] = (byte) (iSource & 0xff);// ï¿½ï¿½ï¿½Ö½ï¿½
+		targets[0] = (byte) ((iSource >> 8) & 0xff);// ï¿½ï¿½ï¿½Ö½ï¿½
 
-		System.out.println(String.format("Ô­Ê¼£º%x ,  µÍ×Ö½Ú: %x , ¸ß×Ö½Ú : %x", iSource, iSource & 0xff, (iSource >> 8) & 0xff));
+		System.out.println(String.format("Ô­Ê¼ï¿½ï¿½%x ,  ï¿½ï¿½ï¿½Ö½ï¿½: %x , ï¿½ï¿½ï¿½Ö½ï¿½ : %x", iSource, iSource & 0xff, (iSource >> 8) & 0xff));
 		return targets;
 	}
 }
