@@ -7,7 +7,7 @@ import java.io.IOException;
 public class Echo {
 
 	public static void main(String[] args) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		DataInputStream in = new DataInputStream(new BufferedInputStream(System.in));
 		String s;
 		try {

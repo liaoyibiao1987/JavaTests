@@ -13,26 +13,26 @@ public class Server {
     public static void main(String args[]) {
  
         try {
-            //´´½¨2¸ö¶ÔÏó, ×¼±¸½«Õâ¸öÁ½¸ö¶ÔÏó×÷ÎªÔ¶³Ì¶ÔÏó×¢²á
+            //åˆ›å»º2ä¸ªå¯¹è±¡, å‡†å¤‡å°†è¿™ä¸ªä¸¤ä¸ªå¯¹è±¡ä½œä¸ºè¿œç¨‹å¯¹è±¡æ³¨å†Œ
             CompareHelper stringCompareHelper = new StringCompare();
             CompareHelper integerCompareHelper = new IntegerCompare();
  
             LocateRegistry.createRegistry(PORT);
  
-            //°ó¶¨µÄURL±ê×¼¸ñÊ½Îª£ºrmi://host:port/name(ÆäÖĞĞ­ÒéÃû¿ÉÒÔÊ¡ÂÔ£¬ÏÂÃæÁ½ÖÖĞ´·¨¶¼ÊÇÕıÈ·µÄ£©
-            // ±¾Àı×ÓÖĞ¾ÍÊÇ "rmi://localhost:9090/XXXXXXCompareHelper"
+            //ç»‘å®šçš„URLæ ‡å‡†æ ¼å¼ä¸ºï¼šrmi://host:port/name(å…¶ä¸­åè®®åå¯ä»¥çœç•¥ï¼Œä¸‹é¢ä¸¤ç§å†™æ³•éƒ½æ˜¯æ­£ç¡®çš„ï¼‰
+            // æœ¬ä¾‹å­ä¸­å°±æ˜¯ "rmi://localhost:9090/XXXXXXCompareHelper"
             Naming.bind("rmi://" + HOST + ":" + PORT + "/StringCompareHelper", stringCompareHelper);
             Naming.bind("//" + HOST + ":" + PORT + "/IntegerCompareHelper", integerCompareHelper);
  
-            System.out.println("---->Ô¶³Ì¶ÔÏó°ó¶¨³É¹¦£¡");
+            System.out.println("---->è¿œç¨‹å¯¹è±¡ç»‘å®šæˆåŠŸï¼");
         } catch (RemoteException e) {
-            System.out.println("´´½¨Ô¶³Ì¶ÔÏó·¢ÉúÒì³££¡");
+            System.out.println("åˆ›å»ºè¿œç¨‹å¯¹è±¡å‘ç”Ÿå¼‚å¸¸ï¼");
             e.printStackTrace();
         } catch (AlreadyBoundException e) {
-            System.out.println("·¢ÉúÖØ¸´°ó¶¨¶ÔÏóÒì³££¡");
+            System.out.println("å‘ç”Ÿé‡å¤ç»‘å®šå¯¹è±¡å¼‚å¸¸ï¼");
             e.printStackTrace();
         } catch (MalformedURLException e) {
-            System.out.println("·¢ÉúURL»ûĞÎÒì³££¡");
+            System.out.println("å‘ç”ŸURLç•¸å½¢å¼‚å¸¸ï¼");
             e.printStackTrace();
         }
     }

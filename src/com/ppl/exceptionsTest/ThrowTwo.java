@@ -2,9 +2,9 @@ package com.ppl.exceptionsTest;
 
 
 /*
-	JavaÖÐÅ×³öRuntimeExceptionÎªÊ²Ã´²»ÓÃÏÔÊ¾ÉùÃ÷
+	Javaä¸­æŠ›å‡ºRuntimeExceptionä¸ºä»€ä¹ˆä¸ç”¨æ˜¾ç¤ºå£°æ˜Ž
 
-	ÎÒÃÇÖªµÀJavaµÄÒì³£ÀàÐÍÌåÏµ½á¹¹ÈçÏÂ£º
+	æˆ‘ä»¬çŸ¥é“Javaçš„å¼‚å¸¸ç±»åž‹ä½“ç³»ç»“æž„å¦‚ä¸‹ï¼š
 	
 	        	Throwable
 	         	/      	\
@@ -12,33 +12,33 @@ package com.ppl.exceptionsTest;
 	     	/       		\
 	      RuntimeException
 	
-	ÎÒÃÇ¿ÉÒÔ¿´µ½RuntimeExceptionµÄ¼Ì³ÐÌåÏµÊÇException×ÓÀà¡£¶øException»¹ÓÐÆäËüÀàÐÍµÄÒì³££¬ÎÒÃÇÍ³Ò»³ÆÎª·ÇRuntimeÒì³£¡£RuntimeExceptionµÄÌØµãÊÇ·ÇÊÜ¼ìÒì³££¬Ò²¾ÍÊÇJavaÏµÍ³ÖÐÔÊÐí¿ÉÒÔ²»±»catch£¬ÔÚÔËÐÐÊ±Å×³ö¡£¶øÆäËü¶¨·ÇÔËÐÐÊ±Òì³£Èç¹ûÅ×³öµÄ»°±ØÐëÏÔÊ¾µÄcatch£¬·ñÔò±àÒë²»¹ý¡£
+	æˆ‘ä»¬å¯ä»¥çœ‹åˆ°RuntimeExceptionçš„ç»§æ‰¿ä½“ç³»æ˜¯Exceptionå­ç±»ã€‚è€ŒExceptionè¿˜æœ‰å…¶å®ƒç±»åž‹çš„å¼‚å¸¸ï¼Œæˆ‘ä»¬ç»Ÿä¸€ç§°ä¸ºéžRuntimeå¼‚å¸¸ã€‚RuntimeExceptionçš„ç‰¹ç‚¹æ˜¯éžå—æ£€å¼‚å¸¸ï¼Œä¹Ÿå°±æ˜¯Javaç³»ç»Ÿä¸­å…è®¸å¯ä»¥ä¸è¢«catchï¼Œåœ¨è¿è¡Œæ—¶æŠ›å‡ºã€‚è€Œå…¶å®ƒå®šéžè¿è¡Œæ—¶å¼‚å¸¸å¦‚æžœæŠ›å‡ºçš„è¯å¿…é¡»æ˜¾ç¤ºçš„catchï¼Œå¦åˆ™ç¼–è¯‘ä¸è¿‡ã€‚
 	
 	
 	
-	ÄÇÃ´ÎªÊ²Ã´RuntimeException¿ÉÒÔÔÊÐí²»±»catchÄØ£¿
+	é‚£ä¹ˆä¸ºä»€ä¹ˆRuntimeExceptionå¯ä»¥å…è®¸ä¸è¢«catchå‘¢ï¼Ÿ
 	
-	Ê×ÏÈÎÒÃÇ¿ÉÒÔ¿´¿´RuntimeException¶¼ÓÐÄÄÐ©×ÓÀàÐÍ£º
+	é¦–å…ˆæˆ‘ä»¬å¯ä»¥çœ‹çœ‹RuntimeExceptionéƒ½æœ‰å“ªäº›å­ç±»åž‹ï¼š
 	
-	1 NullPointerException£¬Õâ¸ö²»ÓÃ¶àËµÁË¡£
+	1 NullPointerExceptionï¼Œè¿™ä¸ªä¸ç”¨å¤šè¯´äº†ã€‚
 	
-	2 NumberFormatException£¬×Ö·û´®×ª»¯³ÉÊý×ÖÊ±¡£
+	2 NumberFormatExceptionï¼Œå­—ç¬¦ä¸²è½¬åŒ–æˆæ•°å­—æ—¶ã€‚
 	
-	3 ArrayIndexOutOfBoundsException£¬ Êý×éÔ½½çÊ±¡£
+	3 ArrayIndexOutOfBoundsExceptionï¼Œ æ•°ç»„è¶Šç•Œæ—¶ã€‚
 	
-	4 StringIndexOutOfBoundsException£¬ ×Ö·û´®Ô½½çÊ±¡£
+	4 StringIndexOutOfBoundsExceptionï¼Œ å­—ç¬¦ä¸²è¶Šç•Œæ—¶ã€‚
 	
-	5 ClassCastException£¬ÀàÐÍ×ª»»Ê±¡£
+	5 ClassCastExceptionï¼Œç±»åž‹è½¬æ¢æ—¶ã€‚
 	
-	6 UnsupportedOperationException£¬¸Ã²Ù×÷²»Ö§³Ö£¬Ò»°ã×ÓÀà²»ÊµÏÖ¸¸ÀàµÄÄ³Ð©·½·¨Ê±¡£
+	6 UnsupportedOperationExceptionï¼Œè¯¥æ“ä½œä¸æ”¯æŒï¼Œä¸€èˆ¬å­ç±»ä¸å®žçŽ°çˆ¶ç±»çš„æŸäº›æ–¹æ³•æ—¶ã€‚
 	
-	7 ArithmeticException£¬Áã×÷Îª³ýÊýµÈ¡£
+	7 ArithmeticExceptionï¼Œé›¶ä½œä¸ºé™¤æ•°ç­‰ã€‚
 	
-	8 IllegalArgumentException£¬±íÃ÷´«µÝÁËÒ»¸ö²»ºÏ·¨»ò²»ÕýÈ·µÄ²ÎÊý
+	8 IllegalArgumentExceptionï¼Œè¡¨æ˜Žä¼ é€’äº†ä¸€ä¸ªä¸åˆæ³•æˆ–ä¸æ­£ç¡®çš„å‚æ•°
 	
 	
 	
-	¿ÉÒÔ¿´µ½´ó¶àÊý´íÎó²¢²»ÊÇÓÉÓÚ³ÌÐò±¾ÉíÓÐÎÊÌâ£¬¶øÊÇÔËÐÐÊ±ÊäÈëÔÚÄ³Ð©caseÏÂµ¼ÖÂµÄ£¬ÓÐ¸ü¶àµÄ²»È·¶¨ÐÔ¡£¶øÇÒJava¿ªÊ¼µÄÊ±ºò²¢Ã»ÓÐÒì³£´¦Àí»úÖÆ£¬ËùÒÔ´Ó¼æÈÝÐÔµ½ÊµÏÖ´ú¼ÛÀ´½²¾ÍÉè¼Æ³ÉÕâ¸öÑù×ÓÁË¡£
+	å¯ä»¥çœ‹åˆ°å¤§å¤šæ•°é”™è¯¯å¹¶ä¸æ˜¯ç”±äºŽç¨‹åºæœ¬èº«æœ‰é—®é¢˜ï¼Œè€Œæ˜¯è¿è¡Œæ—¶è¾“å…¥åœ¨æŸäº›caseä¸‹å¯¼è‡´çš„ï¼Œæœ‰æ›´å¤šçš„ä¸ç¡®å®šæ€§ã€‚è€Œä¸”Javaå¼€å§‹çš„æ—¶å€™å¹¶æ²¡æœ‰å¼‚å¸¸å¤„ç†æœºåˆ¶ï¼Œæ‰€ä»¥ä»Žå…¼å®¹æ€§åˆ°å®žçŽ°ä»£ä»·æ¥è®²å°±è®¾è®¡æˆè¿™ä¸ªæ ·å­äº†ã€‚
 */
 public class ThrowTwo {
 
@@ -51,9 +51,9 @@ public class ThrowTwo {
 		try {
 			System.out.println(xs.length());
 		} catch (Exception ex) {
-			System.out.println("·¢Éú´íÎó£¬Ã»ÓÐÊµÀý»¯µÄ¶ÔÏó±»Ê¹ÓÃ.");
-			// throw new Exception("\n Exception ÏÔÊ¾ÉùÃ÷.");
-			throw new NullPointerException("\n RuntimeException ²»ÓÃÏÔÊ¾ÉùÃ÷.");
+			System.out.println("å‘ç”Ÿé”™è¯¯ï¼Œæ²¡æœ‰å®žä¾‹åŒ–çš„å¯¹è±¡è¢«ä½¿ç”¨.");
+			// throw new Exception("\n Exception æ˜¾ç¤ºå£°æ˜Ž.");
+			throw new NullPointerException("\n RuntimeException ä¸ç”¨æ˜¾ç¤ºå£°æ˜Ž.");
 		}
 
 	}
@@ -66,7 +66,7 @@ public class ThrowTwo {
 		} catch (Exception e) {
 			System.out.println("Caught in main, e.printStackTrace()");
 			e.printStackTrace();
-			throw new NullPointerException("\nÀ´×ÔÓÚ");
+			throw new NullPointerException("\næ¥è‡ªäºŽ");
 		}
 	}
 }

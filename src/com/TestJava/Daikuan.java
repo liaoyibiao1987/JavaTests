@@ -9,7 +9,7 @@ public class Daikuan {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("每月还款 : " + getRepayment());
+		System.out.println("姣忔湀杩樻 : " + getRepayment());
 	}
 
 	private static double getRepayment() {

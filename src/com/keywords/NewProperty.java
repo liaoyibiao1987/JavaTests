@@ -3,18 +3,18 @@ package com.keywords;
 
 public class NewProperty extends BaseProperty {
 	/*
-	 * javaÖÐ×ÓÀàºÍ¸¸ÀàÓÐÏàÍ¬µÄ³ÉÔ±±äÁ¿ £¬ºÎÖÖÈ¡ÖµÎÊÌâ
+	 * javaä¸­å­ç±»å’Œçˆ¶ç±»æœ‰ç›¸åŒçš„æˆå‘˜å˜é‡ ï¼Œä½•ç§å–å€¼é—®é¢˜
 	 * 
-	 * 	1£º×ÓÀà£¬¸¸Ààº¬ÓÐÏàÍ¬µÄ³ÉÔ±±äÁ¿£¬ÊýÖµ¿´ÒýÓÃÐÍ±äÁ¿ËùÊôµÄÀà£¬¼´×ó±ß
-		2£º¸¸Àà¶ÀÓÐ·½·¨¸Ä±ä³ÉÔ±±äÁ¿Öµ£¬Ôò¸Ä±äµÄÊÇ¸¸ÀàÖÐµÄÊý¾Ý
-		3£º×ÓÀàÖØÔØ¸¸Àà·½·¨£¬µ÷ÓÃµÄÊÇ×ÓÀàµÄ·½·¨£¬¸Ä±äµÄÊÇ×ÓÀàÊý¾Ý
-		4£ºÈç¹ûÔÚ¶àÌ¬£¬¼´Parent c = new Child(),×ÓÀàÖØÔØ¸¸Àà·½·¨£¬Ôòc.·½·¨( ) µ÷ÓÃµÄÊÇ×ÓÀàµÄ·½·¨£¬¸Ä±äµÄ×ÓÀà±äÁ¿Êý¾Ý£¬c.±äÁ¿ ÏÔÊ¾µÄÊÇ¸¸ÀàÊý¾Ý£¬»¹ÊÇÎ´¸Ä±äµÄ¡£
+	 * 	1ï¼šå­ç±»ï¼Œçˆ¶ç±»å«æœ‰ç›¸åŒçš„æˆå‘˜å˜é‡ï¼Œæ•°å€¼çœ‹å¼•ç”¨åž‹å˜é‡æ‰€å±žçš„ç±»ï¼Œå³å·¦è¾¹
+		2ï¼šçˆ¶ç±»ç‹¬æœ‰æ–¹æ³•æ”¹å˜æˆå‘˜å˜é‡å€¼ï¼Œåˆ™æ”¹å˜çš„æ˜¯çˆ¶ç±»ä¸­çš„æ•°æ®
+		3ï¼šå­ç±»é‡è½½çˆ¶ç±»æ–¹æ³•ï¼Œè°ƒç”¨çš„æ˜¯å­ç±»çš„æ–¹æ³•ï¼Œæ”¹å˜çš„æ˜¯å­ç±»æ•°æ®
+		4ï¼šå¦‚æžœåœ¨å¤šæ€ï¼Œå³Parent c = new Child(),å­ç±»é‡è½½çˆ¶ç±»æ–¹æ³•ï¼Œåˆ™c.æ–¹æ³•( ) è°ƒç”¨çš„æ˜¯å­ç±»çš„æ–¹æ³•ï¼Œæ”¹å˜çš„å­ç±»å˜é‡æ•°æ®ï¼Œc.å˜é‡ æ˜¾ç¤ºçš„æ˜¯çˆ¶ç±»æ•°æ®ï¼Œè¿˜æ˜¯æœªæ”¹å˜çš„ã€‚
 	 */
 	protected String name = "NewProperty";
 
 	@Override
 	public void BaseFunction() {
-		//javaÖÐ²¢²»Ç¿ÖÆoverride±ØÐëÌí¼Ó super£¬ µ«ÊÇandroidÖÐSDKºÍIDEÎªÁË¸üºÃµÄ±àÒëºÍÊ¹ÓÃ£¬»áÔÚÄ³Ð©·½·¨ÖÐÐèÒªÇ¿ÖÆ¼ÓÉÏsuper£¬±ÈÈç super.onStart()
+		//javaä¸­å¹¶ä¸å¼ºåˆ¶overrideå¿…é¡»æ·»åŠ  superï¼Œ ä½†æ˜¯androidä¸­SDKå’ŒIDEä¸ºäº†æ›´å¥½çš„ç¼–è¯‘å’Œä½¿ç”¨ï¼Œä¼šåœ¨æŸäº›æ–¹æ³•ä¸­éœ€è¦å¼ºåˆ¶åŠ ä¸Šsuperï¼Œæ¯”å¦‚ super.onStart()
 		//super.BaseFunction();		
 		System.out.println("NewProperty BaseFunction.");
 	};

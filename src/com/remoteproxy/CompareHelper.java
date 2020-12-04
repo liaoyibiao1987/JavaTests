@@ -5,14 +5,14 @@ import java.rmi.RemoteException;
 
 public interface CompareHelper<T> extends Remote {
 	/**
-     * ±È½Ï object1 ºÍ object2 µÄ´óĞ¡,
-     * Èç¹ûobject1´ó, ÄÇÃ´·µ»Øtrue
-     * Èç¹ûobject2´ó, ÄÇÃ´·µ»Øfalse
+     * æ¯”è¾ƒ object1 å’Œ object2 çš„å¤§å°,
+     * å¦‚æœobject1å¤§, é‚£ä¹ˆè¿”å›true
+     * å¦‚æœobject2å¤§, é‚£ä¹ˆè¿”å›false
      */
     boolean compare(T object1, T object2) throws RemoteException;
  
     /**
-     * ½«object2µÄÖµÁ¬½Óµ½object1µÄºóÃæ
+     * å°†object2çš„å€¼è¿æ¥åˆ°object1çš„åé¢
      */
     T append(T object1, T object2) throws RemoteException;
 }

@@ -14,7 +14,7 @@ public class ThrowOne {
 			byte[] xy = x.getBytes();
 		} catch (Exception se) {
 			se.printStackTrace();
-			System.out.println(se + "ÀÏÂŞËµµÄ¡£");
+			System.out.println(se + "è€ç½—è¯´çš„ã€‚");
 		}
 	}
 }

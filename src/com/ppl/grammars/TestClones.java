@@ -5,20 +5,20 @@ public class TestClones {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String s1 = "a";
-		String s2 = "a";//³£Á¿³ØÖĞµÄÖµ
+		String s2 = "a";//å¸¸é‡æ± ä¸­çš„å€¼
 		
-		//JVM¾ÍÒÑ¾­Îª"a"ÔÚ¶ÑÖĞ´´½¨ÁËÒ»¸ö¾ĞÁô×Ö·û´®
-		//(ÖµµÃ×¢ÒâµÄÊÇ£ºÈç¹ûÔ´³ÌĞòÖĞ»¹ÓĞÒ»¸ö"a"×Ö·û´®³£Á¿£¬ÄÇÃ´ËûÃÇ¶¼¶ÔÓ¦ÁËÍ¬Ò»¸ö¶ÑÖĞµÄ¾ĞÁô×Ö·û´®)¡£
-		//È»ºóÓÃÕâ¸ö¾ĞÁô×Ö·û´®µÄÖµÀ´³õÊ¼»¯¶ÑÖĞÓÃnewÖ¸Áî´´½¨³öÀ´µÄĞÂµÄString¶ÔÏó£¬
-		//¾Ö²¿±äÁ¿sÊµ¼ÊÉÏ´æ´¢µÄÊÇnew³öÀ´µÄ¶Ñ¶ÔÏóµØÖ·¡£
+		//JVMå°±å·²ç»ä¸º"a"åœ¨å †ä¸­åˆ›å»ºäº†ä¸€ä¸ªæ‹˜ç•™å­—ç¬¦ä¸²
+		//(å€¼å¾—æ³¨æ„çš„æ˜¯ï¼šå¦‚æœæºç¨‹åºä¸­è¿˜æœ‰ä¸€ä¸ª"a"å­—ç¬¦ä¸²å¸¸é‡ï¼Œé‚£ä¹ˆä»–ä»¬éƒ½å¯¹åº”äº†åŒä¸€ä¸ªå †ä¸­çš„æ‹˜ç•™å­—ç¬¦ä¸²)ã€‚
+		//ç„¶åç”¨è¿™ä¸ªæ‹˜ç•™å­—ç¬¦ä¸²çš„å€¼æ¥åˆå§‹åŒ–å †ä¸­ç”¨newæŒ‡ä»¤åˆ›å»ºå‡ºæ¥çš„æ–°çš„Stringå¯¹è±¡ï¼Œ
+		//å±€éƒ¨å˜é‡så®é™…ä¸Šå­˜å‚¨çš„æ˜¯newå‡ºæ¥çš„å †å¯¹è±¡åœ°å€ã€‚
 		String s3 = new String("a");
 		String s4 = new String("a");
 		System.out.println(s3.hashCode() + "====" + s1.hashCode());
 		String s5 = String.valueOf("a");
 		String s6 = String.valueOf("a");
-		System.out.println(s1 == s2); // true ¾ùÊÇÖ¸Ïò³£Á¿³ØÖĞµÄ"a",Òò´ËÏàµÈ
-		System.out.println(s1 == s3); // false ´ú±í¶ÑÉÏµÄ¶ÔÏó£¬Óë s1 ²»µÈ
-		System.out.println(s3 == s4); // false ·Ö±ğ´ú±í²»Í¬¶ÔÏó
+		System.out.println(s1 == s2); // true å‡æ˜¯æŒ‡å‘å¸¸é‡æ± ä¸­çš„"a",å› æ­¤ç›¸ç­‰
+		System.out.println(s1 == s3); // false ä»£è¡¨å †ä¸Šçš„å¯¹è±¡ï¼Œä¸ s1 ä¸ç­‰
+		System.out.println(s3 == s4); // false åˆ†åˆ«ä»£è¡¨ä¸åŒå¯¹è±¡
 		System.out.println(s5 == s1); // true
 		System.out.println(s5 == s6); // true
 

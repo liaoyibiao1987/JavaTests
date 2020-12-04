@@ -6,7 +6,7 @@ import java.util.List;
 
 public class WechatServer implements Observerable {
 	private List<Observer> listObserver;
-	// ÌØµã¾ÍÔÚÕâÀï£¬´«ÈëÊı¾İ²¢²»ÊÇÖ±½Ó¸øObserverable×÷Îª½Ó¿ÚÊ¹ÓÃ£¨notifyObserver(string str)£©
+	// ç‰¹ç‚¹å°±åœ¨è¿™é‡Œï¼Œä¼ å…¥æ•°æ®å¹¶ä¸æ˜¯ç›´æ¥ç»™Observerableä½œä¸ºæ¥å£ä½¿ç”¨ï¼ˆnotifyObserver(string str)ï¼‰
 	private String message;
 	private String publicName;
 
@@ -38,7 +38,7 @@ public class WechatServer implements Observerable {
 
 	public void notifyMessage(String str) {
 		message = str;
-		System.out.println("¹«¹²ºÅ  " + publicName + "Ëµ£º " + str);
+		System.out.println("å…¬å…±å·  " + publicName + "è¯´ï¼š " + str);
 		notifyObserver();
 	}
 }

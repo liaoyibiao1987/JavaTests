@@ -4,23 +4,23 @@ public class Test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		 WechatServer server = new WechatServer("ÁõµÂ»ª¿´µçÓ°");
+		 WechatServer server = new WechatServer("åˆ˜å¾·åçœ‹ç”µå½±");
 	        
-	        Observer userZhang = new WeChatUser("ÕÅÈı");
-	        Observer userLi = new WeChatUser("ÀîËÄ");
-	        Observer userWang = new WeChatUser("ÍõÎå");
+	        Observer userZhang = new WeChatUser("å¼ ä¸‰");
+	        Observer userLi = new WeChatUser("æå››");
+	        Observer userWang = new WeChatUser("ç‹äº”");
 	        
 	        server.registerObserver(userZhang);
 	        server.registerObserver(userLi);
 	        server.registerObserver(userWang);
-	        server.notifyMessage("PHPÊÇÊÀ½çÉÏ×îºÃÓÃµÄÓïÑÔ£¡");
+	        server.notifyMessage("PHPæ˜¯ä¸–ç•Œä¸Šæœ€å¥½ç”¨çš„è¯­è¨€ï¼");
 	        
 	        System.out.println("----------------------------------------------");
 	        
-	        WechatServer server2 = new WechatServer("ÕÅÈı·á¿´µçÓ°");
+	        WechatServer server2 = new WechatServer("å¼ ä¸‰ä¸°çœ‹ç”µå½±");
 	        server2.registerObserver(userZhang);
 	        server2.registerObserver(userLi);
-	        server2.notifyMessage("JAVAÊÇÊÀ½çÉÏ×îºÃÓÃµÄÓïÑÔ£¡");
+	        server2.notifyMessage("JAVAæ˜¯ä¸–ç•Œä¸Šæœ€å¥½ç”¨çš„è¯­è¨€ï¼");
 	}
 
 }

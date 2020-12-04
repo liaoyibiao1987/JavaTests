@@ -2,8 +2,8 @@ package com.ppl.Lists;
 
 import java.util.*;
 
-/*¡°»Øµ÷¡±Ò»´ÊµÄÀ´Àú£¬ÕâÊÇÓÉÓÚquickSort()·½·¨¡°Íù»Øµ÷ÓÃ¡±ÁËCompare ÖĞµÄ·½·¨¡£
-´ÓÖĞÒà¿ÉÀí½âÕâÖÖ¼¼ÊõÈçºÎÉú³ÉÍ¨ÓÃµÄ¡¢¿ÉÖØ¸´ÀûÓÃ£¨ÔÙÉú£©µÄ´úÂë*/
+/*â€œå›è°ƒâ€ä¸€è¯çš„æ¥å†ï¼Œè¿™æ˜¯ç”±äºquickSort()æ–¹æ³•â€œå¾€å›è°ƒç”¨â€äº†Compare ä¸­çš„æ–¹æ³•ã€‚
+ä»ä¸­äº¦å¯ç†è§£è¿™ç§æŠ€æœ¯å¦‚ä½•ç”Ÿæˆé€šç”¨çš„ã€å¯é‡å¤åˆ©ç”¨ï¼ˆå†ç”Ÿï¼‰çš„ä»£ç */
 public class SortVector extends Vector {
 	private Compare compare; // To hold the callback
 

@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
- * ÖĞ½éÕßÄ£Ê½
+ * ä¸­ä»‹è€…æ¨¡å¼
  */
 public class GroupMediator implements Group {
 
 	/*
-	 * Ğ¡×é³ÉÔ±µÄ³éÏó·â×°
+	 * å°ç»„æˆå‘˜çš„æŠ½è±¡å°è£…
 	 */
 	static abstract class GroupMemberBase implements GroupMember {
 
@@ -17,7 +17,7 @@ public class GroupMediator implements Group {
 
 		@Override
 		public void joinedParty(Group group) {
-			System.out.printf("%s ¼ÓÈëµ½ÁËĞ¡×éÖĞ\n", this);
+			System.out.printf("%s åŠ å…¥åˆ°äº†å°ç»„ä¸­\n", this);
 			this.group = group;
 		}
 
@@ -40,13 +40,13 @@ public class GroupMediator implements Group {
 	}
 
 	/*
-	 * ¾²Ì¬ÄÚ²¿Àà±ØĞë¼Ì³ĞÍâ²¿Àà»òÕß¾²Ì¬ÄÚ²¿Àà£¬²»ÄÜÖ±½Ó¼Ì³ĞÒ»°ãµÄÄÚ²¿Àà£¬ÒòÎª±»¼Ì³ĞµÄÄÚ²¿Àà±ØĞë³õÊ¼»¯Ö÷ÀàÒ»´Î²ÅÄÜ´´½¨¡£
+	 * é™æ€å†…éƒ¨ç±»å¿…é¡»ç»§æ‰¿å¤–éƒ¨ç±»æˆ–è€…é™æ€å†…éƒ¨ç±»ï¼Œä¸èƒ½ç›´æ¥ç»§æ‰¿ä¸€èˆ¬çš„å†…éƒ¨ç±»ï¼Œå› ä¸ºè¢«ç»§æ‰¿çš„å†…éƒ¨ç±»å¿…é¡»åˆå§‹åŒ–ä¸»ç±»ä¸€æ¬¡æ‰èƒ½åˆ›å»ºã€‚
 	 */
 	static class Andersen extends GroupMemberBase {
 
 		@Override
 		public String toString() {
-			return "°²Í½Éú";
+			return "å®‰å¾’ç”Ÿ";
 		}
 	}
 
@@ -54,7 +54,7 @@ public class GroupMediator implements Group {
 
 		@Override
 		public String toString() {
-			return "³øÊ¦";
+			return "å¨å¸ˆ";
 		}
 	}
 
@@ -62,7 +62,7 @@ public class GroupMediator implements Group {
 
 		@Override
 		public String toString() {
-			return "Ğ¡¾«Áé";
+			return "å°ç²¾çµ";
 		}
 	}
 
@@ -80,7 +80,7 @@ public class GroupMediator implements Group {
 			if (!member.equals(actor)) {
 				member.partyAction(action);
 			}else {
-				System.out.printf("\t\t\tÊÂ¼ş´¥·¢ÕßÊÇ %s\n", actor);
+				System.out.printf("\t\t\täº‹ä»¶è§¦å‘è€…æ˜¯ %s\n", actor);
 			}
 		}
 	}
@@ -94,26 +94,26 @@ public class GroupMediator implements Group {
 	public static void main(String[] args) {
 		Group party = new GroupMediator();
 
-		// ÓĞÈıÖÖÈË
+		// æœ‰ä¸‰ç§äºº
 		Andersen andersen = new Andersen();
 		Fairy fairy = new Fairy();
 		Chef chef = new Chef();
 
-		// ÕâÈıÖÖÈË¶¼¼ÓÈëµ½ÁËĞ¡×éÖĞ
+		// è¿™ä¸‰ç§äººéƒ½åŠ å…¥åˆ°äº†å°ç»„ä¸­
 		party.addMember(andersen);
 		party.addMember(fairy);
 		party.addMember(chef);
 		System.out.println("-------------------");
 
-		// °²Í½ÉúÒª½²¹ÊÊÂ, ÖĞ½éÕß¾Í»áÍ¨ÖªÆäËûÈË.
+		// å®‰å¾’ç”Ÿè¦è®²æ•…äº‹, ä¸­ä»‹è€…å°±ä¼šé€šçŸ¥å…¶ä»–äºº.
 		andersen.act(ActionEnum.TABLE);
 		System.out.println("-------------------");
 
-		// ¾«Áé·¢ÏÖÁËÏÊ»¨, ÖĞ½éÕß¾Í»áÍ¨ÖªÆäËûËùÓĞÈË
+		// ç²¾çµå‘ç°äº†é²œèŠ±, ä¸­ä»‹è€…å°±ä¼šé€šçŸ¥å…¶ä»–æ‰€æœ‰äºº
 		fairy.act(ActionEnum.FOND);
 		System.out.println("-------------------");
 
-		// ³øÊ¦×öºÃÁË·¹, ÖĞ½éÕß¾Í»áÍ¨ÖªÆäËûËùÓĞÈË
+		// å¨å¸ˆåšå¥½äº†é¥­, ä¸­ä»‹è€…å°±ä¼šé€šçŸ¥å…¶ä»–æ‰€æœ‰äºº
 		chef.act(ActionEnum.HUNT);
 	}
 

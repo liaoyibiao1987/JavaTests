@@ -65,10 +65,10 @@ public class Safes {
 			System.out.println(iterator2.next().toString());
 		}
 		/*
-		 * (01) º¯Êı½Ó¿Ú²»Í¬
-				EnumerationÖ»ÓĞ2¸öº¯Êı½Ó¿Ú¡£Í¨¹ıEnumeration£¬ÎÒÃÇÖ»ÄÜ¶ÁÈ¡¼¯ºÏµÄÊı¾İ£¬¶ø²»ÄÜ¶ÔÊı¾İ½øĞĞĞŞ¸Ä¡£
-				IteratorÖ»ÓĞ3¸öº¯Êı½Ó¿Ú¡£Iterator³ıÁËÄÜ¶ÁÈ¡¼¯ºÏµÄÊı¾İÖ®Íâ£¬Ò²ÄÜÊı¾İ½øĞĞÉ¾³ı²Ù×÷¡£
-			(02) IteratorÖ§³Öfail-fast»úÖÆ£¬¶øEnumeration²»Ö§³Ö¡£*/
+		 * (01) å‡½æ•°æ¥å£ä¸åŒ
+				Enumerationåªæœ‰2ä¸ªå‡½æ•°æ¥å£ã€‚é€šè¿‡Enumerationï¼Œæˆ‘ä»¬åªèƒ½è¯»å–é›†åˆçš„æ•°æ®ï¼Œè€Œä¸èƒ½å¯¹æ•°æ®è¿›è¡Œä¿®æ”¹ã€‚
+				Iteratoråªæœ‰3ä¸ªå‡½æ•°æ¥å£ã€‚Iteratoré™¤äº†èƒ½è¯»å–é›†åˆçš„æ•°æ®ä¹‹å¤–ï¼Œä¹Ÿèƒ½æ•°æ®è¿›è¡Œåˆ é™¤æ“ä½œã€‚
+			(02) Iteratoræ”¯æŒfail-fastæœºåˆ¶ï¼Œè€ŒEnumerationä¸æ”¯æŒã€‚*/
 		Iterator<TempClass> iterator4 = listTemps.iterator();
 		while (iterator4.hasNext()) {
 			TempClass remoteDevice = iterator4.next();
