@@ -3,11 +3,11 @@ package com.TestJava;
 public class Printer implements IPrinter {
 	@Override
 	public void print() {
-		System.out.println("±ëº·µÄÈËÉú²»ĞèÒª½âÊÍÊÇË­ËµµÄ£¿");
+		System.out.println("å½ªæ‚çš„äººç”Ÿä¸éœ€è¦è§£é‡Šæ˜¯è°è¯´çš„ï¼Ÿ");
 	}
 
 	@Override
 	public void print2(String x) {
-		System.out.println(x + "ÀÏÂŞËµµÄ¡£");
+		System.out.println(x + "è€ç½—è¯´çš„ã€‚");
 	}
 }

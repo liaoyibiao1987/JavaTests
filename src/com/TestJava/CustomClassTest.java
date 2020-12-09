@@ -10,19 +10,19 @@ public class CustomClassTest {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		IPrinter printer = null;
 		while (true) {
-			System.out.println("ÊäÈëÈÎÒâ×Ö·û½øĞĞÈÈ¼ÓÔØ£¬Ö±½ÓÇÃ»Ø³µ¼üÍË³ö³ÌĞò");
+			System.out.println("è¾“å…¥ä»»æ„å­—ç¬¦è¿›è¡Œçƒ­åŠ è½½ï¼Œç›´æ¥æ•²å›è½¦é”®é€€å‡ºç¨‹åº");
 			try {
 				String line = reader.readLine();
 				if (line != null && line.length() > 0) {
 					MyClassLoader loader = new MyClassLoader(Thread.currentThread().getContextClassLoader(), name);
 					Class<?> clazz = loader.loadClass();
 					/**
-					 * ±»×Ó¼ÓÔØÆ÷¼ÓÔØµÄÀàÓµÓĞ±»¸¸¼ÓÔØÆ÷¼ÓÔØµÄÀàµÄ¿É¼ûĞÔ PrinterÊÇÓÉ×Ô¶¨ÒåÀà¼ÓÔØÆ÷¼ÓÔØµÄ£¬
-					 * ¶øËüµÄ¸¸ÀàIPrinterÊÇÓÉÏµÍ³Àà¼ÓÔØÆ÷¼ÓÔØµÄ£¬ Òò´ËIPrinter¶ÔÓÚPrinter¾ßÓĞ¿É¼ûĞÔ£¬
-					 * Òò´Ë×ªĞÍ³É¹¦£¬²¢²»»áÒòÎªÀà¼ÓÔØÆ÷²»Í¬µ¼ÖÂClassCastExceptionÒì³£     
+					 * è¢«å­åŠ è½½å™¨åŠ è½½çš„ç±»æ‹¥æœ‰è¢«çˆ¶åŠ è½½å™¨åŠ è½½çš„ç±»çš„å¯è§æ€§ Printeræ˜¯ç”±è‡ªå®šä¹‰ç±»åŠ è½½å™¨åŠ è½½çš„ï¼Œ
+					 * è€Œå®ƒçš„çˆ¶ç±»IPrinteræ˜¯ç”±ç³»ç»Ÿç±»åŠ è½½å™¨åŠ è½½çš„ï¼Œ å› æ­¤IPrinterå¯¹äºPrinterå…·æœ‰å¯è§æ€§ï¼Œ
+					 * å› æ­¤è½¬å‹æˆåŠŸï¼Œå¹¶ä¸ä¼šå› ä¸ºç±»åŠ è½½å™¨ä¸åŒå¯¼è‡´ClassCastExceptionå¼‚å¸¸     
 					 */
 					printer = (IPrinter) clazz.newInstance();
-					/** ¿´¿´ÊÇ·ñÈÈ¼ÓÔØ³É¹¦ÁË **/
+					/** çœ‹çœ‹æ˜¯å¦çƒ­åŠ è½½æˆåŠŸäº† **/
 					printer.print();
 				} else {
 					break;

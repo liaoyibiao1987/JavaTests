@@ -1,6 +1,6 @@
 package com.ppl.grammars;
 
-//ÕâÊÇÊ²Ã´À¬»ø¶«Î÷¡£
+//è¿™æ˜¯ä»€ä¹ˆåžƒåœ¾ä¸œè¥¿ã€‚
 
 public class Sequence {
 	private Object[] o;

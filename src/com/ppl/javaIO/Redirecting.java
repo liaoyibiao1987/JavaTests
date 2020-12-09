@@ -3,10 +3,10 @@ package com.ppl.javaIO;
 import java.io.*;
 
 public class Redirecting {
-	/*ÎŞÂÛ System.setOut()»¹ÊÇSystem.setErr()¶¼ÒªÇóÓÃÒ»¸ö PrintStream×÷Îª²ÎÊıÊ¹ÓÃ£¬ËùÒÔ±ØĞëµ÷ÓÃ
-	PrintStream¹¹½¨Æ÷¡£ËùÒÔ´ó¼Ò¿ÉÄÜ»á¾õµÃÆæ¹Ö£¬¼ÈÈ» Java 1.1 Í¨¹ı·´¶Ô¹¹½¨Æ÷¶ø·´¶ÔÁËÕû¸ö
-	PrintStream£¬ÎªÊ²Ã´¿âµÄÉè¼ÆÈËÔ±ÔÚÌí¼ÓÕâ¸ö·´¶ÔµÄÍ¬Ê±£¬ÒÀÈ»Îª SystemÌí¼ÓÁËĞÂ·½·¨£¬ÇÒÖ¸Ã÷ÒªÇóÓÃ
-	PrintStream£¬¶ø²»ÊÇÓÃ PrintWriter ÄØ£¿±Ï¾¹£¬ºóÕßÊÇÒ»¸öÕ¸ĞÂºÍÊ×Ñ¡µÄÌæ»»´ëÊ©Ñ½£¿ÕâÕæÁîÈË·Ñ½â¡£*/
+	/*æ— è®º System.setOut()è¿˜æ˜¯System.setErr()éƒ½è¦æ±‚ç”¨ä¸€ä¸ª PrintStreamä½œä¸ºå‚æ•°ä½¿ç”¨ï¼Œæ‰€ä»¥å¿…é¡»è°ƒç”¨
+	PrintStreamæ„å»ºå™¨ã€‚æ‰€ä»¥å¤§å®¶å¯èƒ½ä¼šè§‰å¾—å¥‡æ€ªï¼Œæ—¢ç„¶ Java 1.1 é€šè¿‡åå¯¹æ„å»ºå™¨è€Œåå¯¹äº†æ•´ä¸ª
+	PrintStreamï¼Œä¸ºä»€ä¹ˆåº“çš„è®¾è®¡äººå‘˜åœ¨æ·»åŠ è¿™ä¸ªåå¯¹çš„åŒæ—¶ï¼Œä¾ç„¶ä¸º Systemæ·»åŠ äº†æ–°æ–¹æ³•ï¼Œä¸”æŒ‡æ˜è¦æ±‚ç”¨
+	PrintStreamï¼Œè€Œä¸æ˜¯ç”¨ PrintWriter å‘¢ï¼Ÿæ¯•ç«Ÿï¼Œåè€…æ˜¯ä¸€ä¸ªå´­æ–°å’Œé¦–é€‰çš„æ›¿æ¢æªæ–½å‘€ï¼Ÿè¿™çœŸä»¤äººè´¹è§£ã€‚*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {

@@ -14,11 +14,11 @@ public class StandardInputOutput {
 	public static void Ir() {
 		char[] buff = new char[5];
 		InputStreamReader ir = new InputStreamReader(System.in);
-		System.out.println("UnixÏµÍ³: ctrl-d »ò ctrl-c ÍË³ö" + "\nWindowsÏµÍ³: ctrl-z ÍË³ö");
+		System.out.println("Unixç³»ç»Ÿ: ctrl-d æˆ– ctrl-c é€€å‡º" + "\nWindowsç³»ç»Ÿ: ctrl-z é€€å‡º");
 		try {
-			// ¶ÁÒ»ĞĞÊı¾İ£¬²¢±ê×¼Êä³öÖÁÏÔÊ¾Æ÷
+			// è¯»ä¸€è¡Œæ•°æ®ï¼Œå¹¶æ ‡å‡†è¾“å‡ºè‡³æ˜¾ç¤ºå™¨
 			int x = ir.read(buff);
-			// readLine()·½·¨ÔËĞĞÊ±Èô·¢ÉúI/O´íÎó£¬½«Å×³öIOExceptionÒì³£
+			// readLine()æ–¹æ³•è¿è¡Œæ—¶è‹¥å‘ç”ŸI/Oé”™è¯¯ï¼Œå°†æŠ›å‡ºIOExceptionå¼‚å¸¸
 			while (true) {
 				//buff.toString() == getClass().getName() + '@' + Integer.toHexString(hashCode())
 				System.out.println(buff.getClass().getName()+ "$$" + Integer.toHexString(buff.hashCode()));
@@ -48,7 +48,7 @@ public class StandardInputOutput {
 				System.out.println("Read 3: " + String.valueOf(buff));
 				 x = ir.read(buff);
 			}
-			// ¹Ø±Õ»º³åÔÄ¶ÁÆ÷
+			// å…³é—­ç¼“å†²é˜…è¯»å™¨
 			//ir.close();
 		} catch (IOException e) { // Catch any IO exceptions.
 			e.printStackTrace();
@@ -59,16 +59,16 @@ public class StandardInputOutput {
 		String s;
 		InputStreamReader ir = new InputStreamReader(System.in);
 		BufferedReader in = new BufferedReader(ir);
-		System.out.println("UnixÏµÍ³: ctrl-d »ò ctrl-c ÍË³ö" + "\nWindowsÏµÍ³: ctrl-z ÍË³ö");
+		System.out.println("Unixç³»ç»Ÿ: ctrl-d æˆ– ctrl-c é€€å‡º" + "\nWindowsç³»ç»Ÿ: ctrl-z é€€å‡º");
 		try {
-			// ¶ÁÒ»ĞĞÊı¾İ£¬²¢±ê×¼Êä³öÖÁÏÔÊ¾Æ÷
+			// è¯»ä¸€è¡Œæ•°æ®ï¼Œå¹¶æ ‡å‡†è¾“å‡ºè‡³æ˜¾ç¤ºå™¨
 			s = in.readLine();
-			// readLine()·½·¨ÔËĞĞÊ±Èô·¢ÉúI/O´íÎó£¬½«Å×³öIOExceptionÒì³£
+			// readLine()æ–¹æ³•è¿è¡Œæ—¶è‹¥å‘ç”ŸI/Oé”™è¯¯ï¼Œå°†æŠ›å‡ºIOExceptionå¼‚å¸¸
 			while (s != null) {
 				System.out.println("Read: " + s);
 				s = in.readLine();
 			}
-			// ¹Ø±Õ»º³åÔÄ¶ÁÆ÷
+			// å…³é—­ç¼“å†²é˜…è¯»å™¨
 			in.close();
 		} catch (IOException e) { // Catch any IO exceptions.
 			e.printStackTrace();

@@ -35,17 +35,17 @@ class Blip3 implements Externalizable {
 		System.out.println("Blip3.readExternal");
 		// You must do this:
 		s = (String) in.readObject();
-		/* �����ִ�У���i�ٱ�read��ʱ��ͱ��0�� */
+		/* 如果不执行，则i再被read的时候就变成0了 */
 		//i = in.readInt();
 	}
 
 }
 
 /*
- * �ֶ� s�� i ֻ�ڵڶ����������г�ʼ��������Ĭ�Ϲ��������¡�����ζ�ż��粻��readExternal�г� ʼ��s
- * ��i�����Ǿͻ��Ϊnull����Ϊ�ڶ��󴴽��ĵ�һ�����ѽ�����Ĵ洢�ռ����Ϊ 1������ע�͵��� ���ڡ�You must do
- * this����������д��룬�����г��򣬾ͻᷢ�ֵ�����ָ��Ժ�s ��null����i ���㡣 ����һ��Externalizable
- * ����̳У�ͨ����Ҫ����writeExternal()�� readExternal()�Ļ�����汾���Ա� ��ȷ�ر���ͻָ������������
+ * 字段 s和 i 只在第二个构建器中初始化，不关默认构建器的事。这意味着假如不在readExternal中初 始化s
+ * 和i，它们就会成为null（因为在对象创建的第一步中已将对象的存储空间清除为 1）。若注释掉跟 随于“You must do
+ * this”后面的两行代码，并运行程序，就会发现当对象恢复以后，s 是null，而i 是零。 若从一个Externalizable
+ * 对象继承，通常需要调用writeExternal()和 readExternal()的基础类版本，以便 正确地保存和恢复基础类组件。
  */
 public class Serializable2Blip3 {
 	public static void main(String[] args) {

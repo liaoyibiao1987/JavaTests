@@ -3,9 +3,9 @@ package com.ppl.javaIO;
 import java.io.*;
 import java.util.*;
 
-/*ÕýÈç´ó¼Ò¿´µ½µÄÄÇÑù£¬Ä¬ÈÏµÄÐòÁÐ»¯»úÖÆ²¢²»ÄÑ²Ù×Ý¡£È»¶ø£¬¼ÙÈôÓÐÌØÊâÒªÇóÓÖ¸ÃÔõÃ´°ìÄØ£¿ÎÒÃÇ¿ÉÄÜÓÐÌØ
-ÊâµÄ°²È«ÎÊÌâ£¬²»Ï£Íû¶ÔÏóµÄÄ³Ò»²¿·ÖÐòÁÐ»¯£»»òÕßÄ³Ò»¸ö×Ó¶ÔÏóÍêÈ«²»±ØÐòÁÐ»¯£¬ÒòÎª¶ÔÏó»Ö¸´ÒÔºó£¬ÄÇ
-Ò»²¿·ÖÐèÒªÖØÐÂ´´½¨¡£*/
+/*æ­£å¦‚å¤§å®¶çœ‹åˆ°çš„é‚£æ ·ï¼Œé»˜è®¤çš„åºåˆ—åŒ–æœºåˆ¶å¹¶ä¸éš¾æ“çºµã€‚ç„¶è€Œï¼Œå‡è‹¥æœ‰ç‰¹æ®Šè¦æ±‚åˆè¯¥æ€Žä¹ˆåŠžå‘¢ï¼Ÿæˆ‘ä»¬å¯èƒ½æœ‰ç‰¹
+æ®Šçš„å®‰å…¨é—®é¢˜ï¼Œä¸å¸Œæœ›å¯¹è±¡çš„æŸä¸€éƒ¨åˆ†åºåˆ—åŒ–ï¼›æˆ–è€…æŸä¸€ä¸ªå­å¯¹è±¡å®Œå…¨ä¸å¿…åºåˆ—åŒ–ï¼Œå› ä¸ºå¯¹è±¡æ¢å¤ä»¥åŽï¼Œé‚£
+ä¸€éƒ¨åˆ†éœ€è¦é‡æ–°åˆ›å»ºã€‚*/
 
 class Blip1 implements Externalizable {
 	public Blip1() {
@@ -21,7 +21,7 @@ class Blip1 implements Externalizable {
 	}
 }
 
-// Blip1 µÄ¹¹½¨Æ÷ÊÇ¡°¹«¹²µÄ¡±£¨public£©£¬Blip2 µÄ¹¹½¨Æ÷Ôò²»È»£¬ÕâÑù±ã»áÔÚ»Ö¸´Ê±Ôì³ÉÎ¥Àý¡£
+// Blip1 çš„æž„å»ºå™¨æ˜¯â€œå…¬å…±çš„â€ï¼ˆpublicï¼‰ï¼ŒBlip2 çš„æž„å»ºå™¨åˆ™ä¸ç„¶ï¼Œè¿™æ ·ä¾¿ä¼šåœ¨æ¢å¤æ—¶é€ æˆè¿ä¾‹ã€‚
 class Blip2 implements Externalizable {
 	Blip2() {
 		System.out.println("Blip2 Constructor");
@@ -37,10 +37,10 @@ class Blip2 implements Externalizable {
 }
 
 /*
- * »Ö¸´b1ºó£¬»áµ÷ÓÃ Blip1 Ä¬ÈÏ¹¹½¨Æ÷¡£ÕâÓë»Ö¸´Ò»¸öSerializable£¨¿ÉÐòÁÐ»¯£©¶ÔÏó²»Í¬¡£ÔÚºóÕßµÄÇé¿ö
- * ÏÂ£¬¶ÔÏóÍêÈ«ÒÔËü±£´æÏÂÀ´µÄ¶þ½øÖÆÎ»Îª»ù´¡»Ö¸´£¬²»´æÔÚ¹¹½¨Æ÷µ÷ÓÃ¡£¶ø¶ÔÒ»¸öExternalizable ¶ÔÏó£¬Ëù
- * ÓÐÆÕÍ¨µÄÄ¬ÈÏ¹¹½¨ÐÐÎª¶¼»á·¢Éú£¨°üÀ¨ÔÚ×Ö¶Î¶¨ÒåÊ±µÄ³õÊ¼»¯£©£¬¶øÇÒ»áµ÷ÓÃreadExternal()¡£±ØÐë×¢ÒâÕâ
- * Ò»ÊÂÊµ¡ª¡ªÌØ±ð×¢ÒâËùÓÐÄ¬ÈÏµÄ¹¹½¨ÐÐÎª¶¼»á½øÐÐ¡ª¡ª·ñÔòºÜÄÑÔÚ×Ô¼ºµÄ Externalizable ¶ÔÏóÖÐ²úÉúÕýÈ·µÄ ÐÐÎª
+ * æ¢å¤b1åŽï¼Œä¼šè°ƒç”¨ Blip1 é»˜è®¤æž„å»ºå™¨ã€‚è¿™ä¸Žæ¢å¤ä¸€ä¸ªSerializableï¼ˆå¯åºåˆ—åŒ–ï¼‰å¯¹è±¡ä¸åŒã€‚åœ¨åŽè€…çš„æƒ…å†µ
+ * ä¸‹ï¼Œå¯¹è±¡å®Œå…¨ä»¥å®ƒä¿å­˜ä¸‹æ¥çš„äºŒè¿›åˆ¶ä½ä¸ºåŸºç¡€æ¢å¤ï¼Œä¸å­˜åœ¨æž„å»ºå™¨è°ƒç”¨ã€‚è€Œå¯¹ä¸€ä¸ªExternalizable å¯¹è±¡ï¼Œæ‰€
+ * æœ‰æ™®é€šçš„é»˜è®¤æž„å»ºè¡Œä¸ºéƒ½ä¼šå‘ç”Ÿï¼ˆåŒ…æ‹¬åœ¨å­—æ®µå®šä¹‰æ—¶çš„åˆå§‹åŒ–ï¼‰ï¼Œè€Œä¸”ä¼šè°ƒç”¨readExternal()ã€‚å¿…é¡»æ³¨æ„è¿™
+ * ä¸€äº‹å®žâ€”â€”ç‰¹åˆ«æ³¨æ„æ‰€æœ‰é»˜è®¤çš„æž„å»ºè¡Œä¸ºéƒ½ä¼šè¿›è¡Œâ€”â€”å¦åˆ™å¾ˆéš¾åœ¨è‡ªå·±çš„ Externalizable å¯¹è±¡ä¸­äº§ç”Ÿæ­£ç¡®çš„ è¡Œä¸º
  */
 public class Serializable2Blip {
 	public static void main(String[] args) {

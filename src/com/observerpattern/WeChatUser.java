@@ -12,7 +12,7 @@ public class WeChatUser implements Observer {
 	@Override
 	public void update(String message) {
 		 this.message = message;
-		 System.out.println(name + " 收到推送消息： " + message);
+		 System.out.println(name + " 鏀跺埌鎺ㄩ�佹秷鎭細 " + message);
 	}
 
 }

@@ -1,13 +1,13 @@
 package com.keywords;
 
-//ÈçÈ·Êµ²»Ïë·ÅÆú¶îÍâµÄÀàĞÍ°²È«ĞÔ,ÓÖÏëÊµÏÖ½Ó¿ÚµÄ¼ò±ãĞÔ
+//å¦‚ç¡®å®ä¸æƒ³æ”¾å¼ƒé¢å¤–çš„ç±»å‹å®‰å…¨æ€§,åˆæƒ³å®ç°æ¥å£çš„ç®€ä¾¿æ€§
 public class Month2 {
 	private String name;
 	
-	// Èç¹û¹¹Ôìº¯Êı±»ÏÔÊ½µÄ¶¨Òå³öÀ´ÁË£¬¹¹Ôìº¯ÊıÈ«²¿Ë½ÓĞÁËÎŞ·¨±»¼Ì³Ğ,µ¼ÖÂÀàÒ²ÎŞ·¨±»¼Ì³Ğ
-	// ±àÒëÆ÷»á±¨ÈçÏÂ´íÎó¡£
-	// Implicit super constructor Month2() is undefined. Must explicitly invoke another constructor (Ã»ÓĞ¶¨Òå·ÇË½ÓĞµÄÄ¬ÈÏ¹¹Ôìº¯Êı£¬»òÖ»ÓĞË½ÓĞµÄ´ø²Î¹¹Ôìº¯Êı)
-	// Implicit super constructor Month2() is not visible. Must explicitly invoke another constructor (¶¨ÒåÁËË½ÓĞµÄÄ¬ÈÏ¹¹Ôìº¯Êı)
+	// å¦‚æœæ„é€ å‡½æ•°è¢«æ˜¾å¼çš„å®šä¹‰å‡ºæ¥äº†ï¼Œæ„é€ å‡½æ•°å…¨éƒ¨ç§æœ‰äº†æ— æ³•è¢«ç»§æ‰¿,å¯¼è‡´ç±»ä¹Ÿæ— æ³•è¢«ç»§æ‰¿
+	// ç¼–è¯‘å™¨ä¼šæŠ¥å¦‚ä¸‹é”™è¯¯ã€‚
+	// Implicit super constructor Month2() is undefined. Must explicitly invoke another constructor (æ²¡æœ‰å®šä¹‰éç§æœ‰çš„é»˜è®¤æ„é€ å‡½æ•°ï¼Œæˆ–åªæœ‰ç§æœ‰çš„å¸¦å‚æ„é€ å‡½æ•°)
+	// Implicit super constructor Month2() is not visible. Must explicitly invoke another constructor (å®šä¹‰äº†ç§æœ‰çš„é»˜è®¤æ„é€ å‡½æ•°)
 	private Month2(String nm) {
 		name = nm;
 	}

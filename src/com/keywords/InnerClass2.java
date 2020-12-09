@@ -9,7 +9,7 @@ interface Destination {
 }
 
 public class InnerClass2 {
-	// ÄÚ²¿ÀàPContents ±»ÉèÎª private£¬ËùÒÔ³ıÁËParcel3 Ö®Íâ£¬ÆäËûÈÎºÎ¶«Î÷¶¼²»ÄÜ·ÃÎÊËü¡£
+	// å†…éƒ¨ç±»PContents è¢«è®¾ä¸º privateï¼Œæ‰€ä»¥é™¤äº†Parcel3 ä¹‹å¤–ï¼Œå…¶ä»–ä»»ä½•ä¸œè¥¿éƒ½ä¸èƒ½è®¿é—®å®ƒã€‚
 
 	private class PContents extends Contents {
 		private int i = 11;
@@ -19,8 +19,8 @@ public class InnerClass2 {
 		}
 	}
 
-	// PDestination±»ÉèÎª protected£¬ËùÒÔ³ıÁË Parcel3£¬Parcel3°üÄÚµÄÀà£¨ÒòÎªprotected
-	// Ò²Îª°ü¸³ÓèÁË·ÃÎÊÈ¨£»Ò²¾ÍÊÇËµ£¬protected Ò²ÊÇ¡°ÓÑºÃµÄ¡±£©
+	// PDestinationè¢«è®¾ä¸º protectedï¼Œæ‰€ä»¥é™¤äº† Parcel3ï¼ŒParcel3åŒ…å†…çš„ç±»ï¼ˆå› ä¸ºprotected
+	// ä¹Ÿä¸ºåŒ…èµ‹äºˆäº†è®¿é—®æƒï¼›ä¹Ÿå°±æ˜¯è¯´ï¼Œprotected ä¹Ÿæ˜¯â€œå‹å¥½çš„â€ï¼‰
 	protected class PDestination implements Destination {
 		private String label;
 
@@ -37,9 +37,9 @@ public class InnerClass2 {
 		return new PDestination(s);
 	}
 
-	// ÈôÊÔÍ¼¶¨ÒåÒ»¸öÄäÃûÄÚ²¿Àà£¬²¢ÏëÊ¹ÓÃÔÚÄäÃûÄÚ²¿ÀàÍâ²¿¶¨ÒåµÄÒ»¸ö¶ÔÏó£¬Ôò±àÒëÆ÷ÒªÇóÍâ²¿¶ÔÏóÎªfinal ÊôĞÔ¡£
-	// ÕâÕıÊÇÎÒÃÇ½«dest()µÄ×Ô±äÁ¿ÉèÎªfinal µÄÔ­Òò¡£Èç¹ûÍü¼ÇÕâÑù×ö£¬¾Í»áµÃµ½Ò»Ìõ±àÒëÆÚ³ö´íÌáÊ¾¡£
-	// DestinationÎª½Ó¿Ú£¬java
+	// è‹¥è¯•å›¾å®šä¹‰ä¸€ä¸ªåŒ¿åå†…éƒ¨ç±»ï¼Œå¹¶æƒ³ä½¿ç”¨åœ¨åŒ¿åå†…éƒ¨ç±»å¤–éƒ¨å®šä¹‰çš„ä¸€ä¸ªå¯¹è±¡ï¼Œåˆ™ç¼–è¯‘å™¨è¦æ±‚å¤–éƒ¨å¯¹è±¡ä¸ºfinal å±æ€§ã€‚
+	// è¿™æ­£æ˜¯æˆ‘ä»¬å°†dest()çš„è‡ªå˜é‡è®¾ä¸ºfinal çš„åŸå› ã€‚å¦‚æœå¿˜è®°è¿™æ ·åšï¼Œå°±ä¼šå¾—åˆ°ä¸€æ¡ç¼–è¯‘æœŸå‡ºé”™æç¤ºã€‚
+	// Destinationä¸ºæ¥å£ï¼Œjava
 	public Destination dest2(final String dest, final float price) {
 		return new Destination() {
 
@@ -52,15 +52,15 @@ public class InnerClass2 {
 			private int cost;
 
 			// Instance initialization for each object:
-			//ÊµÀı»¯·½·¨
+			//å®ä¾‹åŒ–æ–¹æ³•
 			{
-				//ËÄÉáÎåÈë
+				//å››èˆäº”å…¥
 				cost = Math.round(price);
 				if (cost > 100)
 					System.out.println("Over budget!");
 			}
 			
-			//åeÕ`µÄ·½·¨
+			//éŒ¯èª¤çš„æ–¹æ³•
 			/*public String TestRead()
 			{
 				return desc;

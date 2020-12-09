@@ -2,34 +2,34 @@ package com.ppl.javaIO;
 
 import java.io.*;
 
-/*Èô²»ÊÇÌØ±ðÔÚÒâÒªÊµÏÖ Externalizable½Ó¿Ú£¬»¹ÓÐÁíÒ»ÖÖ·½·¨¿É¹©Ñ¡ÓÃ¡£ÎÒÃÇ¿ÉÒÔÊµÏÖ Serializable½Ó
-¿Ú£¬²¢Ìí¼Ó£¨×¢ÒâÊÇ¡°Ìí¼Ó¡±£¬¶ø·Ç¡°¸²¸Ç¡±»òÕß¡°ÊµÏÖ¡±£©ÃûÎªwriteObject()ºÍ readObject()µÄ·½·¨¡£
-Ò»µ©¶ÔÏó±»ÐòÁÐ»¯»òÕßÖØÐÂ×°Åä£¬¾Í»á·Ö±ðµ÷ÓÃÄÇÁ½¸ö·½·¨¡£Ò²¾ÍÊÇËµ£¬Ö»ÒªÌá¹©ÁËÕâÁ½¸ö·½·¨£¬¾Í»áÓÅÏÈ
-Ê¹ÓÃËüÃÇ£¬¶ø²»¿¼ÂÇÄ¬ÈÏµÄÐòÁÐ»¯»úÖÆ¡£
-ÕâÐ©·½·¨±ØÐëº¬ÓÐÏÂÁÐ×¼È·µÄÇ©Ãû£º
+/*è‹¥ä¸æ˜¯ç‰¹åˆ«åœ¨æ„è¦å®žçŽ° ExternalizableæŽ¥å£ï¼Œè¿˜æœ‰å¦ä¸€ç§æ–¹æ³•å¯ä¾›é€‰ç”¨ã€‚æˆ‘ä»¬å¯ä»¥å®žçŽ° SerializableæŽ¥
+å£ï¼Œå¹¶æ·»åŠ ï¼ˆæ³¨æ„æ˜¯â€œæ·»åŠ â€ï¼Œè€Œéžâ€œè¦†ç›–â€æˆ–è€…â€œå®žçŽ°â€ï¼‰åä¸ºwriteObject()å’Œ readObject()çš„æ–¹æ³•ã€‚
+ä¸€æ—¦å¯¹è±¡è¢«åºåˆ—åŒ–æˆ–è€…é‡æ–°è£…é…ï¼Œå°±ä¼šåˆ†åˆ«è°ƒç”¨é‚£ä¸¤ä¸ªæ–¹æ³•ã€‚ä¹Ÿå°±æ˜¯è¯´ï¼Œåªè¦æä¾›äº†è¿™ä¸¤ä¸ªæ–¹æ³•ï¼Œå°±ä¼šä¼˜å…ˆ
+ä½¿ç”¨å®ƒä»¬ï¼Œè€Œä¸è€ƒè™‘é»˜è®¤çš„åºåˆ—åŒ–æœºåˆ¶ã€‚
+è¿™äº›æ–¹æ³•å¿…é¡»å«æœ‰ä¸‹åˆ—å‡†ç¡®çš„ç­¾åï¼š
 	private void
 		writeObject(ObjectOutputStream stream)
 		throws IOException;
 	private void
 		readObject(ObjectInputStream stream)
 		throws IOException, ClassNotFoundException
-´ÓÉè¼ÆµÄ½Ç¶È³ö·¢£¬Çé¿ö±äµÃÓÐÐ©ÆËË·ÃÔÀë¡£
-Ê×ÏÈ£¬´ó¼Ò¿ÉÄÜÈÏÎªÕâÐ©·½·¨²»ÊôÓÚ»ù´¡Àà»òÕßSerializable½Ó¿ÚµÄÒ»²¿·Ö£¬ËüÃÇÓ¦¸ÃÔÚ×Ô¼ºµÄ½Ó¿ÚÖÐµÃµ½¶¨Òå¡£
-µ«Çë×¢ÒâËüÃÇ±»¶¨Òå³É¡°private¡±£¬ÕâÒâÎ¶×ÅËüÃÇÖ»ÄÜ
-ÓÉÕâ¸öÀàµÄÆäËû³ÉÔ±µ÷ÓÃ¡£È»¶ø£¬ÎÒÃÇÊµ¼Ê²¢²»´ÓÕâ¸öÀàµÄÆäËû³ÉÔ±ÖÐµ÷ÓÃËüÃÇ£¬¶øÊÇÓÉObjectOutputStream ºÍObjectInputStreamµÄ writeObject()
-¼° readObject()·½·¨À´µ÷ÓÃÎÒÃÇ¶ÔÏóµÄwriteObject()ºÍreadObject()·½·¨£¨×¢ÒâÎÒÔÚÕâÀïÓÃÁËºÜ´óµÄÒÖÖÆÁ¦À´±ÜÃâÊ¹ÓÃÏàÍ¬µÄ·½·¨Ãû¡ª¡ªÒòÎªÅÂ»ìÏý£©¡£
-´ó¼Ò¿ÉÄÜÆæ¹Ö ObjectOutputStream ºÍObjectInputStreamÈçºÎÓÐÈ¨·ÃÎÊÎÒÃÇµÄÀàµÄprivate·½·¨¡ª¡ª------------------------Ö»ÄÜÈÏÎªÕâÊÇÐòÁÐ»¯»úÖÆÍæµÄÒ»¸ö°ÑÏ·¡£
-ÔÚÈÎºÎÇé¿öÏÂ£¬½Ó¿ÚÖÐµÄ¶¨ÒåµÄÈÎºÎ¶«Î÷¶¼»á×Ô¶¯¾ßÓÐpublic ÊôÐÔ£¬ËùÒÔ¼ÙÈôwriteObject()ºÍ
-readObject()±ØÐëÎª private£¬ÄÇÃ´ËüÃÇ²»ÄÜ³ÉÎª½Ó¿Ú£¨interface£©µÄÒ»²¿·Ö¡£µ«ÓÉÓÚÎÒÃÇ×¼È·µØ¼ÓÉÏÁËÇ©
-Ãû£¬ËùÒÔ×îÖÕµÄÐ§¹ûÊµ¼ÊÓëÊµÏÖÒ»¸ö½Ó¿ÚÊÇÏàÍ¬µÄ¡£
-¿´ÆðÀ´ËÆºõÎÒÃÇµ÷ÓÃObjectOutputStream.writeObject()µÄÊ±ºò£¬ÎÒÃÇ´«µÝ¸øËüµÄSerializable¶ÔÏóËÆºõ
-»á±»¼ì²éÊÇ·ñÊµÏÖÁË×Ô¼ºµÄwriteObject()¡£Èô´ð°¸ÊÇ¿Ï¶¨µÄÊÇ£¬±ã»áÌø¹ý³£¹æµÄÐòÁÐ»¯¹ý³Ì£¬²¢µ÷ÓÃ
-writeObject()¡£readObject()Ò²»áÓöµ½Í¬ÑùµÄÇé¿ö¡£
-»¹´æÔÚÁíÒ»¸öÎÊÌâ¡£
+ä»Žè®¾è®¡çš„è§’åº¦å‡ºå‘ï¼Œæƒ…å†µå˜å¾—æœ‰äº›æ‰‘æœ”è¿·ç¦»ã€‚
+é¦–å…ˆï¼Œå¤§å®¶å¯èƒ½è®¤ä¸ºè¿™äº›æ–¹æ³•ä¸å±žäºŽåŸºç¡€ç±»æˆ–è€…SerializableæŽ¥å£çš„ä¸€éƒ¨åˆ†ï¼Œå®ƒä»¬åº”è¯¥åœ¨è‡ªå·±çš„æŽ¥å£ä¸­å¾—åˆ°å®šä¹‰ã€‚
+ä½†è¯·æ³¨æ„å®ƒä»¬è¢«å®šä¹‰æˆâ€œprivateâ€ï¼Œè¿™æ„å‘³ç€å®ƒä»¬åªèƒ½
+ç”±è¿™ä¸ªç±»çš„å…¶ä»–æˆå‘˜è°ƒç”¨ã€‚ç„¶è€Œï¼Œæˆ‘ä»¬å®žé™…å¹¶ä¸ä»Žè¿™ä¸ªç±»çš„å…¶ä»–æˆå‘˜ä¸­è°ƒç”¨å®ƒä»¬ï¼Œè€Œæ˜¯ç”±ObjectOutputStream å’ŒObjectInputStreamçš„ writeObject()
+åŠ readObject()æ–¹æ³•æ¥è°ƒç”¨æˆ‘ä»¬å¯¹è±¡çš„writeObject()å’ŒreadObject()æ–¹æ³•ï¼ˆæ³¨æ„æˆ‘åœ¨è¿™é‡Œç”¨äº†å¾ˆå¤§çš„æŠ‘åˆ¶åŠ›æ¥é¿å…ä½¿ç”¨ç›¸åŒçš„æ–¹æ³•åâ€”â€”å› ä¸ºæ€•æ··æ·†ï¼‰ã€‚
+å¤§å®¶å¯èƒ½å¥‡æ€ª ObjectOutputStream å’ŒObjectInputStreamå¦‚ä½•æœ‰æƒè®¿é—®æˆ‘ä»¬çš„ç±»çš„privateæ–¹æ³•â€”â€”------------------------åªèƒ½è®¤ä¸ºè¿™æ˜¯åºåˆ—åŒ–æœºåˆ¶çŽ©çš„ä¸€ä¸ªæŠŠæˆã€‚
+åœ¨ä»»ä½•æƒ…å†µä¸‹ï¼ŒæŽ¥å£ä¸­çš„å®šä¹‰çš„ä»»ä½•ä¸œè¥¿éƒ½ä¼šè‡ªåŠ¨å…·æœ‰public å±žæ€§ï¼Œæ‰€ä»¥å‡è‹¥writeObject()å’Œ
+readObject()å¿…é¡»ä¸º privateï¼Œé‚£ä¹ˆå®ƒä»¬ä¸èƒ½æˆä¸ºæŽ¥å£ï¼ˆinterfaceï¼‰çš„ä¸€éƒ¨åˆ†ã€‚ä½†ç”±äºŽæˆ‘ä»¬å‡†ç¡®åœ°åŠ ä¸Šäº†ç­¾
+åï¼Œæ‰€ä»¥æœ€ç»ˆçš„æ•ˆæžœå®žé™…ä¸Žå®žçŽ°ä¸€ä¸ªæŽ¥å£æ˜¯ç›¸åŒçš„ã€‚
+çœ‹èµ·æ¥ä¼¼ä¹Žæˆ‘ä»¬è°ƒç”¨ObjectOutputStream.writeObject()çš„æ—¶å€™ï¼Œæˆ‘ä»¬ä¼ é€’ç»™å®ƒçš„Serializableå¯¹è±¡ä¼¼ä¹Ž
+ä¼šè¢«æ£€æŸ¥æ˜¯å¦å®žçŽ°äº†è‡ªå·±çš„writeObject()ã€‚è‹¥ç­”æ¡ˆæ˜¯è‚¯å®šçš„æ˜¯ï¼Œä¾¿ä¼šè·³è¿‡å¸¸è§„çš„åºåˆ—åŒ–è¿‡ç¨‹ï¼Œå¹¶è°ƒç”¨
+writeObject()ã€‚readObject()ä¹Ÿä¼šé‡åˆ°åŒæ ·çš„æƒ…å†µã€‚
+è¿˜å­˜åœ¨å¦ä¸€ä¸ªé—®é¢˜ã€‚
 
-ÔÚÎÒÃÇµÄwriteObject()ÄÚ²¿£¬¿ÉÒÔµ÷ÓÃdefaultWriteObject()£¬´Ó¶ø¾ö¶¨²ÉÈ¡Ä¬ÈÏµÄwriteObject()ÐÐ¶¯¡£
-ÀàËÆµØ£¬ÔÚ readObject()ÄÚ²¿£¬¿ÉÒÔµ÷ÓÃdefaultReadObject()¡£ÏÂÃæÕâ¸ö¼òµ¥µÄÀý×Ó
-ÑÝÊ¾ÁËÈçºÎ¶ÔÒ»¸öSerializable ¶ÔÏóµÄ´æ´¢Óë»Ö¸´½øÐÐ¿ØÖÆ£º*/
+åœ¨æˆ‘ä»¬çš„writeObject()å†…éƒ¨ï¼Œå¯ä»¥è°ƒç”¨defaultWriteObject()ï¼Œä»Žè€Œå†³å®šé‡‡å–é»˜è®¤çš„writeObject()è¡ŒåŠ¨ã€‚
+ç±»ä¼¼åœ°ï¼Œåœ¨ readObject()å†…éƒ¨ï¼Œå¯ä»¥è°ƒç”¨defaultReadObject()ã€‚ä¸‹é¢è¿™ä¸ªç®€å•çš„ä¾‹å­
+æ¼”ç¤ºäº†å¦‚ä½•å¯¹ä¸€ä¸ªSerializable å¯¹è±¡çš„å­˜å‚¨ä¸Žæ¢å¤è¿›è¡ŒæŽ§åˆ¶ï¼š*/
 
 public class SerializableSerialCtl implements Serializable {
 	String a;
@@ -44,9 +44,9 @@ public class SerializableSerialCtl implements Serializable {
 		return a + "\n" + b;
 	}
 
-	// ¾ÍËãÃ»ÓÐimplements Externalizable Ö»ÒªÓÐÁ½¸ö·½·¨Ç©Ãû£¬±àÒëÆ÷¾ÍÈÏÎªÊµÏÖÁËExternalizable
+	// å°±ç®—æ²¡æœ‰implements Externalizable åªè¦æœ‰ä¸¤ä¸ªæ–¹æ³•ç­¾åï¼Œç¼–è¯‘å™¨å°±è®¤ä¸ºå®žçŽ°äº†Externalizable
 	private void writeObject(ObjectOutputStream stream) throws IOException {
-		// ÏÈ²ÉÈ¡Ä¬ÈÏµÄwriteObject()£¬È»ºóÔÙÖ´ÐÐÏÂÃæµÄ¶ÔtransientµÄ¸³Öµ
+		// å…ˆé‡‡å–é»˜è®¤çš„writeObject()ï¼Œç„¶åŽå†æ‰§è¡Œä¸‹é¢çš„å¯¹transientçš„èµ‹å€¼
 		stream.defaultWriteObject();
 		stream.writeObject(b);
 	}
@@ -58,20 +58,20 @@ public class SerializableSerialCtl implements Serializable {
 
 	
 	/*
-	 * ÔÚÕâ¸öÀý×ÓÖÐ£¬Ò»¸öString ±£³ÖÔ­Ê¼×´Ì¬£¬ÆäËûÉèÎªtransient£¨ÁÙÊ±£©£¬ÒÔ±ãÖ¤Ã÷·ÇÁÙÊ±×Ö¶Î»á±»
-	 * defaultWriteObject()·½·¨×Ô¶¯±£´æ£¬¶ø transient ×Ö¶Î±ØÐëÔÚ³ÌÐòÖÐÃ÷È·±£´æºÍ»Ö¸´¡£×Ö¶ÎÊÇÔÚ¹¹½¨Æ÷ÄÚ
-	 * ²¿³õÊ¼»¯µÄ£¬¶ø²»ÊÇÔÚ¶¨ÒåµÄÊ±ºò£¬ÕâÖ¤Ã÷ÁËËüÃÇ²»»áÔÚÖØÐÂ×°ÅäµÄÊ±ºò±»Ä³Ð©×Ô¶¯»¯»úÖÆ³õÊ¼»¯¡£ Èô×¼±¸Í¨¹ýÄ¬ÈÏ»úÖÆÐ´Èë¶ÔÏóµÄ·Ç transient
-	 * ²¿·Ö£¬ÄÇÃ´±ØÐëµ÷ÓÃdefaultWriteObject()£¬ÁîÆä×÷Îª
-	 * writeObject()ÖÐµÄµÚÒ»¸ö²Ù×÷£»²¢µ÷ÓÃdefaultReadObject()£¬ÁîÆä×÷Îª readObject()µÄµÚÒ»¸ö²Ù×÷¡£ÕâÐ©
-	 * ¶¼ÊÇ²»³£¼ûµÄµ÷ÓÃ·½·¨¡£¾Ù¸öÀý×ÓÀ´Ëµ£¬µ±ÎÒÃÇÎªÒ»¸öObjectOutputStream µ÷ÓÃdefaultWriteObject()µÄ
-	 * Ê±ºò£¬¶øÇÒÃ»ÓÐÎªÆä´«µÝ²ÎÊý£¬¾ÍÐèÒª²ÉÈ¡ÕâÖÖ²Ù×÷£¬Ê¹ÆäÖªµÀ¶ÔÏóµÄ¾ä±úÒÔ¼°ÈçºÎÐ´ÈëËùÓÐ·Çtransient µÄ²¿·Ö¡£ÕâÖÖ×ö·¨·Ç³£²»±ã¡£
-	 * transient ¶ÔÏóµÄ´æ´¢Óë»Ö¸´²ÉÓÃÁËÎÒÃÇ¸üÊìÏ¤µÄ´úÂë¡£ÏÖÔÚ¿¼ÂÇÒ»ÏÂ»á·¢ÉúÒ»Ð©Ê²Ã´ÊÂÇé¡£ÔÚ main()ÖÐ»á ´´½¨Ò»¸öSerialCtl
-	 * ¶ÔÏó£¬Ëæºó»áÐòÁÐ»¯µ½Ò»¸öObjectOutputStream Àï£¨×¢ÒâÕâÖÖÇé¿öÏÂÊ¹ÓÃµÄÊÇÒ»¸ö»º³å
-	 * Çø£¬¶ø·ÇÎÄ¼þ¡ª¡ªÓëObjectOutputStream ÍêÈ«Ò»ÖÂ£©¡£ÕýÊ½µÄÐòÁÐ»¯²Ù×÷ÊÇÔÚÏÂÃæÕâÐÐ´úÂëÀï·¢ÉúµÄ£º
-	 * o.writeObject(sc); ÆäÖÐ£¬writeObject()·½·¨±ØÐëºË²ésc£¬ÅÐ¶ÏËüÊÇ·ñÓÐ×Ô¼ºµÄ
-	 * writeObject()·½·¨£¨²»ÊÇ¼ì²éËüµÄ½Ó¿Ú¡ª¡ªËü
-	 * ¸ù±¾¾ÍÃ»ÓÐ£¬Ò²²»ÊÇ¼ì²éÀàµÄÀàÐÍ£¬¶øÊÇÀûÓÃ·´Éä·½·¨Êµ¼ÊËÑË÷·½·¨£©¡£Èô´ð°¸ÊÇ¿Ï¶¨µÄ£¬¾ÍÊ¹ÓÃÄÇ¸ö·½ ·¨¡£ÀàËÆµÄÇé¿öÒ²»áÔÚ
-	 * readObject()ÉÏ·¢Éú¡£»òÐíÕâÊÇ½â¾öÎÊÌâÎ¨Ò»Êµ¼ÊµÄ·½·¨£¬µ«È·ÊµÏÔµÃÓÐÐ©¹Å¹Ö¡£
+	 * åœ¨è¿™ä¸ªä¾‹å­ä¸­ï¼Œä¸€ä¸ªString ä¿æŒåŽŸå§‹çŠ¶æ€ï¼Œå…¶ä»–è®¾ä¸ºtransientï¼ˆä¸´æ—¶ï¼‰ï¼Œä»¥ä¾¿è¯æ˜Žéžä¸´æ—¶å­—æ®µä¼šè¢«
+	 * defaultWriteObject()æ–¹æ³•è‡ªåŠ¨ä¿å­˜ï¼Œè€Œ transient å­—æ®µå¿…é¡»åœ¨ç¨‹åºä¸­æ˜Žç¡®ä¿å­˜å’Œæ¢å¤ã€‚å­—æ®µæ˜¯åœ¨æž„å»ºå™¨å†…
+	 * éƒ¨åˆå§‹åŒ–çš„ï¼Œè€Œä¸æ˜¯åœ¨å®šä¹‰çš„æ—¶å€™ï¼Œè¿™è¯æ˜Žäº†å®ƒä»¬ä¸ä¼šåœ¨é‡æ–°è£…é…çš„æ—¶å€™è¢«æŸäº›è‡ªåŠ¨åŒ–æœºåˆ¶åˆå§‹åŒ–ã€‚ è‹¥å‡†å¤‡é€šè¿‡é»˜è®¤æœºåˆ¶å†™å…¥å¯¹è±¡çš„éž transient
+	 * éƒ¨åˆ†ï¼Œé‚£ä¹ˆå¿…é¡»è°ƒç”¨defaultWriteObject()ï¼Œä»¤å…¶ä½œä¸º
+	 * writeObject()ä¸­çš„ç¬¬ä¸€ä¸ªæ“ä½œï¼›å¹¶è°ƒç”¨defaultReadObject()ï¼Œä»¤å…¶ä½œä¸º readObject()çš„ç¬¬ä¸€ä¸ªæ“ä½œã€‚è¿™äº›
+	 * éƒ½æ˜¯ä¸å¸¸è§çš„è°ƒç”¨æ–¹æ³•ã€‚ä¸¾ä¸ªä¾‹å­æ¥è¯´ï¼Œå½“æˆ‘ä»¬ä¸ºä¸€ä¸ªObjectOutputStream è°ƒç”¨defaultWriteObject()çš„
+	 * æ—¶å€™ï¼Œè€Œä¸”æ²¡æœ‰ä¸ºå…¶ä¼ é€’å‚æ•°ï¼Œå°±éœ€è¦é‡‡å–è¿™ç§æ“ä½œï¼Œä½¿å…¶çŸ¥é“å¯¹è±¡çš„å¥æŸ„ä»¥åŠå¦‚ä½•å†™å…¥æ‰€æœ‰éžtransient çš„éƒ¨åˆ†ã€‚è¿™ç§åšæ³•éžå¸¸ä¸ä¾¿ã€‚
+	 * transient å¯¹è±¡çš„å­˜å‚¨ä¸Žæ¢å¤é‡‡ç”¨äº†æˆ‘ä»¬æ›´ç†Ÿæ‚‰çš„ä»£ç ã€‚çŽ°åœ¨è€ƒè™‘ä¸€ä¸‹ä¼šå‘ç”Ÿä¸€äº›ä»€ä¹ˆäº‹æƒ…ã€‚åœ¨ main()ä¸­ä¼š åˆ›å»ºä¸€ä¸ªSerialCtl
+	 * å¯¹è±¡ï¼ŒéšåŽä¼šåºåˆ—åŒ–åˆ°ä¸€ä¸ªObjectOutputStream é‡Œï¼ˆæ³¨æ„è¿™ç§æƒ…å†µä¸‹ä½¿ç”¨çš„æ˜¯ä¸€ä¸ªç¼“å†²
+	 * åŒºï¼Œè€Œéžæ–‡ä»¶â€”â€”ä¸ŽObjectOutputStream å®Œå…¨ä¸€è‡´ï¼‰ã€‚æ­£å¼çš„åºåˆ—åŒ–æ“ä½œæ˜¯åœ¨ä¸‹é¢è¿™è¡Œä»£ç é‡Œå‘ç”Ÿçš„ï¼š
+	 * o.writeObject(sc); å…¶ä¸­ï¼ŒwriteObject()æ–¹æ³•å¿…é¡»æ ¸æŸ¥scï¼Œåˆ¤æ–­å®ƒæ˜¯å¦æœ‰è‡ªå·±çš„
+	 * writeObject()æ–¹æ³•ï¼ˆä¸æ˜¯æ£€æŸ¥å®ƒçš„æŽ¥å£â€”â€”å®ƒ
+	 * æ ¹æœ¬å°±æ²¡æœ‰ï¼Œä¹Ÿä¸æ˜¯æ£€æŸ¥ç±»çš„ç±»åž‹ï¼Œè€Œæ˜¯åˆ©ç”¨åå°„æ–¹æ³•å®žé™…æœç´¢æ–¹æ³•ï¼‰ã€‚è‹¥ç­”æ¡ˆæ˜¯è‚¯å®šçš„ï¼Œå°±ä½¿ç”¨é‚£ä¸ªæ–¹ æ³•ã€‚ç±»ä¼¼çš„æƒ…å†µä¹Ÿä¼šåœ¨
+	 * readObject()ä¸Šå‘ç”Ÿã€‚æˆ–è®¸è¿™æ˜¯è§£å†³é—®é¢˜å”¯ä¸€å®žé™…çš„æ–¹æ³•ï¼Œä½†ç¡®å®žæ˜¾å¾—æœ‰äº›å¤æ€ªã€‚
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

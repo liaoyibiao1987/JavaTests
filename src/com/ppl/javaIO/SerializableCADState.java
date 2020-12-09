@@ -76,11 +76,11 @@ class Square extends Shape {
 class Line extends Shape {
 	private static int color = RED;
 	
-	//serializeStaticState À´½â¾ö¶Ô¾²Ì¬×Ö¶Î³õÊ¼»¯µÄÎÊÌâ
+	//serializeStaticState æ¥è§£å†³å¯¹é™æ€å­—æ®µåˆå§‹åŒ–çš„é—®é¢˜
 	public static void serializeStaticState(ObjectOutputStream os) throws IOException {
 		os.writeInt(color);
 	}
-	//serializeStaticState À´½â¾ö¶Ô¾²Ì¬×Ö¶Î³õÊ¼»¯µÄÎÊÌâ
+	//serializeStaticState æ¥è§£å†³å¯¹é™æ€å­—æ®µåˆå§‹åŒ–çš„é—®é¢˜
 	public static void deserializeStaticState(ObjectInputStream os) throws IOException {
 		color = os.readInt();
 	}
@@ -98,17 +98,17 @@ class Line extends Shape {
 	}
 }
 /*
- * Shape£¨¼¸ºÎÐÎ×´£©Àà¡°ÊµÏÖÁË¿ÉÐòÁÐ»¯¡±£¨implements Serializable£©£¬ËùÒÔ´Ó Shape¼Ì³ÐµÄÈÎºÎ¶«Î÷Ò²
- * ¶¼»á×Ô¶¯¡°¿ÉÐòÁÐ»¯¡±¡£Ã¿¸öShape ¶¼°üº¬ÁËÊý¾Ý£¬¶øÇÒÃ¿¸öÑÜÉúµÄShape Àà¶¼°üº¬ÁËÒ»¸öÌØÊâµÄ static ×Ö ¶Î£¬ÓÃÓÚ¾ö¶¨ËùÓÐÄÇÐ©ÀàÐÍµÄShape
- * µÄÑÕÉ«£¨Èç½«Ò»¸ö static×Ö¶ÎÖÃÈë»ù´¡Àà£¬½á¹ûÖ»»á²úÉúÒ»¸ö×Ö¶Î£¬Òò Îªstatic
- * ×Ö¶ÎÎ´ÔÚÑÜÉúÀàÖÐ¸´ÖÆ£©¡£¿É¶Ô»ù´¡ÀàÖÐµÄ·½·¨½øÐÐ¸²¸Ç´¦Àí£¬ÒÔ±ãÎª²»Í¬µÄÀàÐÍÉèÖÃÑÕÉ«£¨static
- * ·½·¨²»»á¶¯Ì¬°ó¶¨£¬ËùÒÔÕâÐ©¶¼ÊÇÆÕÍ¨µÄ·½·¨£©¡£Ã¿´Îµ÷ÓÃrandomFactory()·½·¨Ê±£¬Ëü¶¼»á´´½¨ Ò»¸ö²»Í¬µÄ Shape£¨Shape Öµ²ÉÓÃËæ»úÖµ£©¡£
- * Circle£¨Ô²£©ºÍ Square£¨¾ØÐÎ£©ÊôÓÚ¶ÔShape µÄÖ±½ÓÀ©Õ¹£»Î¨Ò»µÄ²î±ðÊÇCircle ÔÚ¶¨ÒåÊ±»á³õÊ¼»¯ÑÕÉ«£¬ ¶øSquare
- * ÔÚ¹¹½¨Æ÷ÖÐ³õÊ¼»¯¡£Line£¨Ö±Ïß£©µÄÎÊÌâ½«Áôµ½ÒÔºóÌÖÂÛ¡£ ÔÚmain()ÖÐ£¬Ò»¸öVector ÓÃÓÚÈÝÄÉClass
- * ¶ÔÏó£¬¶øÁíÒ»¸öÓÃÓÚÈÝÄÉÐÎ×´¡£Èô²»Ìá¹©ÏàÓ¦µÄÃüÁîÐÐ²ÎÊý£¬¾Í »á´´½¨shapeTypes Vector£¬²¢Ìí¼ÓClass ¶ÔÏó¡£È»ºó´´½¨shapes
- * Vector£¬²¢Ìí¼ÓShape ¶ÔÏó¡£½ÓÏÂÀ´£¬Ëù ÓÐstatic color Öµ¶¼»áÉè³ÉGREEN£¬¶øÇÒËùÓÐ¶«Î÷¶¼»áÐòÁÐ»¯µ½ÎÄ¼þ
- * CADState.out¡£ ÈôÌá¹©ÁËÒ»¸öÃüÁîÐÐ²ÎÊý£¨¼ÙÉèCADState.out£©£¬±ã»á´ò¿ªÄÇ¸öÎÄ¼þ£¬²¢ÓÃËü»Ö¸´³ÌÐòµÄ×´Ì¬¡£ÎÞÂÛÔÚÄÄÖÖ
- * Çé¿öÏÂ£¬½á¹û²úÉúµÄShape µÄVector ¶¼»á´òÓ¡³öÀ´¡£
+ * Shapeï¼ˆå‡ ä½•å½¢çŠ¶ï¼‰ç±»â€œå®žçŽ°äº†å¯åºåˆ—åŒ–â€ï¼ˆimplements Serializableï¼‰ï¼Œæ‰€ä»¥ä»Ž Shapeç»§æ‰¿çš„ä»»ä½•ä¸œè¥¿ä¹Ÿ
+ * éƒ½ä¼šè‡ªåŠ¨â€œå¯åºåˆ—åŒ–â€ã€‚æ¯ä¸ªShape éƒ½åŒ…å«äº†æ•°æ®ï¼Œè€Œä¸”æ¯ä¸ªè¡ç”Ÿçš„Shape ç±»éƒ½åŒ…å«äº†ä¸€ä¸ªç‰¹æ®Šçš„ static å­— æ®µï¼Œç”¨äºŽå†³å®šæ‰€æœ‰é‚£äº›ç±»åž‹çš„Shape
+ * çš„é¢œè‰²ï¼ˆå¦‚å°†ä¸€ä¸ª staticå­—æ®µç½®å…¥åŸºç¡€ç±»ï¼Œç»“æžœåªä¼šäº§ç”Ÿä¸€ä¸ªå­—æ®µï¼Œå›  ä¸ºstatic
+ * å­—æ®µæœªåœ¨è¡ç”Ÿç±»ä¸­å¤åˆ¶ï¼‰ã€‚å¯å¯¹åŸºç¡€ç±»ä¸­çš„æ–¹æ³•è¿›è¡Œè¦†ç›–å¤„ç†ï¼Œä»¥ä¾¿ä¸ºä¸åŒçš„ç±»åž‹è®¾ç½®é¢œè‰²ï¼ˆstatic
+ * æ–¹æ³•ä¸ä¼šåŠ¨æ€ç»‘å®šï¼Œæ‰€ä»¥è¿™äº›éƒ½æ˜¯æ™®é€šçš„æ–¹æ³•ï¼‰ã€‚æ¯æ¬¡è°ƒç”¨randomFactory()æ–¹æ³•æ—¶ï¼Œå®ƒéƒ½ä¼šåˆ›å»º ä¸€ä¸ªä¸åŒçš„ Shapeï¼ˆShape å€¼é‡‡ç”¨éšæœºå€¼ï¼‰ã€‚
+ * Circleï¼ˆåœ†ï¼‰å’Œ Squareï¼ˆçŸ©å½¢ï¼‰å±žäºŽå¯¹Shape çš„ç›´æŽ¥æ‰©å±•ï¼›å”¯ä¸€çš„å·®åˆ«æ˜¯Circle åœ¨å®šä¹‰æ—¶ä¼šåˆå§‹åŒ–é¢œè‰²ï¼Œ è€ŒSquare
+ * åœ¨æž„å»ºå™¨ä¸­åˆå§‹åŒ–ã€‚Lineï¼ˆç›´çº¿ï¼‰çš„é—®é¢˜å°†ç•™åˆ°ä»¥åŽè®¨è®ºã€‚ åœ¨main()ä¸­ï¼Œä¸€ä¸ªVector ç”¨äºŽå®¹çº³Class
+ * å¯¹è±¡ï¼Œè€Œå¦ä¸€ä¸ªç”¨äºŽå®¹çº³å½¢çŠ¶ã€‚è‹¥ä¸æä¾›ç›¸åº”çš„å‘½ä»¤è¡Œå‚æ•°ï¼Œå°± ä¼šåˆ›å»ºshapeTypes Vectorï¼Œå¹¶æ·»åŠ Class å¯¹è±¡ã€‚ç„¶åŽåˆ›å»ºshapes
+ * Vectorï¼Œå¹¶æ·»åŠ Shape å¯¹è±¡ã€‚æŽ¥ä¸‹æ¥ï¼Œæ‰€ æœ‰static color å€¼éƒ½ä¼šè®¾æˆGREENï¼Œè€Œä¸”æ‰€æœ‰ä¸œè¥¿éƒ½ä¼šåºåˆ—åŒ–åˆ°æ–‡ä»¶
+ * CADState.outã€‚ è‹¥æä¾›äº†ä¸€ä¸ªå‘½ä»¤è¡Œå‚æ•°ï¼ˆå‡è®¾CADState.outï¼‰ï¼Œä¾¿ä¼šæ‰“å¼€é‚£ä¸ªæ–‡ä»¶ï¼Œå¹¶ç”¨å®ƒæ¢å¤ç¨‹åºçš„çŠ¶æ€ã€‚æ— è®ºåœ¨å“ªç§
+ * æƒ…å†µä¸‹ï¼Œç»“æžœäº§ç”Ÿçš„Shape çš„Vector éƒ½ä¼šæ‰“å°å‡ºæ¥ã€‚
  */
 
 
@@ -140,17 +140,17 @@ class Line extends Shape {
 
 
 /*
- * ´ÓÖÐ¿ÉÒÔ¿´³ö£¬xPos£¬yPos ÒÔ¼°dimµÄÖµ¶¼ÒÑ³É¹¦±£´æºÍ»Ö¸´³öÀ´¡£µ«ÔÚ»ñÈ¡ staticÐÅÏ¢Ê±È´³öÏÖÁËÎÊ
- * Ìâ¡£ËùÓÐ¡°3¡±¶¼ÒÑ½øÈë£¬µ«Ã»ÓÐÕý³£µØ³öÀ´¡£Circle ÓÐÒ»¸ö 1Öµ£¨¶¨ÒåÎª RED£©£¬¶øSquare ÓÐÒ»¸ö 0Öµ
- * £¨¼Ç×¡£¬ËüÃÇÊÇÔÚ¹¹½¨Æ÷Àï³õÊ¼»¯µÄ£©¡£¿´ÉÏÈ¥ËÆºõstatic ¸ù±¾Ã»ÓÐµÃµ½³õÊ¼»¯£¡ÊµÇéÕýÊÇÈç´Ë¡ª¡ª¾¡¹ÜÀà Class
- * ÊÇ¡°¿ÉÒÔÐòÁÐ»¯µÄ¡±£¬µ«È´²»ÄÜ°´ÎÒÃÇÏ£ÍûµÄ¹¤×÷¡£ËùÒÔ¼ÙÈçÏëÐòÁÐ»¯staticÖµ£¬±ØÐëÇ××Ô¶¯ÊÖ¡£ ÕâÕýÊÇLine ÖÐµÄ
- * serializeStaticState()ºÍdeserializeStaticState()Á½¸östatic ·½·¨µÄÓÃÍ¾¡£¿ÉÒÔ¿´
- * µ½£¬ÕâÁ½¸ö·½·¨¶¼ÊÇ×÷Îª´æ´¢ºÍ»Ö¸´½ø³ÌµÄÒ»²¿·ÖÃ÷È·µ÷ÓÃµÄ£¨×¢ÒâÐ´ÈëÐòÁÐ»¯ÎÄ¼þºÍ´ÓÖÐ¶Á»ØµÄË³Ðò²»ÄÜ ¸Ä±ä£©¡£ËùÒÔÎªÁËÊ¹CADState.java
- * ÕýÈ·ÔËÐÐÆðÀ´£¬±ØÐë²ÉÓÃÏÂÊöÈýÖÖ·½·¨Ö®Ò»£º
- *  (1) Îª¼¸ºÎÐÎ×´Ìí¼ÓÒ»¸öserializeStaticState()ºÍ deserializeStaticState()¡£ 
- *  (2) É¾³ýVector shapeTypesÒÔ¼°ÓëÖ®ÓÐ¹ØµÄËùÓÐ´úÂë 
- *  (3) ÔÚ¼¸ºÎÐÎ×´ÄÚÌí¼Ó¶ÔÐÂÐòÁÐ»¯ºÍ³·ÏûÐòÁÐ»¯¾²Ì¬·½·¨µÄµ÷ÓÃ Òª×¢ÒâµÄÁíÒ»¸öÎÊÌâÊÇ°²È«£¬ÒòÎªÐòÁÐ»¯´¦ÀíÒ²»á½«private Êý¾Ý±£´æÏÂÀ´¡£
- *  ÈôÓÐÐèÒª±£ÃÜµÄ×Ö¶Î£¬Ó¦½«Æä ±ê¼Ç³Étransient¡£µ«ÔÚÕâÖ®ºó£¬±ØÐëÉè¼ÆÒ»ÖÖ°²È«µÄÐÅÏ¢±£´æ·½·¨¡£ÕâÑùÒ»À´£¬Ò»µ©ÐèÒª»Ö¸´£¬¾Í¿ÉÒÔÖØÉèÄÇÐ©private ±äÁ¿¡£
+ * ä»Žä¸­å¯ä»¥çœ‹å‡ºï¼ŒxPosï¼ŒyPos ä»¥åŠdimçš„å€¼éƒ½å·²æˆåŠŸä¿å­˜å’Œæ¢å¤å‡ºæ¥ã€‚ä½†åœ¨èŽ·å– staticä¿¡æ¯æ—¶å´å‡ºçŽ°äº†é—®
+ * é¢˜ã€‚æ‰€æœ‰â€œ3â€éƒ½å·²è¿›å…¥ï¼Œä½†æ²¡æœ‰æ­£å¸¸åœ°å‡ºæ¥ã€‚Circle æœ‰ä¸€ä¸ª 1å€¼ï¼ˆå®šä¹‰ä¸º REDï¼‰ï¼Œè€ŒSquare æœ‰ä¸€ä¸ª 0å€¼
+ * ï¼ˆè®°ä½ï¼Œå®ƒä»¬æ˜¯åœ¨æž„å»ºå™¨é‡Œåˆå§‹åŒ–çš„ï¼‰ã€‚çœ‹ä¸ŠåŽ»ä¼¼ä¹Žstatic æ ¹æœ¬æ²¡æœ‰å¾—åˆ°åˆå§‹åŒ–ï¼å®žæƒ…æ­£æ˜¯å¦‚æ­¤â€”â€”å°½ç®¡ç±» Class
+ * æ˜¯â€œå¯ä»¥åºåˆ—åŒ–çš„â€ï¼Œä½†å´ä¸èƒ½æŒ‰æˆ‘ä»¬å¸Œæœ›çš„å·¥ä½œã€‚æ‰€ä»¥å‡å¦‚æƒ³åºåˆ—åŒ–staticå€¼ï¼Œå¿…é¡»äº²è‡ªåŠ¨æ‰‹ã€‚ è¿™æ­£æ˜¯Line ä¸­çš„
+ * serializeStaticState()å’ŒdeserializeStaticState()ä¸¤ä¸ªstatic æ–¹æ³•çš„ç”¨é€”ã€‚å¯ä»¥çœ‹
+ * åˆ°ï¼Œè¿™ä¸¤ä¸ªæ–¹æ³•éƒ½æ˜¯ä½œä¸ºå­˜å‚¨å’Œæ¢å¤è¿›ç¨‹çš„ä¸€éƒ¨åˆ†æ˜Žç¡®è°ƒç”¨çš„ï¼ˆæ³¨æ„å†™å…¥åºåˆ—åŒ–æ–‡ä»¶å’Œä»Žä¸­è¯»å›žçš„é¡ºåºä¸èƒ½ æ”¹å˜ï¼‰ã€‚æ‰€ä»¥ä¸ºäº†ä½¿CADState.java
+ * æ­£ç¡®è¿è¡Œèµ·æ¥ï¼Œå¿…é¡»é‡‡ç”¨ä¸‹è¿°ä¸‰ç§æ–¹æ³•ä¹‹ä¸€ï¼š
+ *  (1) ä¸ºå‡ ä½•å½¢çŠ¶æ·»åŠ ä¸€ä¸ªserializeStaticState()å’Œ deserializeStaticState()ã€‚ 
+ *  (2) åˆ é™¤Vector shapeTypesä»¥åŠä¸Žä¹‹æœ‰å…³çš„æ‰€æœ‰ä»£ç  
+ *  (3) åœ¨å‡ ä½•å½¢çŠ¶å†…æ·»åŠ å¯¹æ–°åºåˆ—åŒ–å’Œæ’¤æ¶ˆåºåˆ—åŒ–é™æ€æ–¹æ³•çš„è°ƒç”¨ è¦æ³¨æ„çš„å¦ä¸€ä¸ªé—®é¢˜æ˜¯å®‰å…¨ï¼Œå› ä¸ºåºåˆ—åŒ–å¤„ç†ä¹Ÿä¼šå°†private æ•°æ®ä¿å­˜ä¸‹æ¥ã€‚
+ *  è‹¥æœ‰éœ€è¦ä¿å¯†çš„å­—æ®µï¼Œåº”å°†å…¶ æ ‡è®°æˆtransientã€‚ä½†åœ¨è¿™ä¹‹åŽï¼Œå¿…é¡»è®¾è®¡ä¸€ç§å®‰å…¨çš„ä¿¡æ¯ä¿å­˜æ–¹æ³•ã€‚è¿™æ ·ä¸€æ¥ï¼Œä¸€æ—¦éœ€è¦æ¢å¤ï¼Œå°±å¯ä»¥é‡è®¾é‚£äº›private å˜é‡ã€‚
  */
 
 public class SerializableCADState {

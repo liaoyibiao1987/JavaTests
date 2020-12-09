@@ -14,26 +14,26 @@ class Data implements Serializable {
 	}
 }
 /*
- * ½¨Á¢ÁËÐí¶àÁ´½Ó¶ÔÏóµÄÒ»¸ö¡°Worm¡±£¨Èä³æ£©£¬Ã¿¸ö¶ÔÏó¶¼ÓëWorm ÖÐµÄÏÂÒ»¶ÎÁ´ ½Ó£¬Í¬Ê±ÓÖÓëÊôÓÚ²»Í¬Àà£¨Data£©µÄ¶ÔÏó¾ä±úÊý×éÁ´½Ó
- * ¸üÓÐÈ¤µÄÊÇ£¬Worm ÄÚµÄData ¶ÔÏóÊý×éÊÇÓÃËæ»úÊý×Ö³õÊ¼»¯µÄ£¨ÕâÑù±ã²»ÓÃ»³ÒÉ±àÒëÆ÷±£ÁôÁËÄ³ÖÖÔ­Ê¼ÐÅ Ï¢£©¡£Ã¿¸ö Worm ¶Î¶¼ÓÃÒ»¸ö Char
- * ±ê¼Ç¡£Õâ¸öChar ÊÇÔÚÖØ¸´Éú³ÉÁ´½ÓµÄ Worm ÁÐ±íÊ±×Ô¶¯²úÉúµÄ¡£´´½¨Ò»¸ö Worm
- * Ê±£¬Ðè¸æËß¹¹½¨Æ÷Ï£ÍûËüÓÐ¶à³¤¡£Îª²úÉúÏÂÒ»¸ö¾ä±ú£¨next£©£¬Ëü×ÜÊÇÓÃ¼õÈ¥ 1 µÄ³¤¶ÈÀ´µ÷ÓÃWorm ¹¹½¨Æ÷¡£×îºóÒ»¸önext
- * ¾ä±úÔò±£³ÖÎªnull£¨¿Õ£©£¬±íÊ¾ÒÑµÖ´ï Worm µÄÎ²²¿¡£ ÉÏÃæµÄËùÓÐ²Ù×÷¶¼ÊÇÎªÁË¼ÓÉîÊÂÇéµÄ¸´ÔÓ³Ì¶È£¬¼Ó´ó¶ÔÏóÐòÁÐ»¯µÄÄÑ¶È¡£È»¶ø£¬ÕæÕýµÄÐòÁÐ»¯¹ý³ÌÈ´ÊÇ·Ç³£
- * ¼òµ¥µÄ¡£Ò»µ©´ÓÁíÍâÄ³¸öÁ÷Àï´´½¨ÁËObjectOutputStream£¬writeObject()¾Í»áÐòÁÐ»¯¶ÔÏó¡£×¢ÒâÒ²¿ÉÒÔÎª Ò»¸öStringµ÷ÓÃ
- * writeObject()¡£Òà¿ÉÊ¹ÓÃÓëDataOutputStream ÏàÍ¬µÄ·½·¨Ð´ÈëËùÓÐ»ù±¾Êý¾ÝÀàÐÍ£¨ËüÃÇ ÓÐÏàÍ¬µÄ½Ó¿Ú£©¡£
- * ÓÐÁ½¸öµ¥¶ÀµÄtry¿é¿´ÆðÀ´ÊÇÀàËÆµÄ¡£µÚÒ»¸ö¶ÁÐ´µÄÊÇÎÄ¼þ£¬¶øÁíÒ»¸ö¶ÁÐ´µÄÊÇÒ»¸ö ByteArray£¨×Ö½ÚÊý ×é£©¡£¿ÉÀûÓÃ¶ÔÈÎºÎDataInputStream
- * »òÕßDataOutputStreamµÄÐòÁÐ»¯À´¶ÁÐ´ÌØ¶¨µÄ¶ÔÏó£»ÕýÈçÔÚ¹ØÓÚÁ¬Íø µÄÄÇÒ»ÕÂ»á½²µ½µÄÄÇÑù£¬ÕâÐ©¶ÔÏóÉõÖÁ°üÀ¨ÍøÂç¡£
+ * å»ºç«‹äº†è®¸å¤šé“¾æŽ¥å¯¹è±¡çš„ä¸€ä¸ªâ€œWormâ€ï¼ˆè •è™«ï¼‰ï¼Œæ¯ä¸ªå¯¹è±¡éƒ½ä¸ŽWorm ä¸­çš„ä¸‹ä¸€æ®µé“¾ æŽ¥ï¼ŒåŒæ—¶åˆä¸Žå±žäºŽä¸åŒç±»ï¼ˆDataï¼‰çš„å¯¹è±¡å¥æŸ„æ•°ç»„é“¾æŽ¥
+ * æ›´æœ‰è¶£çš„æ˜¯ï¼ŒWorm å†…çš„Data å¯¹è±¡æ•°ç»„æ˜¯ç”¨éšæœºæ•°å­—åˆå§‹åŒ–çš„ï¼ˆè¿™æ ·ä¾¿ä¸ç”¨æ€€ç–‘ç¼–è¯‘å™¨ä¿ç•™äº†æŸç§åŽŸå§‹ä¿¡ æ¯ï¼‰ã€‚æ¯ä¸ª Worm æ®µéƒ½ç”¨ä¸€ä¸ª Char
+ * æ ‡è®°ã€‚è¿™ä¸ªChar æ˜¯åœ¨é‡å¤ç”Ÿæˆé“¾æŽ¥çš„ Worm åˆ—è¡¨æ—¶è‡ªåŠ¨äº§ç”Ÿçš„ã€‚åˆ›å»ºä¸€ä¸ª Worm
+ * æ—¶ï¼Œéœ€å‘Šè¯‰æž„å»ºå™¨å¸Œæœ›å®ƒæœ‰å¤šé•¿ã€‚ä¸ºäº§ç”Ÿä¸‹ä¸€ä¸ªå¥æŸ„ï¼ˆnextï¼‰ï¼Œå®ƒæ€»æ˜¯ç”¨å‡åŽ» 1 çš„é•¿åº¦æ¥è°ƒç”¨Worm æž„å»ºå™¨ã€‚æœ€åŽä¸€ä¸ªnext
+ * å¥æŸ„åˆ™ä¿æŒä¸ºnullï¼ˆç©ºï¼‰ï¼Œè¡¨ç¤ºå·²æŠµè¾¾ Worm çš„å°¾éƒ¨ã€‚ ä¸Šé¢çš„æ‰€æœ‰æ“ä½œéƒ½æ˜¯ä¸ºäº†åŠ æ·±äº‹æƒ…çš„å¤æ‚ç¨‹åº¦ï¼ŒåŠ å¤§å¯¹è±¡åºåˆ—åŒ–çš„éš¾åº¦ã€‚ç„¶è€Œï¼ŒçœŸæ­£çš„åºåˆ—åŒ–è¿‡ç¨‹å´æ˜¯éžå¸¸
+ * ç®€å•çš„ã€‚ä¸€æ—¦ä»Žå¦å¤–æŸä¸ªæµé‡Œåˆ›å»ºäº†ObjectOutputStreamï¼ŒwriteObject()å°±ä¼šåºåˆ—åŒ–å¯¹è±¡ã€‚æ³¨æ„ä¹Ÿå¯ä»¥ä¸º ä¸€ä¸ªStringè°ƒç”¨
+ * writeObject()ã€‚äº¦å¯ä½¿ç”¨ä¸ŽDataOutputStream ç›¸åŒçš„æ–¹æ³•å†™å…¥æ‰€æœ‰åŸºæœ¬æ•°æ®ç±»åž‹ï¼ˆå®ƒä»¬ æœ‰ç›¸åŒçš„æŽ¥å£ï¼‰ã€‚
+ * æœ‰ä¸¤ä¸ªå•ç‹¬çš„tryå—çœ‹èµ·æ¥æ˜¯ç±»ä¼¼çš„ã€‚ç¬¬ä¸€ä¸ªè¯»å†™çš„æ˜¯æ–‡ä»¶ï¼Œè€Œå¦ä¸€ä¸ªè¯»å†™çš„æ˜¯ä¸€ä¸ª ByteArrayï¼ˆå­—èŠ‚æ•° ç»„ï¼‰ã€‚å¯åˆ©ç”¨å¯¹ä»»ä½•DataInputStream
+ * æˆ–è€…DataOutputStreamçš„åºåˆ—åŒ–æ¥è¯»å†™ç‰¹å®šçš„å¯¹è±¡ï¼›æ­£å¦‚åœ¨å…³äºŽè¿žç½‘ çš„é‚£ä¸€ç« ä¼šè®²åˆ°çš„é‚£æ ·ï¼Œè¿™äº›å¯¹è±¡ç”šè‡³åŒ…æ‹¬ç½‘ç»œã€‚
  */
 
 /*
- * ¿ÉÒÔ¿´³ö£¬×°Åä»ØÔ­×´µÄ¶ÔÏóÈ·Êµ°üº¬ÁËÔ­À´ÄÇ¸ö¶ÔÏóÀï°üº¬µÄËùÓÐÁ´½Ó¡£
- * ×¢ÒâÔÚ¶ÔÒ»¸öSerializable£¨¿ÉÐòÁÐ»¯£©¶ÔÏó½øÐÐÖØÐÂ×°ÅäµÄ¹ý³ÌÖÐ£¬
+ * å¯ä»¥çœ‹å‡ºï¼Œè£…é…å›žåŽŸçŠ¶çš„å¯¹è±¡ç¡®å®žåŒ…å«äº†åŽŸæ¥é‚£ä¸ªå¯¹è±¡é‡ŒåŒ…å«çš„æ‰€æœ‰é“¾æŽ¥ã€‚
+ * æ³¨æ„åœ¨å¯¹ä¸€ä¸ªSerializableï¼ˆå¯åºåˆ—åŒ–ï¼‰å¯¹è±¡è¿›è¡Œé‡æ–°è£…é…çš„è¿‡ç¨‹ä¸­ï¼Œ
  * 
- * ²»»áµ÷ÓÃÈÎºÎ¹¹½¨Æ÷£¨ÉõÖÁÄ¬ÈÏ¹¹½¨Æ÷£©¡£
+ * ä¸ä¼šè°ƒç”¨ä»»ä½•æž„å»ºå™¨ï¼ˆç”šè‡³é»˜è®¤æž„å»ºå™¨ï¼‰ã€‚
  * 
- * Õû¸ö¶ÔÏó¶¼ÊÇÍ¨¹ý´ÓInputStreamÖÐÈ¡µÃÊý¾Ý»Ö¸´µÄ¡£ ×÷ÎªJava 1.1ÌØÐÔµÄÒ»ÖÖ£¬ÎÒÃÇ×¢Òâµ½¶ÔÏóµÄÐòÁÐ»¯²¢²»ÊôÓÚÐÂµÄ ReaderºÍ
- * Writer²ã´Î½á¹¹µÄÒ»²¿·Ö£¬¶ø ÊÇÑØÓÃÀÏÊ½µÄInputStream ºÍOutputStream ½á¹¹¡£ËùÒÔÔÚÒ»Ð©ÌØÊâµÄ³¡ºÏÏÂ£¬²»µÃ²»»ìºÏÊ¹ÓÃÁ½ÖÖÀàÐÍµÄ²ã
- * ´Î½á¹¹¡£
+ * æ•´ä¸ªå¯¹è±¡éƒ½æ˜¯é€šè¿‡ä»ŽInputStreamä¸­å–å¾—æ•°æ®æ¢å¤çš„ã€‚ ä½œä¸ºJava 1.1ç‰¹æ€§çš„ä¸€ç§ï¼Œæˆ‘ä»¬æ³¨æ„åˆ°å¯¹è±¡çš„åºåˆ—åŒ–å¹¶ä¸å±žäºŽæ–°çš„ Readerå’Œ
+ * Writerå±‚æ¬¡ç»“æž„çš„ä¸€éƒ¨åˆ†ï¼Œè€Œ æ˜¯æ²¿ç”¨è€å¼çš„InputStream å’ŒOutputStream ç»“æž„ã€‚æ‰€ä»¥åœ¨ä¸€äº›ç‰¹æ®Šçš„åœºåˆä¸‹ï¼Œä¸å¾—ä¸æ··åˆä½¿ç”¨ä¸¤ç§ç±»åž‹çš„å±‚
+ * æ¬¡ç»“æž„ã€‚
  */
 
 public class SerializableWorm implements Serializable {

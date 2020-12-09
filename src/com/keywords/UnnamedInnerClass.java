@@ -14,12 +14,12 @@ public class UnnamedInnerClass {
 
 			@Override
 			public void beFriendly() {
-				System.out.println("²ä²äÄã^_^");
+				System.out.println("è¹­è¹­ä½ ^_^");
 			}
 
 			@Override
 			public void play() {
-				System.out.println("°Ñ·ÉÅÌµğ¸øÄã£¬±ÆÄã°Ñ·ÉÅÌ¶ª³öÈ¥£¬È»ºóËüÔÙ¼ñ»ØÀ´ÈÃÄã¼ÌĞøÈÓ£¬Á¬Ğø500´Î^_^");
+				System.out.println("æŠŠé£ç›˜å¼ç»™ä½ ï¼Œé€¼ä½ æŠŠé£ç›˜ä¸¢å‡ºå»ï¼Œç„¶åå®ƒå†æ¡å›æ¥è®©ä½ ç»§ç»­æ‰”ï¼Œè¿ç»­500æ¬¡^_^");
 			}
 		};
 		dog.beFriendly();
@@ -37,9 +37,9 @@ public class UnnamedInnerClass {
 			private int cost;
 
 			// Instance initialization for each object:
-			// ÊµÀı»¯·½·¨
+			// å®ä¾‹åŒ–æ–¹æ³•
 			{
-				// ËÄÉáÎåÈë
+				// å››èˆäº”å…¥
 				cost = Math.round(price);
 				if (cost > 100)
 					System.out.println("Over budget!");
@@ -47,14 +47,14 @@ public class UnnamedInnerClass {
 
 			@Override
 			public void beFriendly() {
-				System.out.println("²ä²äÄã^_^");
+				System.out.println("è¹­è¹­ä½ ^_^");
 			}
 
 			@Override
 			public void play() {
-				System.out.println("°Ñ·ÉÅÌµğ¸øÄã£¬±ÆÄã°Ñ·ÉÅÌ¶ª³öÈ¥£¬È»ºóËüÔÙ¼ñ»ØÀ´ÈÃÄã¼ÌĞøÈÓ£¬Á¬Ğø500´Î^_^");
+				System.out.println("æŠŠé£ç›˜å¼ç»™ä½ ï¼Œé€¼ä½ æŠŠé£ç›˜ä¸¢å‡ºå»ï¼Œç„¶åå®ƒå†æ¡å›æ¥è®©ä½ ç»§ç»­æ‰”ï¼Œè¿ç»­500æ¬¡^_^");
 			}
-			// åeÕ`µÄ·½·¨
+			// éŒ¯èª¤çš„æ–¹æ³•
 			/*
 			 * public String TestRead() { return desc; }
 			 */
@@ -63,7 +63,7 @@ public class UnnamedInnerClass {
 
 	public Pet TestUnnamedInner3() {
 
-		// ÄÚ²¿ÀàÏëÒª·ÃÎÊÍâ²¿Àà£¨·½·¨£©µÄ±äÁ¿£¬Ôò±äÁ¿±ØĞëÎªfinal
+		// å†…éƒ¨ç±»æƒ³è¦è®¿é—®å¤–éƒ¨ç±»ï¼ˆæ–¹æ³•ï¼‰çš„å˜é‡ï¼Œåˆ™å˜é‡å¿…é¡»ä¸ºfinal
 		// String dest = "dest";
 		// float dest = 25;
 
@@ -81,9 +81,9 @@ public class UnnamedInnerClass {
 			private int cost;
 
 			// Instance initialization for each object:
-			// ÊµÀı»¯·½·¨
+			// å®ä¾‹åŒ–æ–¹æ³•
 			{
-				// ËÄÉáÎåÈë
+				// å››èˆäº”å…¥
 				cost = Math.round(price);
 				if (cost > 100)
 					System.out.println("Over budget!");
@@ -91,14 +91,14 @@ public class UnnamedInnerClass {
 
 			@Override
 			public void beFriendly() {
-				System.out.println("²ä²äÄã^_^");
+				System.out.println("è¹­è¹­ä½ ^_^");
 			}
 
 			@Override
 			public void play() {
-				System.out.println("°Ñ·ÉÅÌµğ¸øÄã£¬±ÆÄã°Ñ·ÉÅÌ¶ª³öÈ¥£¬È»ºóËüÔÙ¼ñ»ØÀ´ÈÃÄã¼ÌĞøÈÓ£¬Á¬Ğø500´Î^_^");
+				System.out.println("æŠŠé£ç›˜å¼ç»™ä½ ï¼Œé€¼ä½ æŠŠé£ç›˜ä¸¢å‡ºå»ï¼Œç„¶åå®ƒå†æ¡å›æ¥è®©ä½ ç»§ç»­æ‰”ï¼Œè¿ç»­500æ¬¡^_^");
 			}
-			// åeÕ`µÄ·½·¨
+			// éŒ¯èª¤çš„æ–¹æ³•
 			/*
 			 * public String TestRead() { return desc; }
 			 */
@@ -108,24 +108,24 @@ public class UnnamedInnerClass {
 	public static class Dog implements Pet {
 		@Override
 		public void beFriendly() {
-			System.out.println("²ä²äÄã^_^");
+			System.out.println("è¹­è¹­ä½ ^_^");
 		}
 
 		@Override
 		public void play() {
-			System.out.println("°Ñ·ÉÅÌµğ¸øÄã£¬±ÆÄã°Ñ·ÉÅÌ¶ª³öÈ¥£¬È»ºóËüÔÙ¼ñ»ØÀ´ÈÃÄã¼ÌĞøÈÓ£¬Á¬Ğø500´Î^_^");
+			System.out.println("æŠŠé£ç›˜å¼ç»™ä½ ï¼Œé€¼ä½ æŠŠé£ç›˜ä¸¢å‡ºå»ï¼Œç„¶åå®ƒå†æ¡å›æ¥è®©ä½ ç»§ç»­æ‰”ï¼Œè¿ç»­500æ¬¡^_^");
 		}
 	}
 
 	public class Fox implements Pet {
 		@Override
 		public void beFriendly() {
-			System.out.println("ÎÒÊÇºüÀê^_^");
+			System.out.println("æˆ‘æ˜¯ç‹ç‹¸^_^");
 		}
 
 		@Override
 		public void play() {
-			System.out.println("ÎÒÊÇºüÀê³ÇµÄ¹Ú¾ü£¬Á¬Ğø500´Î^_^");
+			System.out.println("æˆ‘æ˜¯ç‹ç‹¸åŸçš„å† å†›ï¼Œè¿ç»­500æ¬¡^_^");
 		}
 	}
 

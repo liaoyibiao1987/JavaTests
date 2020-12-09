@@ -5,10 +5,10 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
 public class MyClassLoader extends ClassLoader {
-	/** ÀàÃû **/
+	/** ç±»å **/
 	private String name;
 
-	/**Í¨¹ı¹¹Ôì·½·¨ÉèÖÃ¸¸Àà¼ÓÔØÆ÷ºÍÒªÈÈ¼ÓÔØµÄÀàÃû**/  
+	/**é€šè¿‡æ„é€ æ–¹æ³•è®¾ç½®çˆ¶ç±»åŠ è½½å™¨å’Œè¦çƒ­åŠ è½½çš„ç±»å**/  
     public MyClassLoader(ClassLoader parent , String name) {  
         super(parent);  
         if(name == null || name.length() <= 0)  
@@ -20,19 +20,19 @@ public class MyClassLoader extends ClassLoader {
 	@Override
 	protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
 		Class<?> clazz = null;
-		/** Èç¹ûÊÇÎÒÃÇÏëÒªÈÈ¼ÓÔØµÄÀàÔòµ÷ÓÃÎÒÃÇÖØĞ´µÄfindClass·½·¨À´¼ÓÔØ **/
+		/** å¦‚æœæ˜¯æˆ‘ä»¬æƒ³è¦çƒ­åŠ è½½çš„ç±»åˆ™è°ƒç”¨æˆ‘ä»¬é‡å†™çš„findClassæ–¹æ³•æ¥åŠ è½½ **/
 		if (this.name.equals(name) && !"java".equals(name)) {
-			/** ÏÈ¿´¿´ÒªÈÈ¼ÓÔØµÄÀàÖ®Ç°ÊÇ·ñÒÑ¾­¼ÓÔØ¹ıÁË£¬ÒòÎªÒ»¸öÀà¼ÓÔØÆ÷Ö»ÄÜ¼ÓÔØÒ»¸öÀàÒ»´Î£¬¼ÓÔØ¶à´Î»á±¨Òì³£ **/
+			/** å…ˆçœ‹çœ‹è¦çƒ­åŠ è½½çš„ç±»ä¹‹å‰æ˜¯å¦å·²ç»åŠ è½½è¿‡äº†ï¼Œå› ä¸ºä¸€ä¸ªç±»åŠ è½½å™¨åªèƒ½åŠ è½½ä¸€ä¸ªç±»ä¸€æ¬¡ï¼ŒåŠ è½½å¤šæ¬¡ä¼šæŠ¥å¼‚å¸¸ **/
 			clazz = findLoadedClass(name);
-			/** clazz==nullËµÃ÷Ö®Ç°Ã»ÓĞ¼ÓÔØ¹ı **/
+			/** clazz==nullè¯´æ˜ä¹‹å‰æ²¡æœ‰åŠ è½½è¿‡ **/
 			if (clazz == null)
 				clazz = findClass(name);
 
 			/**
-			 * ÀàµÄÉúÃüÖÜÆÚ°üÀ¨£º¼ÓÔØ¡¢ÑéÖ¤¡¢×¼±¸¡¢½âÎö¡¢³õÊ¼»¯¡¢Ê¹ÓÃ¡¢Ğ¶ÔØ¡£ÆäÖĞÑéÖ¤¡¢×¼±¸¡¢½âÎöÍ³³ÆÎªÁ¬½Ó Èç¹ûÒªÁ¬½ÓÀà
+			 * ç±»çš„ç”Ÿå‘½å‘¨æœŸåŒ…æ‹¬ï¼šåŠ è½½ã€éªŒè¯ã€å‡†å¤‡ã€è§£æã€åˆå§‹åŒ–ã€ä½¿ç”¨ã€å¸è½½ã€‚å…¶ä¸­éªŒè¯ã€å‡†å¤‡ã€è§£æç»Ÿç§°ä¸ºè¿æ¥ å¦‚æœè¦è¿æ¥ç±»
 			 */
 			if (resolve)
-				resolveClass(clazz);// Èç¹ûÀàÒÑÁ¬½Ó¹ı£¬resolveClass·½·¨»áÖ±½Ó·µ»Ø
+				resolveClass(clazz);// å¦‚æœç±»å·²è¿æ¥è¿‡ï¼ŒresolveClassæ–¹æ³•ä¼šç›´æ¥è¿”å›
 			return clazz;
 		}
 		return super.loadClass(name, resolve);
@@ -46,13 +46,13 @@ public class MyClassLoader extends ClassLoader {
 	}
 
 	/**
-	 * ÀàÃû×ªÎªÎÄ¼şÃû
+	 * ç±»åè½¬ä¸ºæ–‡ä»¶å
 	 * 
 	 * @param name
 	 * @return
 	 */
 	private String c2f(String name) {
-		/** ±àÒëºóµÄclassÎÄ¼ş´æ·ÅµÄÄ¿Â¼ **/
+		/** ç¼–è¯‘åçš„classæ–‡ä»¶å­˜æ”¾çš„ç›®å½• **/
 		String baseDir = "E:\\Pingpingliao\\android\\java\\TestJava\\JavaTests\\bin\\com\\TestJava";
 		name = name.replace(".", File.separator);
 		name = baseDir + name + ".class";
@@ -60,7 +60,7 @@ public class MyClassLoader extends ClassLoader {
 	}
 
 	/**
-	 * ¶ÁÈ¡ÎÄ¼şbyteÊı×é
+	 * è¯»å–æ–‡ä»¶byteæ•°ç»„
 	 * 
 	 * @param fileName
 	 * @return
@@ -70,24 +70,24 @@ public class MyClassLoader extends ClassLoader {
 		FileChannel channel = null;
 		byte[] bytes = null;
 		try {
-			/** Ëæ»ú´æÈ¡ÎÄ¼ş¶ÔÏó£¬Ö»¶ÁÈ¡Ä£Ê½ **/
+			/** éšæœºå­˜å–æ–‡ä»¶å¯¹è±¡ï¼Œåªè¯»å–æ¨¡å¼ **/
 			file = new RandomAccessFile(fileName, "r");
-			/** NIOÎÄ¼şÍ¨µÀ **/
+			/** NIOæ–‡ä»¶é€šé“ **/
 			channel = file.getChannel();
-			/** NIO×Ö½Ú»º³å **/
+			/** NIOå­—èŠ‚ç¼“å†² **/
 			ByteBuffer buffer = ByteBuffer.allocate(1024);
 			int size = (int) channel.size();
 			bytes = new byte[size];
 			int index = 0;
-			/** ´ÓNIOÎÄ¼şÍ¨µÀ¶ÁÈ¡Êı¾İ **/
+			/** ä»NIOæ–‡ä»¶é€šé“è¯»å–æ•°æ® **/
 			while (channel.read(buffer) > 0) {
-				/** ×Ö½Ú»º³å´ÓĞ´Ä£Ê½×ªÎª¶ÁÈ¡Ä£Ê½ **/
+				/** å­—èŠ‚ç¼“å†²ä»å†™æ¨¡å¼è½¬ä¸ºè¯»å–æ¨¡å¼ **/
 				buffer.flip();
 				while (buffer.hasRemaining()) {
 					bytes[index] = buffer.get();
 					++index;
 				}
-				/** ×Ö½Ú»º³åµÄreaderIndex¡¢writerIndexÖÃÁã **/
+				/** å­—èŠ‚ç¼“å†²çš„readerIndexã€writerIndexç½®é›¶ **/
 				buffer.clear();
 			}
 		} catch (FileNotFoundException e) {
@@ -114,7 +114,7 @@ public class MyClassLoader extends ClassLoader {
 	}
 
 	/**
-	 * ÈÈ¼ÓÔØÀà
+	 * çƒ­åŠ è½½ç±»
 	 * 
 	 * @return
 	 */

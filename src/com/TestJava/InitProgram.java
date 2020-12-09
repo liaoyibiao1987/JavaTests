@@ -10,14 +10,14 @@ public class InitProgram {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		InnerClass2.TestInner2();
-		System.out.println("³ÌĞò¿ªÊ¼... ...");
+		System.out.println("ç¨‹åºå¼€å§‹... ...");
 		TestFinal();
 		TestInnerClass2();
 		// TestJVM();
 		// CustomClassTest.TestLoader();
 	}
 
-	// ÎŞ·¨·ÃÎÊTestDefualt£¬Ä¬ÈÏÎª°üÄÚ¿ÉÒÔ¼û
+	// æ— æ³•è®¿é—®TestDefualtï¼Œé»˜è®¤ä¸ºåŒ…å†…å¯ä»¥è§
 	public static void name() {
 		// com.ppl.TestJava.TestDefaultAccess td = new
 		// com.ppl.TestJava.TestDefaultAccess();
@@ -36,11 +36,11 @@ public class InitProgram {
 
 	public static void TestFinal() {
 		FinalArgument fArgument = new FinalArgument();
-		// g ÎŞÂÛÈçºÎ¸³Öµ¶¼ÊÇnull ´Ë´¦ÓĞ´í
+		// g æ— è®ºå¦‚ä½•èµ‹å€¼éƒ½æ˜¯null æ­¤å¤„æœ‰é”™
 		// fArgument.without(new Gizmo());
 		// fArgument.with(null);
 		fArgument.with(new Gizmo());
-		System.out.println("²âÊÔ ¼ÆËã½á¹û£º" + fArgument.g(100));
+		System.out.println("æµ‹è¯• è®¡ç®—ç»“æœï¼š" + fArgument.g(100));
 	}
 
 	public static void TestInnerClass() {
@@ -49,7 +49,7 @@ public class InitProgram {
 		InnerClass q = new InnerClass();
 		// Defining handles to inner classes:
 		InnerClass.Contents c = q.cont();
-		/* ÎŞ·¨·ÃÎÊÄÚ²¿Àà */
+		/* æ— æ³•è®¿é—®å†…éƒ¨ç±» */
 		// InnerClass.Contents cc = new InnerClass.Contents();
 		InnerClass.Destination d = q.to("Borneo");
 	}

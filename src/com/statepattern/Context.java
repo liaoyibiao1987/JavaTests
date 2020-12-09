@@ -8,10 +8,10 @@ public class Context {
 	static class DeductState implements State {
 
 		public void doAction(Context context) {
-			System.out.println("ÉÌÆ·Âô³ö£¬×¼±¸¼õ¿â´æ");
+			System.out.println("å•†å“å–å‡ºï¼Œå‡†å¤‡å‡åº“å­˜");
 			context.setState(this);
 
-			// ... Ö´ĞĞ¼õ¿â´æµÄ¾ßÌå²Ù×÷
+			// ... æ‰§è¡Œå‡åº“å­˜çš„å…·ä½“æ“ä½œ
 		}
 
 		public String toString() {
@@ -33,10 +33,10 @@ public class Context {
 		}
 
 		public void doAction(Context context) {
-			System.out.println("¸ø´ËÉÌÆ·²¹¿â´æ");
+			System.out.println("ç»™æ­¤å•†å“è¡¥åº“å­˜");
 			context.setState(this);
 
-			// ... Ö´ĞĞ¼Ó¿â´æµÄ¾ßÌå²Ù×÷
+			// ... æ‰§è¡ŒåŠ åº“å­˜çš„å…·ä½“æ“ä½œ
 		}
 
 		public String toString() {
@@ -61,18 +61,18 @@ public class Context {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ÎÒÃÇĞèÒª²Ù×÷µÄÊÇ iPhone X
+		// æˆ‘ä»¬éœ€è¦æ“ä½œçš„æ˜¯ iPhone X
 		Context context = new Context("iPhone X");
 
-		// ¿´¿´ÔõÃ´½øĞĞ²¹¿â´æ²Ù×÷
+		// çœ‹çœ‹æ€ä¹ˆè¿›è¡Œè¡¥åº“å­˜æ“ä½œ
 		State revertState = new RevertState(2);
 		revertState.doAction(context);
 
-		// Í¬ÑùµÄ£¬¼õ¿â´æ²Ù×÷Ò²·Ç³£¼òµ¥
+		// åŒæ ·çš„ï¼Œå‡åº“å­˜æ“ä½œä¹Ÿéå¸¸ç®€å•
 		State deductState = new DeductState();
 		deductState.doAction(context);
 
-		// Èç¹ûĞèÒªÎÒÃÇ¿ÉÒÔ»ñÈ¡µ±Ç°µÄ×´Ì¬
+		// å¦‚æœéœ€è¦æˆ‘ä»¬å¯ä»¥è·å–å½“å‰çš„çŠ¶æ€
 		// context.getState().toString();
 	}
 

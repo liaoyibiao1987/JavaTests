@@ -6,7 +6,7 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
 /**
- * ¿Í»§¶Ë²âÊÔ£¬ÔÚ¿Í»§¶Ëµ÷ÓÃÔ¶³Ì¶ÔÏóÉÏµÄÔ¶³Ì·½·¨£¬²¢·µ»Ø½á¹û¡£
+ * å®¢æˆ·ç«¯æµ‹è¯•ï¼Œåœ¨å®¢æˆ·ç«¯è°ƒç”¨è¿œç¨‹å¯¹è±¡ä¸Šçš„è¿œç¨‹æ–¹æ³•ï¼Œå¹¶è¿”å›ç»“æœã€‚
  */
 @SuppressWarnings("unchecked")
 public class Client {
@@ -15,7 +15,7 @@ public class Client {
             CompareHelper compareHelper;
  
             compareHelper = (CompareHelper) Naming.lookup("rmi://localhost:9090/StringCompareHelper");
-            System.out.println(compareHelper.append("ÄãºÃ", "ÉµµôµÄ¿¨ÂİË¿"));
+            System.out.println(compareHelper.append("ä½ å¥½", "å‚»æ‰çš„å¡èºä¸"));
             System.out.println(compareHelper.compare("abc", "abc"));
  
             compareHelper = (CompareHelper) Naming.lookup("rmi://localhost:9090/IntegerCompareHelper");

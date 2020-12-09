@@ -6,23 +6,23 @@ public class DragonSlayer {
 	}
 	
 	/**
-	 * ÄîÄ§Öä²ßÂÔ
+	 * å¿µé­”å’’ç­–ç•¥
 	 */
 	public static class SpellStrategy implements DragonSlayingStrategy{
 	 
 	    @Override
 	    public void execute() {
-	        System.out.println("Ä§Öä²ßÂÔ: ÄîÄ§Öä°ÑÁú·âÓ¡µô");
+	        System.out.println("é­”å’’ç­–ç•¥: å¿µé­”å’’æŠŠé¾™å°å°æŽ‰");
 	    }
 	}
 	
 	/**
-	 * »ðÆ÷²ßÂÔ
+	 * ç«å™¨ç­–ç•¥
 	 */
 	public static class FireStrategy implements DragonSlayingStrategy {
 	    @Override
 	    public void execute() {
-	        System.out.println("»ðÆ÷²ßÂÔ: ÓÃ»ðÉÕ");
+	        System.out.println("ç«å™¨ç­–ç•¥: ç”¨ç«çƒ§");
 	    }
 	}
 	
@@ -30,32 +30,32 @@ public class DragonSlayer {
 	
 	
 	/**
-     * ÍÀÁú²ßÂÔ
+     * å± é¾™ç­–ç•¥
      */
     private DragonSlayingStrategy strategy;
  
  
     /**
-     * Èç¹ûÊÇ¿Õ²Î¹¹ÔìÆ÷, ÄÇÃ´¸³ÉÏÒ»¸öÄ¬ÈÏµÄ²ßÂÔ
+     * å¦‚æžœæ˜¯ç©ºå‚æž„é€ å™¨, é‚£ä¹ˆèµ‹ä¸Šä¸€ä¸ªé»˜è®¤çš„ç­–ç•¥
      */
     public DragonSlayer() {
         strategy = new DragonSlayingStrategy() {
             @Override
             public void execute() {
-                System.out.println("Ä¬ÈÏ²ßÂÔ: È­´ò½ÅÌß");
+                System.out.println("é»˜è®¤ç­–ç•¥: æ‹³æ‰“è„šè¸¢");
             }
         };
     }
  
     /**
-     * ´«ÈëÒ»¸ö²ßÂÔ, ¸ù¾ÝÕâ¸ö²ßÂÔÀ´½øÐÐÊµÀý»¯ÍÀÁúÓÂÊ¿
+     * ä¼ å…¥ä¸€ä¸ªç­–ç•¥, æ ¹æ®è¿™ä¸ªç­–ç•¥æ¥è¿›è¡Œå®žä¾‹åŒ–å± é¾™å‹‡å£«
      */
     public DragonSlayer(DragonSlayingStrategy strategy) {
         this.strategy = strategy;
     }
  
     /**
-     * ²ßÂÔÊÇ¿ÉÒÔËæÊ±±äµÄ, changeÒ»ÏÂ¾ÍºÃÁË
+     * ç­–ç•¥æ˜¯å¯ä»¥éšæ—¶å˜çš„, changeä¸€ä¸‹å°±å¥½äº†
      */
     public DragonSlayer changeStrategy(DragonSlayingStrategy strategy) {
         this.strategy = strategy;
@@ -63,7 +63,7 @@ public class DragonSlayer {
     }
  
     /**
-     * Ê¹ÓÃµ±Ç°²ßÂÔÀ´Ö´ÐÐÍÀÁú
+     * ä½¿ç”¨å½“å‰ç­–ç•¥æ¥æ‰§è¡Œå± é¾™
      */
     public void goToBattle() {
         this.strategy.execute();
@@ -72,44 +72,44 @@ public class DragonSlayer {
     
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ÓÐÒ»¸öÍÀÁúÓÂÊ¿
+		// æœ‰ä¸€ä¸ªå± é¾™å‹‡å£«
         DragonSlayer slayer = new DragonSlayer();
  
-        System.out.println("\nÓ×Áú³öÏÖÀ²");
+        System.out.println("\nå¹¼é¾™å‡ºçŽ°å•¦");
  
         slayer.goToBattle();
  
-        /*-************ÊÀ½ç°²¾²ÁËÆ¬¿Ì**************-*/
+        /*-************ä¸–ç•Œå®‰é™äº†ç‰‡åˆ»**************-*/
  
-        System.out.println("\n±ùÁú³öÏÖÀ²!");
+        System.out.println("\nå†°é¾™å‡ºçŽ°å•¦!");
  
-        //ÍÀÁúÓÂÊ¿·¢ÏÖ¿ÉÒÔÓÃ»ð¿ËÖÆËû, ÓÚÊÇ»»ÁË»ðÆ÷²ßÂÔ, ½øÐÐ¹¥»÷
+        //å± é¾™å‹‡å£«å‘çŽ°å¯ä»¥ç”¨ç«å…‹åˆ¶ä»–, äºŽæ˜¯æ¢äº†ç«å™¨ç­–ç•¥, è¿›è¡Œæ”»å‡»
         slayer.changeStrategy(new FireStrategy()).goToBattle();
  
-        /*-************ÊÀ½ç°²¾²ÁËÆ¬¿Ì**************-*/
+        /*-************ä¸–ç•Œå®‰é™äº†ç‰‡åˆ»**************-*/
  
-        System.out.println("\nÔ¶¹Å¾ÞÁú³öÏÖÀ²!");
+        System.out.println("\nè¿œå¤å·¨é¾™å‡ºçŽ°å•¦!");
  
-        // ¾ÞÁúÌ«Ç¿´óÁË, Ö»ÄÜ×°±¸ºÃÄîÄ§ÖäÕâ¸ö¼¼ÄÜ, È»ºó¹¥»÷
+        // å·¨é¾™å¤ªå¼ºå¤§äº†, åªèƒ½è£…å¤‡å¥½å¿µé­”å’’è¿™ä¸ªæŠ€èƒ½, ç„¶åŽæ”»å‡»
         slayer.changeStrategy(new SpellStrategy()).goToBattle();
  
-        /*-************ÊÀ½ç°²¾²ÁËÆ¬¿Ì**************-*/
+        /*-************ä¸–ç•Œå®‰é™äº†ç‰‡åˆ»**************-*/
  
-        System.out.println("\nÄ§Áú³öÏÖÀ²");
+        System.out.println("\né­”é¾™å‡ºçŽ°å•¦");
  
-        // ÍÀÁúÓÂÊ¿ÓÃ¹âÁËËùÓÐ²ßÂÔ, ÏÖ³¡Ñ§»áÁËÒ»¸öÐÂµÄ¼¼ÄÜ, »¹Ã»À´µÃ¼°¸øÕâ¸ö¼¼ÄÜÆðÃû×ÖÄØ, ÍÀÁúÒª½ô, ¿ì¿ì¿ì
+        // å± é¾™å‹‡å£«ç”¨å…‰äº†æ‰€æœ‰ç­–ç•¥, çŽ°åœºå­¦ä¼šäº†ä¸€ä¸ªæ–°çš„æŠ€èƒ½, è¿˜æ²¡æ¥å¾—åŠç»™è¿™ä¸ªæŠ€èƒ½èµ·åå­—å‘¢, å± é¾™è¦ç´§, å¿«å¿«å¿«
         slayer.changeStrategy(new DragonSlayingStrategy() {
             @Override
             public void execute() {
-                System.out.println("ÉñÃØ¼¼ÄÜ: ¶ÙÎò³öÒ»Ì×´ÓÌì¶ø½µµÄÕÆ·¨, ÈçÀ´ÉñÕÆ!");
+                System.out.println("ç¥žç§˜æŠ€èƒ½: é¡¿æ‚Ÿå‡ºä¸€å¥—ä»Žå¤©è€Œé™çš„æŽŒæ³•, å¦‚æ¥ç¥žæŽŒ!");
             }
         }).goToBattle();
  
-        /*-************ÊÀ½ç°²¾²ÁËÆ¬¿Ì**************-*/
-        System.out.println("\nÉñÁú³öÏÖÀ²");
+        /*-************ä¸–ç•Œå®‰é™äº†ç‰‡åˆ»**************-*/
+        System.out.println("\nç¥žé¾™å‡ºçŽ°å•¦");
  
-        // ÍÀÁúÓÂÊ¿ÀûÓÃº¯ÊýÊ½±à³Ì·¢Ã÷ÁËÒ»ÖÖÐÂµÄÉñ¼¶ÕÐÊ½: Ï´ÄÔ
-        slayer.changeStrategy(()-> System.out.println("Ï´ÄÔ²ßÂÔ: Ï´ÄÔ~~~~~~")).goToBattle();
+        // å± é¾™å‹‡å£«åˆ©ç”¨å‡½æ•°å¼ç¼–ç¨‹å‘æ˜Žäº†ä¸€ç§æ–°çš„ç¥žçº§æ‹›å¼: æ´—è„‘
+        slayer.changeStrategy(()-> System.out.println("æ´—è„‘ç­–ç•¥: æ´—è„‘~~~~~~")).goToBattle();
 	}
 
 }

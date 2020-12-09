@@ -10,11 +10,11 @@ public class TransferTester {
 		System.out.println(str);
 
 		Person person = new Person();
-		person.name = "ÁõµÂ»ª";
+		person.name = "åˆ˜å¾·å";
 		person.age = 61;
 		System.out.println(person.hashCode() + person.name + "\t\t" + person.age);
 		testPerson(person);
-		// personÄÚÈİ¸Ä±äÁË
+		// personå†…å®¹æ”¹å˜äº†
 		System.out.println(person.hashCode() + person.name + "\t\t" + person.age);
 		testPerson2(person);
 		System.out.println(person.hashCode() + person.name + "\t\t" + person.age);
@@ -25,16 +25,16 @@ public class TransferTester {
 	}
 
 	public static void testPerson(Person per) {
-		// 1.per±»¸³ÓèpersonÖµµÄ¿½±´£¬ÕâÀïÊÇÒ»¸ö¶ÔÏóµÄÒıÓÃ
-		// 2.testPerson·½·¨Ó¦ÓÃÓÚÕâ¸öÓ¦ÓÃ¡£perºÍpersonÖ¸ÏòÍ¬Ò»¶ÔÏó£¬¸Ã¶ÔÏóµÄ·ÖÊıÔö¼ÓÁË10
-		// 3.testPerson·½·¨½áÊøºó£¬per²»ÔÙÊ¹ÓÃ£¬personÖ¸ÏòµÄÄÇ¸ö¶ÔÏó·ÖÊıÔö¼ÓÁË10
-		per.name = "ĞŞ¸Ä¹ıµÄ.";
+		// 1.perè¢«èµ‹äºˆpersonå€¼çš„æ‹·è´ï¼Œè¿™é‡Œæ˜¯ä¸€ä¸ªå¯¹è±¡çš„å¼•ç”¨
+		// 2.testPersonæ–¹æ³•åº”ç”¨äºè¿™ä¸ªåº”ç”¨ã€‚perå’ŒpersonæŒ‡å‘åŒä¸€å¯¹è±¡ï¼Œè¯¥å¯¹è±¡çš„åˆ†æ•°å¢åŠ äº†10
+		// 3.testPersonæ–¹æ³•ç»“æŸåï¼Œperä¸å†ä½¿ç”¨ï¼ŒpersonæŒ‡å‘çš„é‚£ä¸ªå¯¹è±¡åˆ†æ•°å¢åŠ äº†10
+		per.name = "ä¿®æ”¹è¿‡çš„.";
 		per.age = 12;
 	}
 
 	public static void testPerson2(Person person) {
 		person = new Person();
-		person.name = "ÔÙ´ÎĞŞ¸Ä¹ıµÄ.";
+		person.name = "å†æ¬¡ä¿®æ”¹è¿‡çš„.";
 		person.age = 20;
 		System.out.println("===" + person.hashCode() + person.name + "\t\t" + person.age);
 	}
@@ -45,7 +45,7 @@ public class TransferTester {
 	}
 
 	/**
-	 * °ü×°Æ÷
+	 * åŒ…è£…å™¨
 	 */
 	public class PersonPack {
 		public Person person;

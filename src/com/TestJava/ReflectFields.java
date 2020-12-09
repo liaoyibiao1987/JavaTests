@@ -18,7 +18,7 @@ public class ReflectFields {
 			return sb.toString();
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "�޷���ȡ";
+			return "";
 		}
 	}
 

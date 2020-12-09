@@ -14,7 +14,7 @@ public class Mammoth {
 	}
 
 	/**
-	 * ����״̬
+	 * 生气状态
 	 */
 	public class AngryState implements State {
 
@@ -26,17 +26,17 @@ public class Mammoth {
 
 		@Override
 		public void observe() {
-			System.out.printf("%s ���ڱ���״̬!\n", mammoth);
+			System.out.printf("%s 处于暴躁状态!\n", mammoth);
 		}
 
 		@Override
 		public void onEnterState() {
-			System.out.printf("%s ��ʼ������!\n", mammoth);
+			System.out.printf("%s 开始生气了!\n", mammoth);
 		}
 	}
 
 	/**
-	 * ƽ��״̬
+	 * 平静状态
 	 */
 	public class PeacefulState implements State {
 
@@ -48,12 +48,12 @@ public class Mammoth {
 
 		@Override
 		public void observe() {
-			System.out.printf("%s ���ں�ƽ��.\n", mammoth);
+			System.out.printf("%s 现在很平静.\n", mammoth);
 		}
 
 		@Override
 		public void onEnterState() {
-			System.out.printf("%s ��ʼ�侲������.\n", mammoth);
+			System.out.printf("%s 开始冷静下来了.\n", mammoth);
 		}
 	}
 
@@ -82,7 +82,7 @@ public class Mammoth {
 
 	@Override
 	public String toString() {
-		return "�������";
+		return "猛犸大象";
 	}
 
 	private static class CircularReferenceA {
@@ -110,51 +110,51 @@ public class Mammoth {
 				System.out.print(k + " ");
 				int x = new Random().nextInt(10);
 				if (x > 7) {
-					System.out.println(" >>x == " + x + "������innerѭ������������ִ��outerѭ���ˣ�");
+					System.out.println(" >>x == " + x + "，结束inner循环，继续迭代执行outer循环了！");
 					continue outer;
 				}
 				if (x == 1) {
-					System.out.println(" >>x == 1����������������outer��innerѭ����");
+					System.out.println(" >>x == 1，跳出并结束整个outer和inner循环！");
 					break outer;
 				}
 			}
 		}
-		System.out.println("------>>>����ѭ��ִ����ϣ�");
+		System.out.println("------>>>所有循环执行完毕！");
 
 		Mammoth mammoth = new Mammoth();
-		// ��������������ʲô״̬
+		// 看看大象现在是什么状态
 		mammoth.observe();
 
-		// ����һ���
+		// 过了一会儿
 		mammoth.timePasses();
 
-		// ��������������ʲô״̬
+		// 看看大象现在是什么状态
 		mammoth.observe();
 
-		// ����һ���
+		// 过了一会儿
 		mammoth.timePasses();
 
-		// ��������������ʲô״̬
+		// 看看大象现在是什么状态
 		mammoth.observe();
 		for (int i = 0; i < 200000; i++) {
 			CircularReferenceA a = new CircularReferenceA();
 			CircularReferenceB b = new CircularReferenceB();
-			//java �ԷǸ��ϵ�ѭ�����ã������
+			//java 对非根上的循环引用，会回收
 			a.setReference(b);
 			b.setReference(a);
-			System.out.println("------>>>ѭ��ִ�У�");
+			System.out.println("------>>>循环执行！");
 		}
 		/*
 		 * for (int i = 0; i < 200000; i++) { Mammoth mammoth = new Mammoth();
-		 * // ��������������ʲô״̬ mammoth.observe();
+		 * // 看看大象现在是什么状态 mammoth.observe();
 		 * 
-		 * // ����һ��� mammoth.timePasses();
+		 * // 过了一会儿 mammoth.timePasses();
 		 * 
-		 * // ��������������ʲô״̬ mammoth.observe();
+		 * // 看看大象现在是什么状态 mammoth.observe();
 		 * 
-		 * // ����һ��� mammoth.timePasses();
+		 * // 过了一会儿 mammoth.timePasses();
 		 * 
-		 * // ��������������ʲô״̬ mammoth.observe();
+		 * // 看看大象现在是什么状态 mammoth.observe();
 		 * 
 		 * }
 		 */

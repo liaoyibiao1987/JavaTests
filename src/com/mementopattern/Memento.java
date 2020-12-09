@@ -3,18 +3,18 @@ package com.mementopattern;
 import java.util.Random;
 
 /*
- * ¿ìÕÕÄ£Ê½£¨±¸ÍüÂ¼Éè¼ÆÄ£Ê½£©
+ * å¿«ç…§æ¨¡å¼ï¼ˆå¤‡å¿˜å½•è®¾è®¡æ¨¡å¼ï¼‰
  */
 public class Memento {
 	
 	/**
-	 * ÓÎÏ·Ö÷ÈË¹«
+	 * æ¸¸æˆä¸»äººå…¬
 	 */
 	public static class Gamer {
 	    private static final Random random = new Random();
 	 
 	    /**
-	     * Ëù³ÖÓÎÏ·½ğ¶î
+	     * æ‰€æŒæ¸¸æˆé‡‘é¢
 	     */
 	    private int money;
 	 
@@ -22,7 +22,7 @@ public class Memento {
 	        this.money = money;
 	    }
 	 
-	    public int getMoney() {                     // »ñÈ¡µ±Ç°Ëù³Ö½ğÇ®
+	    public int getMoney() {                     // è·å–å½“å‰æ‰€æŒé‡‘é’±
 	        return money;
 	    }
 	 
@@ -30,21 +30,21 @@ public class Memento {
 	        int dice = random.nextInt(3) + 1;
 	        if (dice == 1) {
 	            money += 100;
-	            System.out.println("Ëù³Ö½ğÇ®Ôö¼ÓÁË¡£");
+	            System.out.println("æ‰€æŒé‡‘é’±å¢åŠ äº†ã€‚");
 	        } else if (dice == 2) {
 	            money -= random.nextInt(money - 1) + 1;
-	            System.out.println("Ëù³Ö½ğÇ®¼õÉÙÁË¡£");
+	            System.out.println("æ‰€æŒé‡‘é’±å‡å°‘äº†ã€‚");
 	        } else {
-	            System.out.println("Ê²Ã´¶¼Ã»ÓĞ·¢Éú¡£");
+	            System.out.println("ä»€ä¹ˆéƒ½æ²¡æœ‰å‘ç”Ÿã€‚");
 	        }
 	    }
 	 
-	    // ´´½¨±¸ÍüÂ¼, ×÷Îª¿ìÕÕ
+	    // åˆ›å»ºå¤‡å¿˜å½•, ä½œä¸ºå¿«ç…§
 	    public Memento createMemento() {
 	        return new Memento(money);
 	    }
 	 
-	    // Ê¹ÓÃ±¸ÍüÂ¼À´½øĞĞ»Ö¸´Êı¾İ
+	    // ä½¿ç”¨å¤‡å¿˜å½•æ¥è¿›è¡Œæ¢å¤æ•°æ®
 	    public void restoreMemento(Memento memento) {
 	        this.money = memento.getMoney();
 	    }
@@ -55,7 +55,7 @@ public class Memento {
 	}
 	
 	
-	// ´æµµÖĞµÄ½ğ¶î
+	// å­˜æ¡£ä¸­çš„é‡‘é¢
     private int money;
  
     public int getMoney() {
@@ -67,34 +67,34 @@ public class Memento {
     }
     
     public static void main(String[] args) {
-        // ×î³õµÄËù³Ö½ğÇ®ÊıÎª100
+        // æœ€åˆçš„æ‰€æŒé‡‘é’±æ•°ä¸º100
         Gamer gamer = new Gamer(100);
  
-        // ±£´æ×î³õµÄ×´Ì¬
+        // ä¿å­˜æœ€åˆçš„çŠ¶æ€
         Memento memento = gamer.createMemento();
  
         for (int i = 0; i < 10; i++) {
-            // ÏÔÊ¾µ±Ç°ÊÇµÚ¼¸´ÎÑ­»·
+            // æ˜¾ç¤ºå½“å‰æ˜¯ç¬¬å‡ æ¬¡å¾ªç¯
             System.out.println("==== " + i);
  
-            // ÏÔÊ¾Ö÷ÈË¹«ÏÖÔÚµÄ½ğÇ®Êı
-            System.out.println("µ±Ç°×´Ì¬:" + gamer);
+            // æ˜¾ç¤ºä¸»äººå…¬ç°åœ¨çš„é‡‘é’±æ•°
+            System.out.println("å½“å‰çŠ¶æ€:" + gamer);
  
-            // ½øĞĞÓÎÏ·
+            // è¿›è¡Œæ¸¸æˆ
             gamer.bet();
  
-            System.out.println("Ëù³Ö½ğÇ®Îª" + gamer.getMoney() + "Ôª¡£");
+            System.out.println("æ‰€æŒé‡‘é’±ä¸º" + gamer.getMoney() + "å…ƒã€‚");
  
-            // ¾ö¶¨ÈçºÎ´¦ÀíMemento,
-            // Èç¹û½ğ±ÒÔö¼Ó, ÄÇÃ´¾Í¼ÌĞø
-            // Èç¹û½ğ±Ò¼õÉÙÁË, ÄÇÃ´¾Í´Ó±¸ÍüÂ¼ÖĞ»ñÈ¡
+            // å†³å®šå¦‚ä½•å¤„ç†Memento,
+            // å¦‚æœé‡‘å¸å¢åŠ , é‚£ä¹ˆå°±ç»§ç»­
+            // å¦‚æœé‡‘å¸å‡å°‘äº†, é‚£ä¹ˆå°±ä»å¤‡å¿˜å½•ä¸­è·å–
             if (gamer.getMoney() > memento.getMoney()) {
-                System.out.println("    £¨Ëù³Ö½ğÇ®Ôö¼ÓÁË£¬Òò´Ë±£´æÓÎÏ·µ±Ç°µÄ×´Ì¬£©");
+                System.out.println("    ï¼ˆæ‰€æŒé‡‘é’±å¢åŠ äº†ï¼Œå› æ­¤ä¿å­˜æ¸¸æˆå½“å‰çš„çŠ¶æ€ï¼‰");
                 memento = gamer.createMemento();
             } else if (gamer.getMoney() < memento.getMoney()) {
-                System.out.println("    £¨Ëù³Ö½ğÇ®¼õÉÙÁË£¬Òò´Ë½«ÓÎÏ·»Ö¸´ÖÁÒÔÇ°µÄ×´Ì¬£©");
+                System.out.println("    ï¼ˆæ‰€æŒé‡‘é’±å‡å°‘äº†ï¼Œå› æ­¤å°†æ¸¸æˆæ¢å¤è‡³ä»¥å‰çš„çŠ¶æ€ï¼‰");
                 gamer.restoreMemento(memento);
-                System.out.println("    £¨»Ö¸´Ö®ºóµÄ½ğÇ®Îª:" + gamer.getMoney() + "Ôª£©");
+                System.out.println("    ï¼ˆæ¢å¤ä¹‹åçš„é‡‘é’±ä¸º:" + gamer.getMoney() + "å…ƒï¼‰");
             }
  
             System.out.println("");
