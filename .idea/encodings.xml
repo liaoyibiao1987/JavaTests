@@ -1,23 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/src/com/TestJava/Daikuan.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/TestJava/InBox.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/TestJava/InitProgram.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/TestDefualtDelimiter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/TestJava/CustomClassTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/TestJava/Daikuan.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/TestJava/InBox.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/TestJava/InitProgram.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/TestJava/MyClassLoader.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/TestJava/Printer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/TestJava/ReflectFields.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/TestJava/StringFormat.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/keywords/FinalArgument.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/keywords/IInterfaceProperty.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/keywords/Month2.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/keywords/NewProperty.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/keywords/StaticClass.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/observerpattern/WechatServer.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/keywords/EmptyFinal.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/keywords/FinalArgument.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/keywords/FinalClass.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/keywords/IInterfaceProperty.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/keywords/InnerClass.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/keywords/InnerClass2.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/keywords/Month2.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/keywords/NewProperty.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/keywords/StaticClass.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/keywords/UnnamedInnerClass.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/keywords/语法&amp;名词" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/mediatorpattern/GroupMediator.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/mementopattern/Memento.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/observerpattern/Test.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/observerpattern/WeChatUser.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/observerpattern/WechatServer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/Lists/Safes.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/Lists/SortVector.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/Lists/StringSortTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/Lists/about" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/ParameterlessConstructor/ChilderClass.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/TestJava/TestDefaultAccess.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/TestTransfer/TransferTester.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/ppl/encoder/Base64Encoder.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/ppl/exceptionsTest/ThrowOne.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/ppl/exceptionsTest/ThrowTwo.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/ppl/grammars/TestClones.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/com/ppl/javaIO/StandardInputOutput.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/exceptionsTest/LostMessage.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/exceptionsTest/StormyInning.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/exceptionsTest/ThrowOne.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/exceptionsTest/ThrowTwo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/grammars/Sequence.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/grammars/TestClones.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/java/TransOrRentrun/Alias2.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/javaIO/Echo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/javaIO/IOBug.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/javaIO/Redirecting.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/javaIO/Serializable2Blip.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/javaIO/Serializable2Blip3.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/javaIO/SerializableCADState.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/javaIO/SerializableSerialCtl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/javaIO/SerializableWorm.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/javaIO/StandardInputOutput.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/javaIO/keyword/Logon.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/ppl/javaIO/keyword/info.txt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/ppl/testconvert/ByteConvert.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/com/statepattern/Mammoth.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/remoteproxy/Client.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/remoteproxy/CompareHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/remoteproxy/Server.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/statepattern/Context.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/statepattern/Mammoth.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/strategypattern/DragonSlayer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/strategypattern/说明" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/testGit/2.txt" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
