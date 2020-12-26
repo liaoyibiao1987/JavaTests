@@ -23,7 +23,10 @@ public class LongConvert {
     }
 
     public static void main(String[] args) {
-        List<Long> longs = getListStartTimes("1$2$4$5$6$7");
+        //List<Long> longs = getListStartTimes("1$2$4$5$6$7");
+        long x = Long.valueOf("8618023066709");
+        int i1 = Character.codePointAt("A我四一个个并", 0);
+        int i2 = Character.codePointAt("S我四一个个并", 0);
         int s;
     }
 }
